@@ -16,7 +16,9 @@ use App\Http\Controllers\PagesController;
 
 Route::get('/home', [PagesController::class, 'index'] );
 Route::get('/register', [PagesController::class, 'register'] );
+Route::get('/login', [PagesController::class, 'login'] );
 Route::get('/browse_courses', [PagesController::class, 'browse_courses'] );
 Route::get('/contact', [PagesController::class, 'contact'] );
 Route::get('/about', [PagesController::class, 'about'] );
+Route::get('/login', [PagesController::class, 'login'] );
 
