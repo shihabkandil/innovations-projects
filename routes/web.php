@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/home', [PagesController::class, 'index'] );
+Route::get('/register', [PagesController::class, 'register'] );
+Route::get('/browse_courses', [PagesController::class, 'browse_courses'] );
+Route::get('/contact', [PagesController::class, 'contact'] );
+Route::get('/about', [PagesController::class, 'about'] );
+
