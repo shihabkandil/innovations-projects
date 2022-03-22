@@ -228,6 +228,7 @@
     left: -40px;
     background: var(--primary);
     z-index: -1;
+    background-color:#000000;
 }
 
 .section-title::after {
@@ -238,6 +239,7 @@
     bottom: 5px;
     left: -60px;
     background: var(--primary);
+    background-color:#000000;
     z-index: -1;
 }
 
