@@ -48,7 +48,7 @@
                 <a href="/about" class="nav-item nav-link">About</a>
                 <a href="/contact" class="nav-item nav-link">Contact</a>            
                 <a href="/login" class="nav-item nav-link">Login</a>
-            <a href="" class="btn btn-warning py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
+            <a href="/register" class="btn btn-warning py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
       
     </nav>
