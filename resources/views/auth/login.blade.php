@@ -13,7 +13,7 @@
             <div class="text-center">
                 <h1 class="mb-5">{{ __('Login') }}</h1>
             </div>
-            <form method="POST" action="{{ route('login')}}">
+            <form method="POST">
                 @csrf
             <div class="row g-4">
                 <div class="col-lg-4 col-md-12 mx-auto">
@@ -44,11 +44,11 @@
                             <div class="col-12 ">
                                 <button type="submit" class="btn btn-warning w-100 py-3">{{ __('Login') }}</button>
                             </div>
-                            <div class="col-12 ">
-                                <button class="btn btn-primary w-100 py-3" type="submit"><b>{{ __('f') }}</b></button>
-                            </div>
                         </div>
                     </form>
+                    <div class="col-12 pt-2">
+                        <button type="button" style="background-color:royalblue;" class="btn btn-primary w-100 py-2"><b>{{ __('Login with Facebook') }}</b></button>
+                    </div>
                 </div>
             </div>
         </div>
