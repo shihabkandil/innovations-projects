@@ -47,7 +47,7 @@
                         </div>
                     </form>
                     <div class="col-12 pt-2">
-                        <button style="background-color:royalblue;" class="btn btn-primary w-100 py-2"><b>{{ __('Login with Facebook') }}</b></button>
+                        <button type="button" style="background-color:royalblue;" class="btn btn-primary w-100 py-2"><b>{{ __('Login with Facebook') }}</b></button>
                     </div>
                 </div>
             </div>
