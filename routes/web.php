@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,6 @@ Route::get('/login', [PagesController::class, 'login'] );
 Route::get('/browse_courses', [PagesController::class, 'browse_courses'] );
 Route::get('/contact', [PagesController::class, 'contact'] );
 Route::get('/about', [PagesController::class, 'about'] );
-
-
+Route::get('/logout', [LoginController::class,'logout']);
 Auth::routes(['verify'=> true]);
 
