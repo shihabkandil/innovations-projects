@@ -5,6 +5,7 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\SocialController;
 
 
 /*
@@ -26,6 +27,8 @@ Route::get('/browse_courses', [PagesController::class, 'browse_courses'] );
 Route::get('/contact', [PagesController::class, 'contact'] );
 Route::get('/about', [PagesController::class, 'about'] );
 Route::get('/logout', [LoginController::class,'logout']);
+Route::get('/redirect/{service}', [SocialController::class, 'redirect']);
+Route::get('/callback/{service}', [SocialController::class, 'callback']);
 Auth::routes(['verify'=> true]);
 
 
