@@ -47,7 +47,7 @@
                         </div>
                     </form>
                     <div class="col-12 pt-2">
-                        <button type="button" style="background-color:royalblue;" class="btn btn-primary w-100 py-2"><b>{{ __('Login with Facebook') }}</b></button>
+                        <a href="{{url('redirect/facebook')}}" class="btn btn-primary w-100 py-2" style="background:#3c5a99;"><b>Login with Facebook</b></a>
                     </div>
                 </div>
             </div>
