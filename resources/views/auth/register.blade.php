@@ -22,7 +22,7 @@
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
-                                        <label for="email">{{ __('Full name') }}</label>
+                                        <label for="name">{{ __('Full name') }}</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -46,14 +46,14 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                                    <label for="name">{{ __('Password') }}</label>
+                                    <label for="password">{{ __('Password') }}</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input id="password-confirm" placeholder="{{ __('Confirm Password') }}" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                    <input id="password_confirmation" placeholder="{{ __('Confirm Password') }}" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                            
-                                    <label for="name">{{ __('Confirm Password') }}</label>
+                                    <label for="password_confirmation">{{ __('Confirm Password') }}</label>
                                 </div>
                             </div>
                             <div class="col-12 ">
