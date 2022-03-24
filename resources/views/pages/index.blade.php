@@ -32,6 +32,19 @@
 
 
         <!-- About Start -->
+
+        <div class="card-body">
+            @if(session('status'))
+                <div class="alert alert-danger" role="alert">
+
+                    {{session('status')}}
+
+                </div>
+            @endif
+
+        </div>
+
+
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="row g-5">
