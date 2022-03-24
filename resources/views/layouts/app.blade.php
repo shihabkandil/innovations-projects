@@ -48,12 +48,12 @@
                 <a href="/about" class="nav-item nav-link">{{ __('About') }}</a>
                 <a href="/contact" class="nav-item nav-link">{{ __('Contact') }}</a>
                 @auth
-                <a href="/logout" class="nav-item nav-link">{{ __('Log Out') }}</a>
+                <a href="/logout" id='Logout'class="nav-item nav-link">{{ __('Log Out') }}</a>
                 @endauth
 
             @guest
-                <a href="/login" class="nav-item nav-link">{{ __('Login') }}</a>
-                <a href="/register" class="btn btn-warning py-4 px-lg-5 d-none d-lg-block">{{ __('Join us') }}<i class="fa fa-arrow-right ms-3"></i></a>
+                <a href="/login" id="Login" class="nav-item nav-link">{{ __('Login') }}</a>
+                <a href="/register" id="Join us"class="btn btn-warning py-4 px-lg-5 d-none d-lg-block">{{ __('Join us') }}<i class="fa fa-arrow-right ms-3"></i></a>
             @endguest
         </div>
       
