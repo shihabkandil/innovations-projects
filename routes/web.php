@@ -23,7 +23,7 @@ Route::get('/', [PagesController::class, 'index'] )->name('home');
 Route::get('/home', [PagesController::class, 'index'] )->name('home');
 Route::get('/register', [PagesController::class, 'register'] );
 Route::get('/login', [PagesController::class, 'login'] );
-Route::get('/browse_courses', [PagesController::class, 'browse_courses'] );
+Route::get('/browse_courses', [PagesController::class, 'browse_courses'] )->name('courses');
 Route::get('/contact', [PagesController::class, 'contact'] );
 Route::get('/about', [PagesController::class, 'about'] );
 Route::get('/logout', [LoginController::class,'logout']);

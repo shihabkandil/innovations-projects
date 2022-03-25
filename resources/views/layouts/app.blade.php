@@ -35,8 +35,8 @@
 
 <!-- Navbar Start -->
 <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>Innovations Projects</h2>
+        <a href="/" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>{{ __('Innovations Projects')}}</h2>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -47,8 +47,20 @@
                 <a href="/browse_courses" class="nav-item nav-link">{{ __('Courses') }}</a>
                 <a href="/about" class="nav-item nav-link">{{ __('About') }}</a>
                 <a href="/contact" class="nav-item nav-link">{{ __('Contact') }}</a>
+
                 @auth
-                <a href="/logout" id='Logout'class="nav-item nav-link">{{ __('Log Out') }}</a>
+                <!-- Navbar-->
+                <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/edit-profile">Edit Profile</a></li>
+                            <li><a class="dropdown-item" href="/settings">Settings</a></li>
+                            <li><hr class="dropdown-divider" /></li>
+                            <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
                 @endauth
 
             @guest
@@ -68,15 +80,14 @@
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Quick Link</h4>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Privacy Policy</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">FAQs & Help</a>
+                    <h4 class="text-white mb-3">{{ __('Quick Link') }}</h4>
+                    <a class="btn btn-link" href="/about">{{ __('About Us') }}</a>
+                    <a class="btn btn-link" href="/contact">{{ __('Contact Us') }}</a>
+                    <a class="btn btn-link" href="/privacy-policy">{{ __('Privacy Policy') }}</a>
+                    <a class="btn btn-link" href="/terms-conditions">{{ __('Terms & Conditions') }}</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Contact</h4>
+                    <h4 class="text-white mb-3">{{ __('Contact') }}</h4>
                     <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
@@ -93,7 +104,7 @@
             <div class="copyright">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
+                        &copy; <a class="border-bottom" href="#">{{ __('Innovations Projects') }}</a>, All Right Reserved.
 
                         <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
                         Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a><br><br>
@@ -119,7 +130,9 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="{{asset('js/main.js')}}"></script>
+    <script src="{{asset('js/bootstrap.bundle.min.js')}}" crossorigin="anonymous"></script>
+    <script src="{{asset('js/scripts.js')}}" crossorigin="anonymous"></script>
 </body>
 
 
