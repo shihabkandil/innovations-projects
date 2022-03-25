@@ -31,6 +31,7 @@ Route::get('/redirect/{service}', [SocialController::class, 'redirect']);
 Route::get('/callback/{service}', [SocialController::class, 'callback']);
 Auth::routes(['verify'=> true]);
 
+Route::resource('category','CategoryController');
 
 Route::prefix('admin')->middleware(['auth' , 'isAdmin'])->group(function(){
     Route::get('/dashboard' , [DashboardController::class,'index']);
