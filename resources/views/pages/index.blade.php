@@ -6,7 +6,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Innovations Projects</title>
+        <title>{{ __('Innovations Projects')}}</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="" name="keywords">
         <meta content="" name="description">
@@ -31,17 +31,55 @@
     <body>
 
 
-        <!-- About Start -->
+            <!-- Carousel Start -->
+    <div class="container-fluid p-0 mb-5">
+        <div class="owl-carousel header-carousel position-relative">
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src="img/carousel-1.jpg" alt="">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, .7);">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-sm-10 col-lg-8">
+                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">{{ __('Start your journey')}}</h5>
+                                <h1 class="display-3 text-white animated slideInDown">{{ __('Effective Video Lessons')}}</h1>
+                                <p class="fs-5 text-white mb-4 pb-2">{{ __('Browse our courses catalog and see what can help you develop yourself')}} </p>
+                                <a href="/browse_courses" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">{{ __('Browse Courses')}}</a>
+                                @guest
+                                <a href="/register" class="btn btn-light py-md-3 px-md-5 animated slideInRight">{{ __('Join Now')}}</a>
+                                @endguest
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src="img/carousel-2.jpg" alt="">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, .7);">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-sm-10 col-lg-8">
+                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">{{ __('Helpful Articles')}}</h5>
+                                <h1 class="display-3 text-white animated slideInDown">{{ __('Articles written by experts')}}</h1>
+                                <p class="fs-5 text-white mb-4 pb-2">{{ __('Articles are written by researchers or experts in order to share the results of their original research or analysis with other researchers and students')}}.</p>
+                                <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">{{ __('Read More')}}</a>
+                                @guest
+                                <a href="/register" class="btn btn-light py-md-3 px-md-5 animated slideInRight">{{ __('Join Now')}}</a>
+                                @endguest
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Carousel End -->
+
+        <!-- About Start -->
         <div class="card-body">
             @if(session('status'))
-                <div class="alert alert-danger" role="alert">
-
-                    {{session('status')}}
-
-                </div>
+                <div class="alert alert-danger" role="alert">{{session('status')}}</div>
             @endif
-
         </div>
 
 
@@ -54,33 +92,33 @@
                         </div>
                     </div>
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <h6 class="section-title bg-white text-start text-primary pe-3">About Us</h6>
-                        <h1 class="mb-4">Welcome to Innovations Projects</h1>
-                        <p class="mb-4">The hospitality and retail industry has been steadily developing at a rapid speed in Egypt and due
+                        <h6 class="section-title bg-white text-start text-primary pe-3">{{ __('About Us')}}</h6>
+                        <h1 class="mb-4">{{ __('Welcome to Innovations Projects')}}</h1>
+                        <p class="mb-4">{{ __('The hospitality and retail industry has been steadily developing at a rapid speed in Egypt and due
                             to its fast development the workers in this field have\’t been able to keep up with it and implement
                             the newest cutting edge technologies and practices that will advance their quality of service to the
-                            next level.</p>
-                        <p class="mb-4">Our web application will close this gap as it will include a variety of courses
+                            next level.')}}</p>
+                        <p class="mb-4">{{ __('Our web application will close this gap as it will include a variety of courses
                             taught by experts in the field of retail and hospitality, and it will display the latest news in those
-                            fields.</p>
+                            fields.')}}</p>
                             <div class="row gy-2 gx-4 mb-4">
                             <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Skilled Instructors</p>
+                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>{{ __('Skilled Instructors')}}</p>
                             </div>
                             <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Online Classes</p>
+                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>{{ __('Online Classes')}}</p>
                             </div>
                             <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Experts' articles</p>
+                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>{{ __('Experts\' articles')}}</p>
                             </div>
                             <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Verified Certificates</p>
+                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>{{ __('Verified Certificates')}}</p>
                             </div>
                             <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Bundles</p>
+                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>{{ __('Bundles')}}</p>
                             </div>
                         </div>
-                        <a class="btn btn-primary py-3 px-5 mt-2" href="">Read More</a>
+                        <a class="btn btn-primary py-3 px-5 mt-2" href="/about">{{ __('Read More')}}</a>
                     </div>
                 </div>
             </div>
@@ -94,8 +132,8 @@
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h6 class="section-title bg-white text-center text-primary px-3">Courses</h6>
-                    <h1 class="mb-5">Popular Courses</h1>
+                    <h6 class="section-title bg-white text-center text-primary px-3">{{ __('Courses')}}</h6>
+                    <h1 class="mb-5">{{ __('Popular Courses')}}</h1>
                 </div>
                 <div class="row g-4 justify-content-center">
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -190,7 +228,7 @@
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="4s">
-                    <h6 class="section-title bg-white text-center text-primary px-3">News Section</h6>
+                    <h6 class="section-title bg-white text-center text-primary px-3">{{ __('News Section')}}</h6>
                     <h1 class="mb-5">News</h1>
                 </div>
             </div>
@@ -199,7 +237,7 @@
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="4s">
-                    <h6 class="section-title bg-white text-center text-primary px-3">Articles Section</h6>
+                    <h6 class="section-title bg-white text-center text-primary px-3">{{ __('Articles Section')}}</h6>
                     <h1 class="mb-5">Articles</h1>
                 </div>
             </div>

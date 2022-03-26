@@ -59,7 +59,9 @@
                             <div class="col-12 ">
                                 <button class="btn btn-warning w-100 py-3" type="submit">{{ __('Register') }}</button>
                             </div>
-                            
+                            <div class="col-12 pt-2">
+                                <a href="{{url('redirect/facebook')}}" class="btn btn-primary w-100 py-2" style="background:#3c5a99;"><b>Login with Facebook</b></a>
+                            </div>
                         </div>
                     </form>
                 </div>
