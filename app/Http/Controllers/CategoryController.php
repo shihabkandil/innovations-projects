@@ -1,16 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-use app\Models\category;
+use App\Models\Category;
 class CategoryController extends Controller
 {
 
     public $cat; 
 
    public function __construct(){
-$this->cat= new category();
+     $this->cat= new Category();
 
    }
     /**
@@ -20,9 +19,9 @@ $this->cat= new category();
      */
     public function index()
     {
-        
- return view('');
-
+        $categories= $this->cat->getall();
+        return view("pages.browseC")->with(array('categories'=>$categories));
+       
     }
 
     /**
@@ -54,7 +53,7 @@ $this->cat= new category();
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
