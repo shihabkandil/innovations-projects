@@ -30,4 +30,8 @@ class PagesController extends Controller
         return view('pages.login');
     }
 
+    public function editProfile(){
+        return view('pages.editProfile');
+    }
+
 }
