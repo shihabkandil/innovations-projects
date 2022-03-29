@@ -10,13 +10,13 @@ use Illuminate\Support\Facades\Hash;
 
 class SocialController extends Controller
 {
-    public function redirect($service){
-        return Socialite::driver($service) -> redirect();
+    public function redirect(){
+        return Socialite::driver('facebook') -> redirect();
     }
 
-    public function callback($service){
+    public function callback(){
         try{
-            $user = Socialite::driver($service) -> user();
+            $user = Socialite::driver('facebook') -> user();
 
             $saveUser = User::updateOrCreate([
                 'facebook_id' => $user->getId(),
