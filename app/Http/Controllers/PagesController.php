@@ -45,5 +45,9 @@ class PagesController extends Controller
             return redirect('/');
         }  
     }
+    
+    public function Courses(){
+        return view('pages.courses');
+    }
 
 }
