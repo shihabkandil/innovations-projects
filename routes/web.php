@@ -27,6 +27,7 @@ Route::get('/register', [PagesController::class, 'register'] );
 Route::get('/login', [PagesController::class, 'login'] );
 Route::get('/editProfile', [PagesController::class, 'editProfile'] );
 Route::get('/Catigories', [CategoryController::class, 'index'] );
+Route::get('/checkout', [PagesController::class, 'checkout'] );
 Route::get('/contact', [PagesController::class, 'contact'] );
 Route::get('/about', [PagesController::class, 'about'] );
 Route::get('/logout', [LoginController::class,'logout']);
