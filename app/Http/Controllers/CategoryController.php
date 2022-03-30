@@ -10,8 +10,8 @@ class CategoryController extends Controller
 
    public function __construct(){
      $this->cat= new Category();
-
    }
+   
     /**
      * Display a listing of the resource.
      *
@@ -20,7 +20,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories= $this->cat->getall();
-        return view("pages.browseC")->with(array('categories'=>$categories));
+        return view("pages.browseCategory")->with(array('categories'=>$categories));
        
     }
 
@@ -53,7 +53,7 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        
+       
     }
 
     /**
@@ -89,4 +89,6 @@ class CategoryController extends Controller
     {
         //
     }
+
+    
 }

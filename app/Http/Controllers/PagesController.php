@@ -33,5 +33,9 @@ class PagesController extends Controller
     public function editProfile(){
         return view('pages.editProfile');
     }
+    
+    public function Courses(){
+        return view('pages.courses');
+    }
 
 }
