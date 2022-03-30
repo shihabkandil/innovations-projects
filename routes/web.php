@@ -24,6 +24,7 @@ Route::get('/home', [PagesController::class, 'index'] )->name('home');
 Route::get('/register', [PagesController::class, 'register'] );
 Route::get('/login', [PagesController::class, 'login'] );
 Route::get('/editProfile', [PagesController::class, 'editProfile'] );
+Route::get('/checkout', [PagesController::class, 'checkout'] );
 Route::get('/browse_courses', [CategoryController::class, 'index'] );
 Route::get('/contact', [PagesController::class, 'contact'] );
 Route::get('/about', [PagesController::class, 'about'] );
