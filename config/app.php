@@ -125,6 +125,23 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | NEWS API 
+    |--------------------------------------------------------------------------
+    |
+    | Environment variables for News API
+    |
+    */
+    'url' => env('APP_URL', 'http://localhost'),
+
+    'news_api_url' => env('NEWS_API_URL', null),
+    'news_api_key' => env('NEWS_API_KEY', null),
+    'default_news_source' => env('DEFAULT_NEWS_SOURCE', 'CNN'),
+    'default_news_source_id' => env('DEFAULT_NEWS_SOURCE_ID', 'cnn'),
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
@@ -163,6 +180,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        
 
         /*
          * Package Service Providers...
@@ -177,6 +195,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
+        App\Providers\HelperServiceProvider::class,
 
     ],
 
@@ -193,6 +212,8 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([        
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'View' => Illuminate\Support\Facades\View::class,
+        'Helper' => App\Helpers\Helper::class,
     ])->toArray(),
 
 ];
