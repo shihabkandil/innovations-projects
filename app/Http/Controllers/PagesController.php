@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PagesController extends Controller
 {
@@ -31,7 +31,19 @@ class PagesController extends Controller
     }
 
     public function editProfile(){
-        return view('pages.editProfile');
+        if(Auth::check()){
+            return view('pages.editProfile');
+        }else{
+            return redirect('/');
+        }  
+    }
+
+    public function checkout(){
+        if(Auth::check()){
+            return view('pages.checkout');
+        }else{
+            return redirect('/');
+        }  
     }
 
 }
