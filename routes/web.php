@@ -24,7 +24,8 @@ use App\Http\Controllers\Auth\LoginController;
 
 Route::get('/', [PagesController::class, 'index'] )->name('home');
 Route::get('/home', [PagesController::class, 'index'] )->name('home');
-Route::get('/register', [PagesController::class, 'register'] );
+Route::get('/student_register', [PagesController::class, 'StudentRegister'] );
+Route::get('/instructor_register', [PagesController::class, 'InstructorRegister'] );
 Route::get('/login', [PagesController::class, 'login'] );
 Route::get('/bundles', [PagesController::class, 'bundles'] );
 Route::get('/editProfile', [PagesController::class, 'editProfile'] );

@@ -45,13 +45,13 @@
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="/home" class="nav-item nav-link">{{ __('Home') }}</a>
                 <a href="/news" class="nav-item nav-link">{{ __('News') }}</a>
+                <a href="/Catigories" class="nav-item nav-link">{{ __('Browse Courses') }}</a>
                 <a href="/about" class="nav-item nav-link">{{ __('About') }}</a>
                 <a href="/contact" class="nav-item nav-link">{{ __('Contact') }}</a>
                 <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ __('Browse Courses') }}</a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li><a href="/browse_courses" class="dropdown-item">{{ __('Courses') }}</a></li>
                             <li><a href="/Catigories" class="dropdown-item">{{ __('Courses') }}</a></li>
                             <li><a href="/bundles" class="dropdown-item">{{ __('Bundles') }}</a></li>
                         </ul>
@@ -80,6 +80,7 @@
       
     </nav>
     <!-- Navbar End -->
+    
     <div>
                 @yield('content')
     </div>
