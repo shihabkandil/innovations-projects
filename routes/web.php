@@ -1,9 +1,9 @@
 <?php
 
+
+namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PagesController;
-use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\CategoryController;
@@ -45,3 +45,4 @@ Route::prefix('admin')->middleware(['auth' , 'isAdmin'])->group(function(){
 
 
 Route::get('/quiz', [StudentController::class, 'quiz'] );
+Route::get('/news', [NewsApiController::class, 'showNews'] );
