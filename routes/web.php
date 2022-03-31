@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\StudentController;
-
+use App\Http\Controllers\CartController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,6 +35,8 @@ Route::get('/callback/facebook', [SocialController::class, 'callback']);
 Auth::routes(['verify'=> true]);
 
 Route::resource('category','CategoryController');
+Route::get('/cart', [CartController::class, 'index'] );
+//Route::resource('cart','CartController');
 
 Route::prefix('admin')->middleware(['auth' , 'isAdmin'])->group(function(){
     Route::get('/dashboard' , [DashboardController::class,'index']);
