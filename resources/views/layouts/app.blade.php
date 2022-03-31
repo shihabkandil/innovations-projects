@@ -46,6 +46,7 @@
                 <a href="/home" class="nav-item nav-link">{{ __('Home') }}</a>
                 <a href="/news" class="nav-item nav-link">{{ __('News') }}</a>
                 <a href="/browse_courses" class="nav-item nav-link">{{ __('Courses') }}</a>
+                <a href="/Catigories" class="nav-item nav-link">{{ __('Courses') }}</a>
                 <a href="/about" class="nav-item nav-link">{{ __('About') }}</a>
                 <a href="/contact" class="nav-item nav-link">{{ __('Contact') }}</a>
 
