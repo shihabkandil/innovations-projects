@@ -23,7 +23,8 @@ use App\Http\Controllers\StudentController;
 
 Route::get('/', [PagesController::class, 'index'] )->name('home');
 Route::get('/home', [PagesController::class, 'index'] )->name('home');
-Route::get('/register', [PagesController::class, 'register'] );
+Route::get('/student_register', [PagesController::class, 'StudentRegister'] );
+Route::get('/instructor_register', [PagesController::class, 'InstructorRegister'] );
 Route::get('/login', [PagesController::class, 'login'] );
 Route::get('/editProfile', [PagesController::class, 'editProfile'] );
 Route::get('/Catigories', [CategoryController::class, 'index'] );
