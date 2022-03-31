@@ -50,9 +50,6 @@ class PagesController extends Controller
         }  
     }
     
-    public function Courses(){
-        return view('pages.courses');
-    }
 
     public function bundles(){
         return view('pages.bundles');

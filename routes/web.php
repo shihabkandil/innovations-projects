@@ -37,7 +37,6 @@ Route::get('/logout', [LoginController::class,'logout']);
 Route::get('/redirect/facebook', [SocialController::class, 'redirect']);
 Route::get('/callback/facebook', [SocialController::class, 'callback']);
 Route::get('/Catigories/{id}' , [CoursesController::class , 'CoursesCategories'] );
-Route::get('/courses', [PagesController::class, 'Courses']);
 Auth::routes(['verify'=> true]);
 
 Route::resource('category','CategoryController');
