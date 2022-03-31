@@ -18,7 +18,7 @@ class NewsApiModel extends Model
      */
     public function fetchNews()
     {
-        $urlParams = 'everything?q=hospitality%20learning?';
+        $urlParams = 'everything?q=hospitality%20learning';
         $response = (new Helper)->makeApiCalls($urlParams);
         return Arr::get($response,'articles');
     }
