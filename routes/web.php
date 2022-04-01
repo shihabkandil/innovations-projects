@@ -33,9 +33,13 @@ Route::get('/Catigories', [CategoryController::class, 'index'] );
 Route::get('/checkout', [PagesController::class, 'checkout'] );
 Route::get('/contact', [PagesController::class, 'contact'] );
 Route::get('/about', [PagesController::class, 'about'] );
+Route::get('/articles', [PagesController::class, 'articles'] );
+
 Route::get('/logout', [LoginController::class,'logout']);
+
 Route::get('/redirect/facebook', [SocialController::class, 'redirect']);
 Route::get('/callback/facebook', [SocialController::class, 'callback']);
+
 Route::get('/Catigories/{id}' , [CoursesController::class , 'CoursesCategories'] );
 Auth::routes(['verify'=> true]);
 

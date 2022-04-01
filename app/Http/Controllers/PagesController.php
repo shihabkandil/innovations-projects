@@ -55,4 +55,8 @@ class PagesController extends Controller
         return view('pages.bundles');
     }
 
+    public function articles(){
+        return view('pages.articles');
+    }
+
 }
