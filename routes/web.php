@@ -9,7 +9,7 @@ use App\Http\Controllers\SocialController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\StudentController;
-
+use App\Http\Controllers\AdminLogninController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,3 +46,5 @@ Route::prefix('admin')->middleware(['auth' , 'isAdmin'])->group(function(){
 
 Route::get('/quiz', [StudentController::class, 'quiz'] );
 Route::get('/news', [NewsApiController::class, 'showNews'] );
+
+Route::get('/AdminLogin', [AdminLoginController::class, 'index'] );
