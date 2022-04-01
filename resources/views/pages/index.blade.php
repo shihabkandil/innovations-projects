@@ -176,24 +176,6 @@
             </div>
         </div>
         <!-- Courses End -->
-    
-        <div class="container-xxl py-5">
-            <div class="container">
-                <div class="text-center wow fadeInUp" data-wow-delay="4s">
-                    <h6 class="section-title bg-white text-center text-primary px-3">{{ __('News Section')}}</h6>
-                    <h1 class="mb-5">News</h1>
-                </div>
-            </div>
-        </div>
-
-        <div class="container-xxl py-5">
-            <div class="container">
-                <div class="text-center wow fadeInUp" data-wow-delay="4s">
-                    <h6 class="section-title bg-white text-center text-primary px-3">{{ __('Articles Section')}}</h6>
-                    <h1 class="mb-5">Articles</h1>
-                </div>
-            </div>
-        </div>
 
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     
