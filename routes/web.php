@@ -34,6 +34,7 @@ Route::get('/checkout', [PagesController::class, 'checkout'] );
 Route::get('/contact', [PagesController::class, 'contact'] );
 Route::get('/about', [PagesController::class, 'about'] );
 Route::get('/articles', [PagesController::class, 'articles'] );
+Route::get('/subscriptions', [PagesController::class, 'subscribe'] );
 
 Route::get('/logout', [LoginController::class,'logout']);
 

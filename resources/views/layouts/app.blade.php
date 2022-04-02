@@ -56,6 +56,8 @@
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             <li><a href="/Catigories" class="dropdown-item">{{ __('Browse Courses') }}</a></li>
                             <li><a href="/bundles" class="dropdown-item">{{ __('Bundles') }}</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a href="/subscriptions" class="dropdown-item" style="color:red; font-weight:bold;" >{{ __('Subscribe') }}</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -65,7 +67,7 @@
                 <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <ul class="dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="/editProfile">Edit Profile</a></li>
                             <li><a class="dropdown-item" href="/settings">Settings</a></li>
                             <li><hr class="dropdown-divider" /></li>
@@ -77,7 +79,7 @@
 
             @guest
                 <a href="/login" id="Login" class="nav-item nav-link">{{ __('Login') }}</a>
-                <a href="/register" id="Join us"class="btn btn-warning py-4 px-lg-5 d-none d-lg-block">{{ __('Join us') }}<i class="fa fa-arrow-right ms-3"></i></a>
+                <a href="/register" id="Join us"class="btn btn-warning py-4 px-lg-5 d-none d-lg-block" style="border-radius:0px;">{{ __('Join us') }}<i class="fa fa-arrow-right ms-3"></i></a>
             @endguest
         </div>
       
@@ -151,8 +153,8 @@
             </div>
         </div>
     </div>
-    <button class="close-button" onclick="closeForm()">Close</button>
-    <button class="open-button" onclick="openForm()">Chat</button>
+    <button class="btn btn-primary close-button" onclick="closeForm()">Close</button>
+    <button class="btn btn-primary open-button" onclick="openForm()">Chat</button>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -180,105 +182,6 @@
         document.getElementsByClassName("close-button")[0].style.display = "none";
     }
 </script>
-<style>
-.open-button {
-    background-color: #FFC107;
-    color: white;
-    padding: 13px 20px;
-    border: none;
-    cursor: pointer;
-    position: fixed;
-    bottom: 44px;
-    right: 110px;
-    z-index: 10;
-}
 
-.close-button {
-    display: none;
-    background-color: #FFC107;
-    color: white;
-    padding: 13px 20px;
-    border: none;
-    cursor: pointer;
-    position: fixed;
-    bottom: 44px;
-    right: 110px;
-    z-index: 10;
-}
-
-.send-button {
-  background-color: #FFC107;
-  color: white;
-  padding: 5px 20px;
-  border-radius: 15px;
-  border: none;
-  margin: 5px;
-  margin-left: auto;
-  cursor: pointer;
-}
-
-#chatBox{
-    display: none;
-    position: fixed;
-    bottom: 130px;
-    right: 110px;
-    z-index: 10;
-}
-
-#chatBox body {
-    background: #000000;
-}
-
-#chatBox .card {
-    width: 300px;
-    border: none;
-    border-radius: 15px;
-}
-
-#chatBox .adiv {
-    background: #FFC107;
-    border-radius: 15px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-    font-size: 20px;
-    height: 46px;
-}
-
-#chatBox .chat {
-    border: none;
-    background: #E2FFE8;
-    font-size: 13px;
-    border-radius: 20px;
-}
-
-#chatBox .bg-white {
-    border: 1px solid #E7E7E9;
-    font-size: 13px;
-    border-radius: 20px;
-}
-
-#chatBox .myvideo img {
-    border-radius: 20px;
-}
-
-#chatBox .dot {
-    font-weight: bold;
-}
-
-#chatBox .form-control {
-    border-radius: 12px;
-    border: 1px solid #F0F0F0;
-    font-size: 12px;
-}
-
-#chatBox .form-control:focus {
-    box-shadow: none;
-}
-
-#chatBox .form-control::placeholder {
-    font-size: 8px;
-    color: #C4C4C4;
-}
-</style>
 </html>
 
