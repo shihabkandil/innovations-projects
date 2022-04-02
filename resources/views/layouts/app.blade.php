@@ -157,6 +157,8 @@
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             <li><a href="/Catigories" class="dropdown-item">{{ __('Browse Courses') }}</a></li>
                             <li><a href="/bundles" class="dropdown-item">{{ __('Bundles') }}</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a href="/subscriptions" class="dropdown-item" style="color:red; font-weight:bold;" >{{ __('Subscribe') }}</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -164,9 +166,9 @@
                 @auth
                 <!-- Navbar-->
                 <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-                    <li class="nav-item dropdown-menu-right">
-                        <a class="nav-link dropdown-toggle dropleft" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                        <ul class="dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="/editProfile">Edit Profile</a></li>
                             <li><a class="dropdown-item" href="/settings">Settings</a></li>
                             <li><hr class="dropdown-divider" /></li>
@@ -199,7 +201,7 @@
 
             @guest
                 <a href="/login" id="Login" class="nav-item nav-link">{{ __('Login') }}</a>
-                <a href="/register" id="Join us"class="btn btn-warning py-4 px-lg-5 d-none d-lg-block">{{ __('Join us') }}<i class="fa fa-arrow-right ms-3"></i></a>
+                <a href="/register" id="Join us"class="btn btn-warning py-4 px-lg-5 d-none d-lg-block" style="border-radius:0px;">{{ __('Join us') }}<i class="fa fa-arrow-right ms-3"></i></a>
             @endguest
         </div>
       
@@ -254,7 +256,27 @@
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-
+    <div id="chatBox">
+        <div class="container d-flex justify-content-center">
+            <div class="card mt-5">
+                <div class="d-flex flex-row justify-content-between p-3 adiv text-white"> <span class="pb-3 mx-auto">Live chat</span> </div>
+                <div class="d-flex flex-row p-3"> <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-7.png" width="30" height="30">
+                    <div class="chat ml-2 p-3">Hello</div>
+                </div>
+                <div class="d-flex flex-row p-3" style="margin-left: auto;">
+                    <div class="bg-white mr-2 p-3"><span class="text-muted">Hello</span></div> <img src="https://img.icons8.com/color/48/000000/circled-user-male-skin-type-7.png" width="30" height="30">
+                </div>
+                <div class="d-flex flex-row p-3"> <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-7.png" width="30" height="30">
+                    <div class="chat ml-2 p-3"><span class="text-muted dot">. . .</span></div>
+                </div>
+                <div class="form-group px-3"> <textarea class="form-control" style="resize: none;" rows="5" placeholder="Type your message"></textarea> </div>
+                <button type="button" class="send-button">Send</button>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-primary close-button" onclick="closeForm()">Close</button>
+    <button class="btn btn-primary open-button" onclick="openForm()">Chat</button>
+    
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>

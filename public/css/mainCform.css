@@ -27,11 +27,13 @@ a {
 
 a:focus {
 	outline: none !important;
+  border-radius: 5px;
 }
 
 a:hover {
 	text-decoration: none;
 	color: #57b846;
+  border-radius: 5px;
 }
 
 /*---------------------------------------------*/
@@ -56,11 +58,13 @@ ul, li {
 input {
 	outline: none;
 	border: none;
+  border-radius: 5px;
 }
 
 textarea {
   outline: none;
   border: none;
+  border-radius: 5px;
 }
 
 textarea:focus, input:focus {
@@ -82,14 +86,17 @@ button {
 	outline: none !important;
 	border: none;
 	background: transparent;
+  border-radius: 5px;
 }
 
 button:hover {
 	cursor: pointer;
+  border-radius: 5px;
 }
 
 iframe {
 	border: none !important;
+  border-radius: 5px;
 }
 /*//////////////////////////////////////////////////////////////////
 [ Contact 1 ]*/
@@ -107,6 +114,7 @@ iframe {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  border-radius: 5px;
 }
 
 .container-contact1 {
@@ -125,6 +133,7 @@ iframe {
   align-items: center;
 
   padding: 90px 130px 88px 148px;
+  border-radius: 5px;
 }
 
 /*------------------------------------------------------------------
@@ -155,20 +164,21 @@ iframe {
 
 input.input1 {
   height: 50px;
-  border-radius: 0px;
+  border-radius: 5px;
   padding: 0 30px;
+
 }
 input.input1 + .shadow-input1 {
-  border-radius: 0px;
+  border-radius: 5px;
 }
 
 textarea.input1 {
   min-height: 150px;
-  border-radius: 0px;
   padding: 12px 30px;
+  border-radius: 5px;
 }
 textarea.input1 + .shadow-input1 {
-  border-radius: 0px;
+  border-radius: 5px;
 }
 
 /*---------------------------------------------*/
@@ -177,6 +187,7 @@ textarea.input1 + .shadow-input1 {
   width: 100%;
   z-index: 1;
   margin-bottom: 20px;
+  border-radius: 5px;
 }
 
 .input1 {
@@ -186,6 +197,7 @@ textarea.input1 + .shadow-input1 {
   font-size: 15px;
   line-height: 1.5;
   color: #666666;
+  border-radius: 5px;
 }
 
 .shadow-input1 {
@@ -199,6 +211,7 @@ textarea.input1 + .shadow-input1 {
   height: 100%;
   box-shadow: 0px 0px 0px 0px;
   color: rgba(41, 40, 40, 0.555);
+  border-radius: 5px;
 }
 
 .input1:focus + .shadow-input1 {
@@ -229,12 +242,12 @@ textarea.input1 + .shadow-input1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  border-radius: 5px;
 }
 
 .contact1-form-btn {
   min-width: 193px;
   height: 50px;
-  border-radius: 0px;
   background: rgba(41, 40, 40, 0.555);
   font-size: 15px;
   line-height: 1.5;
@@ -252,6 +265,7 @@ textarea.input1 + .shadow-input1 {
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
   transition: all 0.4s;
+  border-radius: 5px;
 }
 
 .contact1-form-btn i {
@@ -261,6 +275,7 @@ textarea.input1 + .shadow-input1 {
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
   transition: all 0.4s;
+  border-radius: 5px;
 }
 
 .contact1-form-btn:hover {
