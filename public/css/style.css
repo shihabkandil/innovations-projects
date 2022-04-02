@@ -411,3 +411,7 @@
     padding-right: 0;
     border-right: none;
 }
+
+.dropdown:hover>.dropdown-menu{
+    display: block;
+}
