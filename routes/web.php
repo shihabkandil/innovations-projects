@@ -9,6 +9,7 @@ use App\Http\Controllers\SocialController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\Auth\LoginController;
 
 /*
@@ -45,6 +46,9 @@ Route::get('/Catigories/{id}' , [CoursesController::class , 'CoursesCategories']
 Auth::routes(['verify'=> true]);
 
 Route::resource('category','CategoryController');
+
+Route::get('/cart', [CartController::class, 'index'] );
+
 Route::prefix('admin')->middleware(['auth' , 'isAdmin'])->group(function(){
     Route::get('/dashboard' , [DashboardController::class,'index']);
 });
