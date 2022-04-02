@@ -40,6 +40,11 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        'contentCreator' => [
+            'driver' => 'session',
+            'provider' => 'contentCreators',
+        ],
     ],
 
     /*
@@ -63,6 +68,10 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+        'contentCreators' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\ContentCreator::class,
         ],
 
         // 'users' => [
@@ -89,6 +98,12 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'contentCreators' => [
+            'provider' => 'contentCreators',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,

@@ -35,13 +35,38 @@ class LoginController extends Controller
      *
      * @return void
      */
+    
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+        $this->middleware('guest:contentCreator')->except('logout');
     }
 
     public function logout(Request $request) {
-        Auth::logout();
-        return redirect('/home');
+        if(Auth::guard('contentCreator')->check())
+        {
+            Auth::guard('contentCreator')->logout();
+            return redirect('/home');
+         }
+        else{
+            return redirect('/home');
       }
+    }
+    
+    public function showContentCreatorLogin(){
+        return view('auth.content_creator_login');
+    }
+    
+    public function contentCreatorLogin(Request $request){
+            
+            $validation = $this->validate($request, [
+                'email' => 'required|email',
+                'password' => 'required|min:8'
+            ]);
+
+            if (Auth::guard('contentCreator')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
+                return redirect('/home');
+            }
+            return back()->withErrors($validation,['email' => 'Please enter correct credentials']);
+    }
 }

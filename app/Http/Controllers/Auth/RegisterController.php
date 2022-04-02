@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-
+use App\Models\ContentCreator;
+use Auth;
 class RegisterController extends Controller
 {
     /*
@@ -39,6 +41,8 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+        $this->middleware('guest:contentCreator');
+
     }
 
     /**
@@ -51,7 +55,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:contentCreators,email'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -69,5 +73,36 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    /**
+     * Create a new user instance after a valid registration.
+     *
+     * @param  array  $data
+     * @return \App\Models\ContentCreator
+     */
+    protected function contentCreatorRegister(Request $request){
+
+        $this->validator($request->all())->validate();
+
+        $contentCreator = ContentCreator::create([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'password' => Hash::make($request['password']),
+        ]);
+
+        if (Auth::guard('contentCreator')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
+            return redirect('/home');
+        }
+        return back()->withInput($request->only('email', 'password'))->withErrors($contentCreator);
+        
+    }
+
+    public function showContentCreatorRegister(){
+        return view('auth.content_creator_register');
+    }
+
+    public function showRegisterAs(){
+        return view('auth.register');
     }
 }

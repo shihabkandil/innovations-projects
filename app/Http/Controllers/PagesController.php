@@ -31,11 +31,11 @@ class PagesController extends Controller
     }
 
     public function login(){
-        return view('pages.login');
+        return view('auth.login');
     }
 
     public function editProfile(){
-        if(Auth::check()){
+        if(Auth::guard('contentCreator')->check()){
             return view('pages.editProfile');
         }else{
             return redirect('/');

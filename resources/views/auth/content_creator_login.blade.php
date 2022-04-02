@@ -4,14 +4,17 @@
 </header>
 
 
-<title>Login</title>
+<title>Content Creator Login</title>
 
 @section('content')
 
 <div class="container-xxl py-5">
         <div class="container text-center">
             <div class="text-center">
-                <h1 class="mb-5">{{ __('Student Login') }}</h1>
+                <h1>{{ __('Content Creator') }}</h1>
+            </div>
+            <div class="text-center">
+                <h1 class="mb-5">{{ __('Login') }}</h1>
             </div>
             <form method="POST" method="action={{ route('contentCreatorLoginForm') }}">
                 @csrf
@@ -20,7 +23,7 @@
                         <div class="row g-3"> 
                             <div class="col-12">
                                     <div class="form-floating">
-                                        <input id="email" type="email" placeholder="{{ __('Email Address') }}" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                        <input id="email" type="email" placeholder="{{ __('Email Address') }}" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -42,19 +45,16 @@
                                 </div>
                             </div>
                             <div class="col-12 ">
-                                <button type="submit" class="btn btn-warning w-100 py-3">{{ __('Login') }}</button>
+                                <button type="submit" class="btn btn-warning w-100 py-2">{{ __('Login') }}</button>
                             </div>
                         </div>
                     </form>
                     <div class="col-12 pt-2">
                         <a href="{{url('redirect/facebook')}}" class="btn btn-primary w-100 py-2" style="background:#3c5a99;"><b>Login with Facebook</b></a>
                     </div>
-                    <div class="col-12 pt-2">
-                        <a href="{{route('contentCreatorLoginForm')}}" class="btn w-100 py-2"><b>Login as Content Creator</b></a>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
-
+    
 @endsection
