@@ -10,8 +10,12 @@ class PagesController extends Controller
         return view('pages.index');
     }
 
-    public function register(){
-        return view('pages.register');
+    public function StudentRegister(){
+        return view('auth.student_register');
+    }
+
+    public function InstructorRegister(){
+        return view('auth.instructor_register');
     }
 
     public function browse_courses(){
@@ -46,8 +50,13 @@ class PagesController extends Controller
         }  
     }
     
-    public function Courses(){
-        return view('pages.courses');
+
+    public function bundles(){
+        return view('pages.bundles');
+    }
+
+    public function articles(){
+        return view('pages.articles');
     }
 
 }
