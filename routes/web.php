@@ -9,9 +9,10 @@ use App\Http\Controllers\SocialController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\AdminLoginController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,6 +36,7 @@ Route::get('/checkout', [PagesController::class, 'checkout'] );
 Route::get('/contact', [PagesController::class, 'contact'] );
 Route::get('/about', [PagesController::class, 'about'] );
 Route::get('/articles', [PagesController::class, 'articles'] );
+Route::get('/subscriptions', [PagesController::class, 'subscribe'] );
 
 Route::get('/logout', [LoginController::class,'logout']);
 
@@ -48,9 +50,11 @@ Route::get('/Catigories/{id}' , [CoursesController::class , 'CoursesCategories']
 
 Route::resource('category','CategoryController');
 
+Route::get('/cart', [CartController::class, 'index'] );
 
 Route::prefix('admin')->middleware(['auth' , 'isAdmin'])->group(function(){
     Route::get('/dashboard' , [DashboardController::class,'index']);
+    Route::get('/AdminLogin', [AdminLoginController::class, 'index'] );
 });
 
 

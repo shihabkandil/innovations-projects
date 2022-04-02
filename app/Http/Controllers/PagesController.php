@@ -59,4 +59,8 @@ class PagesController extends Controller
         return view('pages.articles');
     }
 
+    public function subscribe(){
+        return view('pages.subscribe');
+    }
+
 }
