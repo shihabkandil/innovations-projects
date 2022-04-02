@@ -41,10 +41,9 @@ Route::resource('category','CategoryController');
 
 Route::prefix('admin')->middleware(['auth' , 'isAdmin'])->group(function(){
     Route::get('/dashboard' , [DashboardController::class,'index']);
+    Route::get('/AdminLogin', [AdminLoginController::class, 'index'] );
 });
 
 
 Route::get('/quiz', [StudentController::class, 'quiz'] );
 Route::get('/news', [NewsApiController::class, 'showNews'] );
-
-Route::get('/AdminLogin', [AdminLoginController::class, 'index'] );
