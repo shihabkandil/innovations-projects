@@ -10,6 +10,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,17 +38,30 @@ Route::get('/articles', [PagesController::class, 'articles'] );
 
 Route::get('/logout', [LoginController::class,'logout']);
 
+Route::get('/register', [RegisterController::class,'showRegisterAs']);
+
 Route::get('/redirect/facebook', [SocialController::class, 'redirect']);
 Route::get('/callback/facebook', [SocialController::class, 'callback']);
 
 Route::get('/Catigories/{id}' , [CoursesController::class , 'CoursesCategories'] );
-Auth::routes(['verify'=> true]);
+
 
 Route::resource('category','CategoryController');
+
+
 Route::prefix('admin')->middleware(['auth' , 'isAdmin'])->group(function(){
     Route::get('/dashboard' , [DashboardController::class,'index']);
 });
 
 
+Route::get('/register/contentCreator', [RegisterController::class,'showContentCreatorRegister']);
+Route::get('/login/contentCreator', [LoginController::class, 'showContentCreatorLogin']);
+
 Route::get('/quiz', [StudentController::class, 'quiz'] );
 Route::get('/news', [NewsApiController::class, 'showNews'] );
+
+
+Route::post('/register/contentCreator', [RegisterController::class, 'contentCreatorRegister'])->name('contentCreatorRegisterForm');
+Route::post('/login/contentCreator', [LoginController::class, 'contentCreatorLogin'])->name('contentCreatorLoginForm');
+
+

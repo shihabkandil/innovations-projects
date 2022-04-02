@@ -29,7 +29,7 @@
                         </div>
 
                         <div class="col">
-                        <a href="instructor_register">
+                        <a href="/register/contentCreator">
                             <div class="wow fadeInUp" data-wow-delay="0.1s">
                                 <div class="course-item bg-light">
                                     <div class="position-relative overflow-hidden">
