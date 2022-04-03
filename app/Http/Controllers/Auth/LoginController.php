@@ -40,6 +40,7 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
         $this->middleware('guest:contentCreator')->except('logout');
+        $this->middleware('guest:student')->except('logout');
     }
 
     public function logout(Request $request) {
@@ -48,9 +49,15 @@ class LoginController extends Controller
             Auth::guard('contentCreator')->logout();
             return redirect('/home');
          }
+        else if(Auth::guard('student')->check())
+        {
+            Auth::guard('student')->logout();
+            return redirect('/home');
+         }
         else{
             return redirect('/home');
-      }
+        }
+
     }
     
     public function showContentCreatorLogin(){
@@ -59,14 +66,31 @@ class LoginController extends Controller
     
     public function contentCreatorLogin(Request $request){
             
-            $validation = $this->validate($request, [
+            $this->validate($request, [
                 'email' => 'required|email',
-                'password' => 'required|min:8'
+                'password' => 'required|min:8',
             ]);
 
             if (Auth::guard('contentCreator')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
                 return redirect('/home');
             }
-            return back()->withErrors($validation,['email' => 'Please enter correct credentials']);
+            return back()->withInput($request->only('email'))->withErrors(['email' => 'Please enter correct credentials']);
+    }
+
+    public function showStudentLogin(){
+        return view('auth.studentLogin');
+    }
+    
+    public function studentLogin(Request $request){
+            
+            $validation = $this->validate($request, [
+                'email' => 'required|email',
+                'password' => 'required|min:8'
+            ]);
+
+            if (Auth::guard('student')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
+                return redirect('/home');
+            }
+            return back()->withInput($request->only('email'))->withErrors(['email' => 'Please enter correct credentials']);
     }
 }

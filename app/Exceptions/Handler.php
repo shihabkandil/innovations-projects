@@ -49,6 +49,9 @@ class Handler extends ExceptionHandler
             if ($request->is('contentCreator') || $request->is('contentCreator/*')) {
                 return redirect()->guest('/login/contentCreator');
             }
-            return redirect()->guest(route('login'));
+            else if ($request->is('student') || $request->is('student/*')) {
+                return redirect()->guest('/login');
+            }
+            return redirect()->guest(route('home'));
         }
 }

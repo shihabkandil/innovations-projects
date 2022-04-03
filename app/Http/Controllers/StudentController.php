@@ -9,5 +9,7 @@ class StudentController extends Controller
     public function quiz(){
         return view('student.quiz');
     }
+
+    
     
 }

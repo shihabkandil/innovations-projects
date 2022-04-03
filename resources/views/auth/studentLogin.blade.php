@@ -13,7 +13,7 @@
             <div class="text-center">
                 <h1 class="mb-5">{{ __('Student Login') }}</h1>
             </div>
-            <form method="POST" method="action={{ route('contentCreatorLoginForm') }}">
+            <form method="POST" action="{{ route('studentLoginForm') }}">
                 @csrf
             <div class="row g-4">
                 <div class="col-lg-4 col-md-12 mx-auto">
@@ -21,7 +21,7 @@
                             <div class="col-12">
                                     <div class="form-floating">
                                         <input id="email" type="email" placeholder="{{ __('Email Address') }}" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
+                                            
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
