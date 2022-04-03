@@ -49,7 +49,9 @@
                 <a href="/articles" class="nav-item nav-link">{{ __('Articles') }}</a>
                 <a href="/about" class="nav-item nav-link">{{ __('About') }}</a>
                 <a href="/contact" class="nav-item nav-link">{{ __('Contact') }}</a>
+                <a href="/contentCreator/upload" class="nav-item nav-link" style="color:red; font-weight:bold;" >{{ __('Upload Content') }}</a>
 
+                @guest('contentCreator')
                 <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ __('Browse Courses') }}</a>
@@ -61,6 +63,8 @@
                         </ul>
                     </li>
                 </ul>
+                @endguest
+                
                 @auth('contentCreator')
                 <!-- Navbar-->
                 <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
