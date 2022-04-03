@@ -24,7 +24,12 @@ Route::get('/student_register', [PagesController::class, 'StudentRegister'] );
 Route::get('/instructor_register', [PagesController::class, 'InstructorRegister'] );
 Route::get('/login', [PagesController::class, 'login'] );
 Route::get('/bundles', [PagesController::class, 'bundles'] );
-Route::get('/editProfile', [PagesController::class, 'editProfile'] );
+
+
+
+Route::get('/editProfile', [PagesController::class, 'editProfile']);
+
+
 Route::get('/Catigories', [CategoryController::class, 'index'] );
 Route::get('/checkout', [PagesController::class, 'checkout'] );
 Route::get('/contact', [PagesController::class, 'contact'] );
@@ -51,10 +56,11 @@ Route::prefix('admin')->middleware(['auth' , 'isAdmin'])->group(function(){
     Route::get('/AdminLogin', [AdminLoginController::class, 'index'] );
 });
 
-
 Route::get('/register/contentCreator', [RegisterController::class,'showContentCreatorRegister']);
-
 Route::get('/login/contentCreator', [LoginController::class, 'showContentCreatorLogin']);
+
+Route::get('/register/student', [RegisterController::class,'showStudentRegister'])->name('studentRegisterForm');
+Route::get('/login', [LoginController::class, 'showStudentLogin'])->name('studentLoginForm');
 
 Route::get('/quiz', [StudentController::class, 'quiz'] );
 
@@ -66,5 +72,8 @@ Route::get('contentCreator/upload',[ContentCreatorController::class,'requestUplo
 
 Route::post('/register/contentCreator', [RegisterController::class, 'contentCreatorRegister'])->name('contentCreatorRegisterForm');
 Route::post('/login/contentCreator', [LoginController::class, 'contentCreatorLogin'])->name('contentCreatorLoginForm');
+
+Route::post('/register/student', [RegisterController::class, 'studentRegister'])->name('studentRegisterForm');
+Route::post('/login', [LoginController::class, 'studentLogin'])->name('studentLoginForm');
 
 

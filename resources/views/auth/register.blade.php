@@ -11,10 +11,9 @@
                     <h6 class="section-title bg-white text-center text-primary px-3">{{ __('Register')}}</h6>
                     <h1 class="mb-5">{{ __('Join Us')}}</h1>
                 </div>
-
                     <div class="row">
                         <div class="col">
-                        <a href="/student_register">
+                        <a href={{ route('studentRegisterForm') }}>
                             <div class="wow fadeInUp" data-wow-delay="0.1s">
                                 <div class="course-item bg-light">
                                     <div class="position-relative overflow-hidden">
@@ -29,7 +28,7 @@
                         </div>
 
                         <div class="col">
-                        <a href="/register/contentCreator">
+                        <a href="{{route('contentCreatorRegisterForm')}}">
                             <div class="wow fadeInUp" data-wow-delay="0.1s">
                                 <div class="course-item bg-light">
                                     <div class="position-relative overflow-hidden">

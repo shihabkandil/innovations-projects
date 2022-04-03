@@ -47,9 +47,12 @@
                 <a href="/articles" class="nav-item nav-link">{{ __('Articles') }}</a>
                 <a href="/about" class="nav-item nav-link">{{ __('About') }}</a>
                 <a href="/contact" class="nav-item nav-link">{{ __('Contact') }}</a>
-                <a href="/contentCreator/upload" class="nav-item nav-link" style="color:red; font-weight:bold;" >{{ __('Upload Content') }}</a>
 
-                @guest('contentCreator')
+                @auth('contentCreator')
+                <a href="/contentCreator/upload" class="nav-item nav-link" style="color:red; font-weight:bold;" >{{ __('Upload Content') }}</a>
+                @endauth
+
+                @auth('student')
                 <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ __('Browse Courses') }}</a>
@@ -61,9 +64,9 @@
                         </ul>
                     </li>
                 </ul>
-                @endguest
+                @endauth
                 
-                @auth('contentCreator')
+                @if(Auth::guard('student')->check() || Auth::guard('contentCreator')->check())
                 <!-- Navbar-->
                 <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                     <li class="nav-item dropdown">
@@ -76,7 +79,6 @@
                         </ul>
                     </li>
                 </ul>
-
                 <div id="chatBox">
                     <div class="container d-flex justify-content-center">
                         <div class="card mt-5">
@@ -97,12 +99,12 @@
                 </div>
                 <button class="close-button" onclick="closeForm()" >Close</button>
                 <button class="open-button" onclick="openForm()">Chat</button>
-                @endauth
+                @endif
                 
-            @guest('contentCreator')
-                <a href="/login" id="Login" class="nav-item nav-link">{{ __('Login') }}</a>
-                <a href="/register" id="Join us"class="btn btn-warning py-4 px-lg-5 d-none d-lg-block" style="border-radius:0px;">{{ __('Join us') }}<i class="fa fa-arrow-right ms-3"></i></a>
-            @endguest
+                @if(!(Auth::guard('contentCreator')->check() || Auth::guard('student')->check()))
+                    <a href="/login" id="Login" class="nav-item nav-link">{{ __('Login') }}</a>
+                    <a href="/register" id="Join us"class="btn btn-warning py-4 px-lg-5 d-none d-lg-block" style="border-radius:0px;">{{ __('Join us') }}<i class="fa fa-arrow-right ms-3"></i></a>
+                @endif
         </div>
       
     </nav>

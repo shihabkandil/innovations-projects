@@ -35,11 +35,7 @@ class PagesController extends Controller
     }
 
     public function editProfile(){
-        if(Auth::guard('contentCreator')->check()){
-            return view('pages.editProfile');
-        }else{
-            return redirect('/');
-        }  
+        return view('pages.editProfile');
     }
 
     public function checkout(){
