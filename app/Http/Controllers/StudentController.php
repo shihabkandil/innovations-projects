@@ -25,6 +25,13 @@ class StudentController extends Controller
     public function editProfile($id){
         return view('pages.editProfile', ['id'=>$id] )->with(array('student'=>$this->fetchStudent($id)));
     }
-    
-    
+
+    public function updateStudent(Request $req){
+
+        $data = Student::find($req->id);
+        $data->name = $req->name;
+        $data->email = $req->email;
+        $data->BIO = $req->BIO;
+        $data->save();
+    }
 }

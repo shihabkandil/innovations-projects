@@ -34,6 +34,7 @@
 </div>
 </div>
 
+
 <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
 <div class="card h-100">
 	<div class="card-body">
@@ -41,6 +42,9 @@
 			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 				<h6 class="mb-2 text-warning">Personal Details</h6>
 			</div>
+			<form action={{ route('update') }} method="POST">
+			<input type="hidden" name="id" value="{{$student[0]->id}}">
+			@csrf
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
 					<label for="name">Name</label>
@@ -50,24 +54,27 @@
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
 					<label for="eMail">Email</label>
-					<input type="email" class="form-control" id="eMail" placeholder="Enter email" name="email">
+					<input type="email" pattern=".+@globex.com" size="30" class="form-control" id="eMail" placeholder="Enter email" name="email" value="{{$student[0]->email}}">
 				</div>
 			</div>
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
-					<label for="Bio">Bio</label>
-					<input type="text" class="form-control" id="bio" placeholder="Enter Bio" name="Bio">
+					<label for="BIO">Bio</label>
+					<input type="text" class="form-control" id="BIO" placeholder="Enter Bio" name="BIO">
 				</div>
 			</div>
 		</div>
 		<div class="row gutters">
 			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 				<div class="text-right">
-					<button  type="button" id="submit" name="submit" class="btn btn-secondary" style="float: right; margin: 10px;">Cancel</button>
-					<button type="button" id="submit" name="submit" class="btn btn-warning" style="float: right; margin: 10px;">Update</button>
+					<a href="/">
+					<button  type="button" class="btn btn-secondary" style="float: right; margin: 10px;">Cancel</button>
+					</a>
+					<button type="submit" id="submit" name="submit" class="btn btn-warning" style="float: right; margin: 10px;">Update</button>
 				</div>
 			</div>
 		</div>
+		</form>
 	</div>
 </div>
 </div>
