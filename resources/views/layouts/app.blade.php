@@ -73,7 +73,7 @@
                 <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-                        <ul class="dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdown">
+                        <ul class="dropdown-menu" style="right: 0; left: auto;" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="/editProfile">Edit Profile</a></li>
                             <li><a class="dropdown-item" href="/settings">Settings</a></li>
                             <li><hr class="dropdown-divider" /></li>
@@ -122,7 +122,7 @@
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">{{ __('Quick Link') }}</h4>
-                    <a class="btn btn-link" style="!important"href="/about">{{ __('About Us') }}</a>
+                    <a class="btn btn-link" href="/about">{{ __('About Us') }}</a>
                     <a class="btn btn-link" href="/contact">{{ __('Contact Us') }}</a>
                     <a class="btn btn-link" href="/privacy-policy">{{ __('Privacy Policy') }}</a>
                     <a class="btn btn-link" href="/terms-conditions">{{ __('Terms & Conditions') }}</a>
