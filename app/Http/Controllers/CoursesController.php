@@ -28,8 +28,6 @@ class CoursesController extends Controller
         return view('pages.CourseCategories' , ['id'=>$id] )->with(array('courses'=>$this->fetchCourses($id)));
     }
 
-    
-
     /**
      * Show the form for creating a new resource.
      *
@@ -57,9 +55,10 @@ class CoursesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function showCourse($id)
     {
-        //
+        $course = $this->courses->getCourse($id);
+        return view('pages.courseDetails', ['course'=>$course]);
     }
 
     /**
@@ -68,7 +67,7 @@ class CoursesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function editCourse($id)
     {
         //
     }
@@ -80,7 +79,7 @@ class CoursesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function updateCourse(Request $request, $id)
     {
         //
     }
@@ -91,7 +90,7 @@ class CoursesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroyCourse($id)
     {
         //
     }

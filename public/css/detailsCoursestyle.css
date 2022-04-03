@@ -1,0 +1,1342 @@
+/*
+* ----------------------------------------------------------------------------------------
+Author       : EcologyTheme
+Author  Uri  : www.ecologytheme
+Version      : 1.0                                          
+* ----------------------------------------------------------------------------------------
+*/
+/*====================================
+  /* Bottom right text */
+  .banner-image {
+    position: relative;
+  }
+
+  .sub-header-course{
+    color: #fff;
+  }
+  
+  /* Bottom right text */
+  .text-block {
+    position: absolute;
+    top: -40px;
+    left: 120px;
+    color: white;
+  }
+  .blog_wrapper .single_blog {
+    margin-bottom: 60px;
+    -webkit-box-shadow: 0px 0px 81px 0px rgba(47, 47, 47, 0.1);
+            box-shadow: 0px 0px 81px 0px rgba(47, 47, 47, 0.1); }
+    .blog_wrapper .single_blog:last-child {
+      margin-bottom: 0; }
+    .blog_wrapper .single_blog:hover {
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out; }
+      .blog_wrapper .single_blog:hover .blog_banner img {
+        -webkit-transform: scale(1.05);
+                transform: scale(1.05); }
+      .blog_wrapper .single_blog:hover .post_content_wrapper h3 a {
+        color: #ffc107; }
+    .blog_wrapper .single_blog .blog_banner {
+      overflow: hidden; }
+      .blog_wrapper .single_blog .blog_banner img {
+        -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out; }
+      .blog_wrapper .single_blog .post_content_wrapper .post_date p {
+        color: #000000;
+        font-size: 13px;
+        font-weight: 400;
+        font-family: "Rubik", sans-serif;
+        margin: 0 0 15px;
+        line-height: 15px; }
+        .blog_wrapper .single_blog .post_content_wrapper .post_date p span {
+          color: #000000; }
+      .blog_wrapper .single_blog .post_content_wrapper h3 {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 24px; }
+        .blog_wrapper .single_blog .post_content_wrapper h3 a {
+          -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+          color: #000000; }
+      .blog_wrapper .single_blog .post_content_wrapper p {
+        margin: 20px 0 25px; }
+      .blog_wrapper .single_blog .post_content_wrapper .post_by {
+        padding-bottom: 40px; }
+        .blog_wrapper .single_blog .post_content_wrapper .post_by a {
+          color: #000000;
+          -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+          font-size: 14px;
+          font-family: "Rubik", sans-serif;
+          text-transform: uppercase;
+          font-weight: 500;
+          line-height: 30px; }
+          .blog_wrapper .single_blog .post_content_wrapper .post_by a i {
+            padding-left: 10px;
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out; }
+            .blog_wrapper .single_blog .post_content_wrapper .post_by a i:before {
+              margin: 0;
+              font-size: 14px; }
+          .blog_wrapper .single_blog .post_content_wrapper .post_by a:hover {
+            color: #ffc107; }
+            .blog_wrapper .single_blog .post_content_wrapper .post_by a:hover i {
+              padding-left: 15px; }
+        .blog_wrapper .single_blog .post_content_wrapper .post_by .social_wrapper span {
+          padding-right: 15px;
+          font-family: "Rubik", sans-serif;
+          line-height: 30px; }
+        .blog_wrapper .single_blog .post_content_wrapper .post_by .social_wrapper .social-items li:last-child {
+          margin-right: 0; }
+        .blog_wrapper .single_blog .post_content_wrapper .post_by .social_wrapper .social-items li a i {
+          padding: 0;
+          height: 30px;
+          width: 30px;
+          text-align: center;
+          line-height: 29px;
+          border-radius: 50%;
+          font-size: 15px;
+          margin: 0;
+          background: transparent;
+          -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out; }
+          .blog_wrapper .single_blog .post_content_wrapper .post_by .social_wrapper .social-items li a i:hover {
+            padding: 0;
+            -webkit-transform: scale(1.3);
+                    transform: scale(1.3); }
+        .blog_wrapper .single_blog .post_content_wrapper .post_by .social_wrapper .social-items li a .fb_icon {
+          color: #4867aa; }
+        .blog_wrapper .single_blog .post_content_wrapper .post_by .social_wrapper .social-items li a .tw_icon {
+          color: #1da1f2; }
+        .blog_wrapper .single_blog .post_content_wrapper .post_by .social_wrapper .social-items li a .link_icon {
+          color: #0077B5; }
+        .blog_wrapper .single_blog .post_content_wrapper .post_by .social_wrapper .social-items li a .in_icon {
+          color: #262223; }
+      .blog_wrapper .single_blog .post_content_wrapper .post_bloger {
+        padding: 30px 0 0px;
+        border-top: 1px solid #d7d7d7;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap; }
+        .blog_wrapper .single_blog .post_content_wrapper .post_bloger li {
+          font-size: 14px;
+          font-weight: 300;
+          margin: 0;
+          color: #000000;
+          -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+          font-family: "Rubik", sans-serif;
+          font-weight: 400;
+          padding-right: 50px; }
+          .blog_wrapper .single_blog .post_content_wrapper .post_bloger li:last-child {
+            padding-right: 0; }
+          .blog_wrapper .single_blog .post_content_wrapper .post_bloger li i {
+            padding-right: 7px;
+            font-size: 15px; }
+  .blog_wrapper .single_without_img {
+    background: linear-gradient(-125deg, #e6793b 0%, #c9270e 100%);
+    position: relative;
+    z-index: 1; }
+    .blog_wrapper .single_without_img:before {
+      position: absolute;
+      content: "";
+      background: url(../images/shapes/shape_bullet.png) repeat center center;
+      height: 100%;
+      width: 100%;
+      left: 0;
+      top: 0;
+      opacity: 1;
+      z-index: -1; }
+    .blog_wrapper .single_without_img .post_content_wrapper {
+      padding: 65px 50px 60px !important; }
+      .blog_wrapper .single_without_img .post_content_wrapper h3 a {
+        color: #ffffff !important; }
+      .blog_wrapper .single_without_img .post_content_wrapper .post_date p {
+        color: #ffffff !important; }
+        .blog_wrapper .single_without_img .post_content_wrapper .post_date p span {
+          color: #fcff9e !important; }
+      .blog_wrapper .single_without_img .post_content_wrapper .post_by {
+        padding: 40px 0 0 !important; }
+        .blog_wrapper .single_without_img .post_content_wrapper .post_by .social_wrapper span {
+          color: #ffffff !important; }
+        .blog_wrapper .single_without_img .post_content_wrapper .post_by .social_wrapper .social-items li a i {
+          color: #ffffff !important; }
+          .blog_wrapper .single_without_img .post_content_wrapper .post_by .social_wrapper .social-items li a i:hover {
+            color: #ffffff; }
+      .blog_wrapper .single_without_img .post_content_wrapper .post_bloger {
+        padding: 0 !important;
+        border-top: 1px solid transparent !important; }
+        .blog_wrapper .single_without_img .post_content_wrapper .post_bloger li {
+          color: #ffffff !important; }
+  .blog_wrapper .blog_post h3 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 46px;
+    color: #000000;
+    margin: 35px 0 25px; }
+  .blog_wrapper .blog_post .post_by {
+    margin-bottom: 30px; }
+    .blog_wrapper .blog_post .post_by span {
+      font-size: 12px;
+      font-weight: 400;
+      color: #000000;
+      font-family: "Rubik", sans-serif;
+      padding-right: 50px;
+      position: relative; }
+      .blog_wrapper .blog_post .post_by span:before {
+        position: absolute;
+        content: "";
+        background: #000000;
+        height: 15px;
+        width: 1px;
+        right: 25px;
+        top: 5px; }
+      .blog_wrapper .blog_post .post_by span:last-child:before {
+        display: none; }
+      .blog_wrapper .blog_post .post_by span .bloger_name {
+        color: #000000; }
+      .blog_wrapper .blog_post .post_by span a {
+        color: #000000;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out; }
+        .blog_wrapper .blog_post .post_by span a:hover {
+          color: #ffc107; }
+  .blog_wrapper .blog_post .postpage_content_wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    .blog_wrapper .blog_post .postpage_content_wrapper .social_wrapper {
+      padding-top: 40px;
+      padding-right: 50px; }
+      .blog_wrapper .blog_post .postpage_content_wrapper .social_wrapper h4 {
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #000000;
+        font-size: 20px; }
+      .blog_wrapper .blog_post .postpage_content_wrapper .social_wrapper .social_items {
+        position: relative;
+        z-index: 1;
+        margin: 20px 0 0;
+        text-align: center; }
+        .blog_wrapper .blog_post .postpage_content_wrapper .social_wrapper .social_items li {
+          background: #ffffff;
+          padding-bottom: 15px; }
+          .blog_wrapper .blog_post .postpage_content_wrapper .social_wrapper .social_items li a i {
+            height: 35px;
+            width: 35px;
+            text-align: center;
+            line-height: 34px;
+            border-radius: 50%;
+            font-size: 14px;
+            margin: 0;
+            border: 1px solid rgba(47, 47, 47, 0.1);
+            background: transparent;
+            color: #000000;
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out; }
+            .blog_wrapper .blog_post .postpage_content_wrapper .social_wrapper .social_items li a i:hover {
+              padding: 0; }
+          .blog_wrapper .blog_post .postpage_content_wrapper .social_wrapper .social_items li a .fb_icon {
+            border: 1px solid #4867aa;
+            color: #4867aa; }
+            .blog_wrapper .blog_post .postpage_content_wrapper .social_wrapper .social_items li a .fb_icon:hover {
+              color: #ffffff;
+              background: #4867aa; }
+          .blog_wrapper .blog_post .postpage_content_wrapper .social_wrapper .social_items li a .tw_icon {
+            border: 1px solid #fcff9e;
+            color: #fcff9e; }
+            .blog_wrapper .blog_post .postpage_content_wrapper .social_wrapper .social_items li a .tw_icon:hover {
+              color: #ffffff;
+              background: #fcff9e; }
+          .blog_wrapper .blog_post .postpage_content_wrapper .social_wrapper .social_items li a .link_icon {
+            border: 1px solid #fcff9e;
+            color: #0077B5; }
+            .blog_wrapper .blog_post .postpage_content_wrapper .social_wrapper .social_items li a .link_icon:hover {
+              color: #ffffff;
+              background: #fcff9e; }
+          .blog_wrapper .blog_post .postpage_content_wrapper .social_wrapper .social_items li a .in_icon {
+            border: 1px solid #262223;
+            color: #262223; }
+            .blog_wrapper .blog_post .postpage_content_wrapper .social_wrapper .social_items li a .in_icon:hover {
+              color: #ffffff;
+              background: #262223; }
+    .blog_wrapper .blog_post .postpage_content_wrapper .blog_post_content {
+      padding-top: 40px; }
+      .blog_wrapper .blog_post .postpage_content_wrapper .blog_post_content p {
+        margin-bottom: 25px;
+        font-weight: 300; }
+        .blog_wrapper .blog_post .postpage_content_wrapper .blog_post_content p:last-child {
+          margin-bottom: 0; }
+      .blog_wrapper .blog_post .postpage_content_wrapper .blog_post_content h3 {
+        font-size: 40px;
+        font-weight: 700;
+        margin: 45px 0 30px; }
+      .blog_wrapper .blog_post .postpage_content_wrapper .blog_post_content .quite_speech {
+        padding: 25px 0px;
+        font-size: 20px;
+        font-style: italic;
+        position: relative;
+        line-height: 30px;
+        color: #000000;
+        padding-left: 40px; }
+        .blog_wrapper .blog_post .postpage_content_wrapper .blog_post_content .quite_speech i {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          font-size: 55px;
+          opacity: 0.5;
+          color: #ffc107;
+          -webkit-transform: translateY(-50%);
+                  transform: translateY(-50%); }
+      .blog_wrapper .blog_post .postpage_content_wrapper .blog_post_content .banner {
+        padding: 20px 0;
+        text-align: center; }
+        .blog_wrapper .blog_post .postpage_content_wrapper .blog_post_content .banner p {
+          color: #ffc107;
+          font-size: 14px;
+          padding-top: 15px;
+          font-weight: 500px;
+          font-family: "Rubik", sans-serif; }
+          .blog_wrapper .blog_post .postpage_content_wrapper .blog_post_content .banner p span {
+            font-weight: 600 !important;
+            color: #000000 !important; }
+    .blog_wrapper .blog_post .postpage_content_wrapper .post_response_count {
+      padding-top: 20px;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+      .blog_wrapper .blog_post .postpage_content_wrapper .post_response_count .tags {
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap; }
+        .blog_wrapper .blog_post .postpage_content_wrapper .post_response_count .tags li {
+          padding-right: 3px;
+          font-family: "Rubik", sans-serif;
+          font-size: 12px; }
+          .blog_wrapper .blog_post .postpage_content_wrapper .post_response_count .tags li a {
+            color: #000000;
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out; }
+            .blog_wrapper .blog_post .postpage_content_wrapper .post_response_count .tags li a:hover {
+              color: #ffc107; }
+        .blog_wrapper .blog_post .postpage_content_wrapper .post_response_count .tags .tag_headline {
+          font-weight: 600;
+          color: #000000; }
+      .blog_wrapper .blog_post .postpage_content_wrapper .post_response_count .comnent_count li {
+        padding-left: 50px;
+        position: relative;
+        font-size: 12px; }
+        .blog_wrapper .blog_post .postpage_content_wrapper .post_response_count .comnent_count li:before {
+          position: absolute;
+          content: "";
+          background: #000000;
+          height: 12px;
+          width: 1px;
+          right: -25px;
+          top: 7px; }
+        .blog_wrapper .blog_post .postpage_content_wrapper .post_response_count .comnent_count li:last-child:before {
+          display: none; }
+        .blog_wrapper .blog_post .postpage_content_wrapper .post_response_count .comnent_count li i {
+          padding-right: 10px; }
+    .blog_wrapper .blog_post .postpage_content_wrapper .commnet-wrapper {
+      background: #ffffff; }
+      .blog_wrapper .blog_post .postpage_content_wrapper .commnet-wrapper .items_title .title {
+        font-size: 40px;
+        font-weight: 700;
+        color: #000000;
+        margin: 65px 0 0; }
+      .blog_wrapper .blog_post .postpage_content_wrapper .commnet-wrapper .comment-list-items .comment-list-wrapper {
+        border-bottom: 1px solid rgba(47, 47, 47, 0.05);
+        padding-top: 40px;
+        padding-bottom: 40px; }
+        .blog_wrapper .blog_post .postpage_content_wrapper .commnet-wrapper .comment-list-items .comment-list-wrapper:last-child {
+          border-bottom: 1px solid rgba(47, 47, 47, 0);
+          padding-bottom: 0px; }
+        .blog_wrapper .blog_post .postpage_content_wrapper .commnet-wrapper .comment-list-items .comment-list-wrapper:first-child {
+          border-top: 1px solid transparent; }
+        .blog_wrapper .blog_post .postpage_content_wrapper .commnet-wrapper .comment-list-items .comment-list-wrapper .reply_comment_text {
+          padding-left: 50px !important;
+          padding-top: 30px !important; }
+        .blog_wrapper .blog_post .postpage_content_wrapper .commnet-wrapper .comment-list-items .comment-list-wrapper .comment-list {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: justify;
+              -ms-flex-pack: justify;
+                  justify-content: space-between;
+          background: #ffffff;
+          padding: 0;
+          border-radius: 0;
+          position: relative;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          width: 100%; }
+          .blog_wrapper .blog_post .postpage_content_wrapper .commnet-wrapper .comment-list-items .comment-list-wrapper .comment-list:first-child {
+            margin-bottom: 0; }
+          .blog_wrapper .blog_post .postpage_content_wrapper .commnet-wrapper .comment-list-items .comment-list-wrapper .comment-list .commnet_img {
+            width: 55px;
+            height: 55px; }
+            .blog_wrapper .blog_post .postpage_content_wrapper .commnet-wrapper .comment-list-items .comment-list-wrapper .comment-list .commnet_img img {
+              border-radius: 50%; }
+          .blog_wrapper .blog_post .postpage_content_wrapper .commnet-wrapper .comment-list-items .comment-list-wrapper .comment-list .comment-text {
+            width: 87%; }
+            .blog_wrapper .blog_post .postpage_content_wrapper .commnet-wrapper .comment-list-items .comment-list-wrapper .comment-list .comment-text .author_info {
+              line-height: 14px;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-pack: justify;
+                  -ms-flex-pack: justify;
+                      justify-content: space-between; }
+              .blog_wrapper .blog_post .postpage_content_wrapper .commnet-wrapper .comment-list-items .comment-list-wrapper .comment-list .comment-text .author_info .author_name a {
+                font-size: 16px;
+                font-weight: 700;
+                color: #000000;
+                margin-right: 25px; }
+              .blog_wrapper .blog_post .postpage_content_wrapper .commnet-wrapper .comment-list-items .comment-list-wrapper .comment-list .comment-text .author_info .author_name span {
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 24px;
+                color: #000000; }
+              .blog_wrapper .blog_post .postpage_content_wrapper .commnet-wrapper .comment-list-items .comment-list-wrapper .comment-list .comment-text .author_info .reply-comment a {
+                font-size: 14px;
+                font-weight: 500;
+                margin: 0 0 0 30px;
+                color: #092ace;
+                -webkit-transition: all 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
+                font-family: "Rubik", sans-serif; }
+                .blog_wrapper .blog_post .postpage_content_wrapper .commnet-wrapper .comment-list-items .comment-list-wrapper .comment-list .comment-text .author_info .reply-comment a:hover {
+                  color: #ffc107; }
+                  .blog_wrapper .blog_post .postpage_content_wrapper .commnet-wrapper .comment-list-items .comment-list-wrapper .comment-list .comment-text .author_info .reply-comment a:hover i {
+                    color: #ffc107;
+                    -webkit-transition: all 0.3s ease-in-out;
+                    transition: all 0.3s ease-in-out;
+                    padding-right: 10px;
+                    margin: 0;
+                    font-size: 10px; }
+                .blog_wrapper .blog_post .postpage_content_wrapper .commnet-wrapper .comment-list-items .comment-list-wrapper .comment-list .comment-text .author_info .reply-comment a i {
+                  padding-right: 5px;
+                  -webkit-transition: all 0.3s ease-in-out;
+                  transition: all 0.3s ease-in-out; }
+                  .blog_wrapper .blog_post .postpage_content_wrapper .commnet-wrapper .comment-list-items .comment-list-wrapper .comment-list .comment-text .author_info .reply-comment a i:before {
+                    margin: 0;
+                    font-size: 14px; }
+            .blog_wrapper .blog_post .postpage_content_wrapper .commnet-wrapper .comment-list-items .comment-list-wrapper .comment-list .comment-text p {
+              font-size: 14px;
+              font-weight: 400;
+              line-height: 24px;
+              margin: 19px 0 0;
+              color: #000000; }
+    .blog_wrapper .blog_post .postpage_content_wrapper .leave_comment_wrapper {
+      margin-top: 50px; }
+      .blog_wrapper .blog_post .postpage_content_wrapper .leave_comment_wrapper .items_title {
+        margin-bottom: 30px; }
+        .blog_wrapper .blog_post .postpage_content_wrapper .leave_comment_wrapper .items_title .title {
+          font-size: 40px;
+          font-weight: 700;
+          color: #000000;
+          margin-bottom: 10px; }
+        .blog_wrapper .blog_post .postpage_content_wrapper .leave_comment_wrapper .items_title p {
+          margin: 0; }
+      .blog_wrapper .blog_post .postpage_content_wrapper .leave_comment_wrapper .leave_comment .form-group {
+        margin-bottom: 15px; }
+        .blog_wrapper .blog_post .postpage_content_wrapper .leave_comment_wrapper .leave_comment .form-group input, .blog_wrapper .blog_post .postpage_content_wrapper .leave_comment_wrapper .leave_comment .form-group textarea {
+          background: transparent;
+          border: 1px solid #d7d7d7;
+          border-radius: 0px;
+          height: 46px;
+          padding: 0px 20px;
+          -webkit-transition: all 0.5s ease 0s;
+          transition: all 0.5s ease 0s;
+          width: 100%;
+          color: #000000;
+          font-size: 14px;
+          font-weight: 400;
+          outline: none;
+          -webkit-box-shadow: none;
+                  box-shadow: none;
+          font-family: "Rubik", sans-serif; }
+          .blog_wrapper .blog_post .postpage_content_wrapper .leave_comment_wrapper .leave_comment .form-group input:focus, .blog_wrapper .blog_post .postpage_content_wrapper .leave_comment_wrapper .leave_comment .form-group textarea:focus {
+            border: 1px solid #000000;
+            outline: none;
+            color: #000000; }
+          .blog_wrapper .blog_post .postpage_content_wrapper .leave_comment_wrapper .leave_comment .form-group input ::-webkit-input-placeholder, .blog_wrapper .blog_post .postpage_content_wrapper .leave_comment_wrapper .leave_comment .form-group textarea ::-webkit-input-placeholder {
+            /* Chrome/Opera/Safari */
+            color: #000000;
+            font-size: 12px;
+            font-weight: 400;
+            font-family: "Rubik", sans-serif; }
+          .blog_wrapper .blog_post .postpage_content_wrapper .leave_comment_wrapper .leave_comment .form-group input ::-moz-placeholder, .blog_wrapper .blog_post .postpage_content_wrapper .leave_comment_wrapper .leave_comment .form-group textarea ::-moz-placeholder {
+            /* Firefox 19+ */
+            color: #000000;
+            font-size: 12px;
+            font-weight: 400;
+            font-family: "Rubik", sans-serif; }
+          .blog_wrapper .blog_post .postpage_content_wrapper .leave_comment_wrapper .leave_comment .form-group input :-ms-input-placeholder, .blog_wrapper .blog_post .postpage_content_wrapper .leave_comment_wrapper .leave_comment .form-group textarea :-ms-input-placeholder {
+            /* IE 10+ */
+            color: #000000;
+            font-size: 12px;
+            font-weight: 400;
+            font-family: "Rubik", sans-serif; }
+          .blog_wrapper .blog_post .postpage_content_wrapper .leave_comment_wrapper .leave_comment .form-group input :-moz-placeholder, .blog_wrapper .blog_post .postpage_content_wrapper .leave_comment_wrapper .leave_comment .form-group textarea :-moz-placeholder {
+            /* Firefox 18- */
+            color: #000000;
+            font-size: 12px;
+            font-weight: 400;
+            font-family: "Rubik", sans-serif; }
+        .blog_wrapper .blog_post .postpage_content_wrapper .leave_comment_wrapper .leave_comment .form-group textarea {
+          height: 150px;
+          padding-top: 15px; }
+      .blog_wrapper .blog_post .postpage_content_wrapper .leave_comment_wrapper .leave_comment .submit-btn button {
+        height: 60px;
+        padding: 0 40px;
+        font-size: 14px;
+        font-weight: 500;
+        background: #ffc107;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+        outline: none;
+        color: #ffffff;
+        margin-top: 30px;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        font-family: "Rubik", sans-serif; }
+        .blog_wrapper .blog_post .postpage_content_wrapper .leave_comment_wrapper .leave_comment .submit-btn button:hover {
+          background: #fcff9e; }
+  .blog_wrapper .blog_wrapper_right {
+    padding-left: 50px; }
+    .blog_wrapper .blog_wrapper_right .blog-right-items .items-title .title {
+      font-size: 25px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      position: relative;
+      padding-left: 80px; }
+      .blog_wrapper .blog_wrapper_right .blog-right-items .items-title .title:before {
+        position: absolute;
+        content: "";
+        background: #000000;
+        height: 3px;
+        width: 50px;
+        top: 50%;
+        left: 0;
+        -webkit-transform: translateY(-50%);
+                transform: translateY(-50%); }
+    .blog_wrapper .blog_wrapper_right .blog-right-items .widget_single {
+      margin-bottom: 55px; }
+      .blog_wrapper .blog_wrapper_right .blog-right-items .widget_single:last-child {
+        margin-bottom: 0; }
+    .blog_wrapper .blog_wrapper_right .blog-right-items .become_a_teacher .form-full-box {
+      padding: 40px 30px;
+      text-align: center;
+      -webkit-box-shadow: 0px 0px 81px 0px rgba(47, 47, 47, 0.1);
+              box-shadow: 0px 0px 81px 0px rgba(47, 47, 47, 0.1); }
+      .blog_wrapper .blog_wrapper_right .blog-right-items .become_a_teacher .form-full-box .form_title {
+        margin-bottom: 40px; }
+        .blog_wrapper .blog_wrapper_right .blog-right-items .become_a_teacher .form-full-box .form_title h2 {
+          font-size: 25px;
+          line-height: 30px;
+          padding-bottom: 0;
+          font-weight: 700;
+          position: relative;
+          color: #ffffff; }
+        .blog_wrapper .blog_wrapper_right .blog-right-items .become_a_teacher .form-full-box .form_title p {
+          padding-top: 15px;
+          font-size: 12px;
+          color: #ffffff; }
+          .blog_wrapper .blog_wrapper_right .blog-right-items .become_a_teacher .form-full-box .form_title p span {
+            color: #ffc107; }
+      .blog_wrapper .blog_wrapper_right .blog-right-items .become_a_teacher .form-full-box .register-form {
+        padding: 0; }
+        .blog_wrapper .blog_wrapper_right .blog-right-items .become_a_teacher .form-full-box .register-form .form-group {
+          margin-bottom: 20px;
+          position: relative; }
+          .blog_wrapper .blog_wrapper_right .blog-right-items .become_a_teacher .form-full-box .register-form .form-group label {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            -webkit-transform: translateY(-50%);
+                    transform: translateY(-50%); }
+            .blog_wrapper .blog_wrapper_right .blog-right-items .become_a_teacher .form-full-box .register-form .form-group label i:before {
+              margin: 0;
+              color: #ffffff;
+              font-size: 16px; }
+          .blog_wrapper .blog_wrapper_right .blog-right-items .become_a_teacher .form-full-box .register-form .form-group input, .blog_wrapper .blog_wrapper_right .blog-right-items .become_a_teacher .form-full-box .register-form .form-group textarea {
+            position: relative;
+            background: transparent;
+            border-bottom: 1px solid  #d7d7d7;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-radius: 0px;
+            -webkit-box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0);
+                    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0);
+            height: 50px;
+            padding: 10px 15px 10px 40px;
+            -webkit-transition: all 0.5s ease 0s;
+            transition: all 0.5s ease 0s;
+            width: 100%;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 400;
+            font-family: "Rubik", sans-serif; }
+            .blog_wrapper .blog_wrapper_right .blog-right-items .become_a_teacher .form-full-box .register-form .form-group input:focus, .blog_wrapper .blog_wrapper_right .blog-right-items .become_a_teacher .form-full-box .register-form .form-group textarea:focus {
+              border-color: #ffc107;
+              outline: none;
+              -webkit-box-shadow: none;
+                      box-shadow: none; }
+            .blog_wrapper .blog_wrapper_right .blog-right-items .become_a_teacher .form-full-box .register-form .form-group input::-webkit-input-placeholder, .blog_wrapper .blog_wrapper_right .blog-right-items .become_a_teacher .form-full-box .register-form .form-group textarea::-webkit-input-placeholder {
+              /* Chrome/Opera/Safari */
+              color: #ffffff;
+              font-size: 14px;
+              font-weight: 400;
+              opacity: 0.8; }
+            .blog_wrapper .blog_wrapper_right .blog-right-items .become_a_teacher .form-full-box .register-form .form-group input::-moz-placeholder, .blog_wrapper .blog_wrapper_right .blog-right-items .become_a_teacher .form-full-box .register-form .form-group textarea::-moz-placeholder {
+              /* Firefox 19+ */
+              color: #ffffff;
+              font-size: 14px;
+              font-weight: 400;
+              opacity: 0.8; }
+            .blog_wrapper .blog_wrapper_right .blog-right-items .become_a_teacher .form-full-box .register-form .form-group input::-ms-input-placeholder, .blog_wrapper .blog_wrapper_right .blog-right-items .become_a_teacher .form-full-box .register-form .form-group textarea::-ms-input-placeholder {
+              /* IE 10+ */
+              color: #ffffff;
+              font-size: 14px;
+              font-weight: 400;
+              opacity: 0.8; }
+            .blog_wrapper .blog_wrapper_right .blog-right-items .become_a_teacher .form-full-box .register-form .form-group input::-moz-placeholder, .blog_wrapper .blog_wrapper_right .blog-right-items .become_a_teacher .form-full-box .register-form .form-group textarea::-moz-placeholder {
+              /* Firefox 18- */
+              color: #ffffff;
+              font-size: 14px;
+              font-weight: 400;
+              opacity: 0.8; }
+        .blog_wrapper .blog_wrapper_right .blog-right-items .become_a_teacher .form-full-box .register-form .register-btn-box {
+          padding-top: 20px; }
+          .blog_wrapper .blog_wrapper_right .blog-right-items .become_a_teacher .form-full-box .register-form .register-btn-box .register-btn {
+            background: #ffc107;
+            color: white;
+            padding: 0 50px;
+            color: #fff;
+            height: 50px;
+            line-height: 50px;
+            font-size: 16px;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 5px;
+            font-weight: 500;
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer; }
+            .blog_wrapper .blog_wrapper_right .blog-right-items .become_a_teacher .form-full-box .register-form .register-btn-box .register-btn:hover {
+              background: #ffc107;
+              color: #ffffff; }
+    .blog_wrapper .blog_wrapper_right .blog-right-items .recent_post_wrapper .single-post {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      border-radius: 0px;
+      overflow: hidden;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      margin-bottom: 40px;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      border-bottom: 1px solid #d7d7d7;
+      padding-bottom: 40px; }
+      .blog_wrapper .blog_wrapper_right .blog-right-items .recent_post_wrapper .single-post:last-child {
+        margin-bottom: 0; }
+      .blog_wrapper .blog_wrapper_right .blog-right-items .recent_post_wrapper .single-post .recent_img {
+        width: 25%; }
+        .blog_wrapper .blog_wrapper_right .blog-right-items .recent_post_wrapper .single-post .recent_img img {
+          border-radius: 5px; }
+      .blog_wrapper .blog_wrapper_right .blog-right-items .recent_post_wrapper .single-post .post_title {
+        width: 75%;
+        padding-left: 15px; }
+        .blog_wrapper .blog_wrapper_right .blog-right-items .recent_post_wrapper .single-post .post_title a {
+          font-weight: 700;
+          line-height: 24px;
+          color: #000000;
+          font-size: 18px;
+          -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out; }
+          .blog_wrapper .blog_wrapper_right .blog-right-items .recent_post_wrapper .single-post .post_title a:hover {
+            color: #ffc107; }
+        .blog_wrapper .blog_wrapper_right .blog-right-items .recent_post_wrapper .single-post .post_title .post-date {
+          margin-top: 8px; }
+          .blog_wrapper .blog_wrapper_right .blog-right-items .recent_post_wrapper .single-post .post_title .post-date span {
+            font-weight: 400;
+            font-size: 12px;
+            color: #000000;
+            font-family: "Rubik", sans-serif; }
+    .blog_wrapper .blog_wrapper_right .blog-right-items .twitter_post_wrapper .items-title {
+      margin-bottom: 30px; }
+    .blog_wrapper .blog_wrapper_right .blog-right-items .twitter_post_wrapper .twitter-single {
+      border-bottom: 1px solid rgba(141, 149, 166, 0.1);
+      margin-bottom: 30px;
+      padding-bottom: 30px; }
+      .blog_wrapper .blog_wrapper_right .blog-right-items .twitter_post_wrapper .twitter-single:last-child {
+        border-bottom: none; }
+      .blog_wrapper .blog_wrapper_right .blog-right-items .twitter_post_wrapper .twitter-single .twitter-post {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; }
+        .blog_wrapper .blog_wrapper_right .blog-right-items .twitter_post_wrapper .twitter-single .twitter-post .twitter-title {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          position: relative; }
+          .blog_wrapper .blog_wrapper_right .blog-right-items .twitter_post_wrapper .twitter-single .twitter-post .twitter-title i {
+            font-size: 35px;
+            color: #1da1f3;
+            line-height: 24px;
+            margin-right: 35px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center; }
+          .blog_wrapper .blog_wrapper_right .blog-right-items .twitter_post_wrapper .twitter-single .twitter-post .twitter-title p {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 24px;
+            color: #000000; }
+            .blog_wrapper .blog_wrapper_right .blog-right-items .twitter_post_wrapper .twitter-single .twitter-post .twitter-title p a {
+              color: #092ace;
+              text-transform: uppercase;
+              font-weight: 500; }
+    .blog_wrapper .blog_wrapper_right .blog-right-items .popular_tags .items-title {
+      margin-bottom: 30px; }
+    .blog_wrapper .blog_wrapper_right .blog-right-items .popular_tags .tags-items ul li {
+      display: -webkit-inline-box;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      padding-right: 6px;
+      padding-bottom: 10px; }
+      .blog_wrapper .blog_wrapper_right .blog-right-items .popular_tags .tags-items ul li a {
+        padding: 10px 25px;
+        font-size: 15px;
+        background: #eef2f5;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        color: #000000;
+        font-weight: 500;
+        border-radius: 0px;
+        text-transform: uppercase;
+        font-family: "Rubik", sans-serif; }
+        .blog_wrapper .blog_wrapper_right .blog-right-items .popular_tags .tags-items ul li a:hover {
+          background: #ffc107;
+          color: #ffffff; }
+    .blog_wrapper .blog_wrapper_right .blog-right-items .archives .items-title {
+      margin-bottom: 20px; }
+    .blog_wrapper .blog_wrapper_right .blog-right-items .archives .archives-items {
+      margin-left: 50px; }
+      .blog_wrapper .blog_wrapper_right .blog-right-items .archives .archives-items ul li {
+        padding-bottom: 12px; }
+        .blog_wrapper .blog_wrapper_right .blog-right-items .archives .archives-items ul li a {
+          -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+          font-size: 18px;
+          font-weight: 500;
+          position: relative;
+          margin-right: 30px;
+          color: #000000; }
+          .blog_wrapper .blog_wrapper_right .blog-right-items .archives .archives-items ul li a:before {
+            position: absolute;
+            font-family: "Flaticon";
+            font-size: 10px;
+            content: "\f103";
+            left: -30px;
+            bottom: -0px;
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            font-weight: 700; }
+
+
+
+
+
+#courses_details_wrapper, .event_details_wrapper {
+  padding: 130px 0 0; }
+  #courses_details_wrapper .courses_details .single-curses-contert h2, .event_details_wrapper .courses_details .single-curses-contert h2 {
+    font-size: 30px;
+    text-align: left; }
+  #courses_details_wrapper .courses_details .single-curses-contert h3, .event_details_wrapper .courses_details .single-curses-contert h3 {
+    font-weight: 700; }
+  #courses_details_wrapper .courses_details .single-curses-contert .review-option, .event_details_wrapper .courses_details .single-curses-contert .review-option {
+    padding: 40px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    #courses_details_wrapper .courses_details .single-curses-contert .review-option .border-left, .event_details_wrapper .courses_details .single-curses-contert .review-option .border-left {
+      border-right: 1px solid #e5e5e5; }
+      #courses_details_wrapper .courses_details .single-curses-contert .review-option .border-left:last-child, .event_details_wrapper .courses_details .single-curses-contert .review-option .border-left:last-child {
+        border-right: none; }
+    #courses_details_wrapper .courses_details .single-curses-contert .review-option .single_items_shape, .event_details_wrapper .courses_details .single-curses-contert .review-option .single_items_shape {
+      position: relative; }
+      #courses_details_wrapper .courses_details .single-curses-contert .review-option .single_items_shape:before, .event_details_wrapper .courses_details .single-curses-contert .review-option .single_items_shape:before {
+        position: absolute;
+        content: "";
+        height: 55px;
+        width: 1px;
+        background: #d7d7d7;
+        top: 50%;
+        right: -22%;
+        -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%); }
+    #courses_details_wrapper .courses_details .single-curses-contert .review-option .teacher-info, .event_details_wrapper .courses_details .single-curses-contert .review-option .teacher-info {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      #courses_details_wrapper .courses_details .single-curses-contert .review-option .teacher-info img, .event_details_wrapper .courses_details .single-curses-contert .review-option .teacher-info img {
+        height: 50px;
+        width: 50px;
+        margin-right: 15px;
+        border-radius: 50%; }
+      #courses_details_wrapper .courses_details .single-curses-contert .review-option .teacher-info .teacher-name span, .event_details_wrapper .courses_details .single-curses-contert .review-option .teacher-info .teacher-name span {
+        font-size: 13px;
+        display: inherit;
+        line-height: 18px; }
+        #courses_details_wrapper .courses_details .single-curses-contert .review-option .teacher-info .teacher-name span:last-child, .event_details_wrapper .courses_details .single-curses-contert .review-option .teacher-info .teacher-name span:last-child {
+          margin-top: 5px;
+          font-size: 15px;
+          font-weight: 600;
+          text-transform: uppercase; }
+    #courses_details_wrapper .courses_details .single-curses-contert .review-option .review-rank span, .event_details_wrapper .courses_details .single-curses-contert .review-option .review-rank span {
+      font-size: 13px; }
+    #courses_details_wrapper .courses_details .single-curses-contert .review-option .review-rank .rank-icons, .event_details_wrapper .courses_details .single-curses-contert .review-option .review-rank .rank-icons {
+      padding-top: 5px; }
+      #courses_details_wrapper .courses_details .single-curses-contert .review-option .review-rank .rank-icons ul, .event_details_wrapper .courses_details .single-curses-contert .review-option .review-rank .rank-icons ul {
+        margin: 0; }
+        #courses_details_wrapper .courses_details .single-curses-contert .review-option .review-rank .rank-icons ul li, .event_details_wrapper .courses_details .single-curses-contert .review-option .review-rank .rank-icons ul li {
+          display: inline-block; }
+          #courses_details_wrapper .courses_details .single-curses-contert .review-option .review-rank .rank-icons ul li .review-icon, .event_details_wrapper .courses_details .single-curses-contert .review-option .review-rank .rank-icons ul li .review-icon {
+            color: #ffc107; }
+    #courses_details_wrapper .courses_details .single-curses-contert .review-option .teacher_fee, .event_details_wrapper .courses_details .single-curses-contert .review-option .teacher_fee {
+      padding-left: 20px; }
+      #courses_details_wrapper .courses_details .single-curses-contert .review-option .teacher_fee span, .event_details_wrapper .courses_details .single-curses-contert .review-option .teacher_fee span {
+        font-size: 13px;
+        display: table; }
+        #courses_details_wrapper .courses_details .single-curses-contert .review-option .teacher_fee span:last-child, .event_details_wrapper .courses_details .single-curses-contert .review-option .teacher_fee span:last-child {
+          color: #fcff9e;
+          margin-top: 5px;
+          font-weight: 700;
+          font-size: 18px;
+          text-transform: uppercase; }
+          #courses_details_wrapper .courses_details .single-curses-contert .review-option .teacher_fee span:last-child .courses_price, .event_details_wrapper .courses_details .single-curses-contert .review-option .teacher_fee span:last-child .courses_price {
+            color: #fcff9e; }
+    #courses_details_wrapper .courses_details .single-curses-contert .review-option .buy_btn, .event_details_wrapper .courses_details .single-curses-contert .review-option .buy_btn {
+      padding-left: 40px; }
+      #courses_details_wrapper .courses_details .single-curses-contert .review-option .buy_btn a, .event_details_wrapper .courses_details .single-curses-contert .review-option .buy_btn a {
+        background: #ffc107;
+        height: 46px;
+        padding: 0 35px;
+        display: inline-block;
+        line-height: 46px;
+        color: #ffffff;
+        border-radius: 5px;
+        font-family: "Rubik", sans-serif;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 500;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out; }
+        #courses_details_wrapper .courses_details .single-curses-contert .review-option .buy_btn a:hover, .event_details_wrapper .courses_details .single-curses-contert .review-option .buy_btn a:hover {
+          background: #fcff9e; }
+  #courses_details_wrapper .courses_details .courses_tab_wrapper, .event_details_wrapper .courses_details .courses_tab_wrapper {
+    padding: 35px 0px; }
+
+    
+    #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents {
+      margin-top: 35px; }
+      #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane h3, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane h3 {
+        font-size: 25px;
+        font-weight: 700;
+        padding: 20px 0; }
+        #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane h3 span, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane h3 span {
+          font-size: "Roboto", sans-serif;
+          color: #092ace; }
+      #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane p, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane p {
+        margin-bottom: 20px; }
+        #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane p:last-child, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane p:last-child {
+          margin-bottom: 0px; }
+      #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane .step_point li, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane .step_point li {
+        position: relative;
+        padding-left: 30px;
+        padding-bottom: 10px;
+        font-family: "Rubik", sans-serif; }
+        #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane .step_point li:before, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane .step_point li:before {
+          position: absolute;
+          font-family: "Flaticon";
+          font-size: 10px;
+          content: "\f103";
+          left: 0px;
+          top: 0px;
+          color: #ffc107;
+          font-weight: 700; }
+      #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane .social_wrapper, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane .social_wrapper {
+        margin-top: 80px; }
+        #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane .social_wrapper span, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane .social_wrapper span {
+          padding-right: 15px;
+          line-height: 30px;
+          font-weight: 700;
+          text-transform: uppercase;
+          font-size: 18px; }
+        #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane .social_wrapper .social-items li, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane .social_wrapper .social-items li {
+          margin-right: 12px; }
+          #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane .social_wrapper .social-items li:last-child, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane .social_wrapper .social-items li:last-child {
+            margin-right: 0px; }
+          #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane .social_wrapper .social-items li a i, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane .social_wrapper .social-items li a i {
+            padding: 0;
+            height: 34px;
+            width: 34px;
+            text-align: center;
+            line-height: 33px;
+            border-radius: 50%;
+            font-size: 14px;
+            margin: 0;
+            background: transparent;
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out; }
+            #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane .social_wrapper .social-items li a i:hover, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane .social_wrapper .social-items li a i:hover {
+              padding: 0; }
+          #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane .social_wrapper .social-items li a .fb_icon, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane .social_wrapper .social-items li a .fb_icon {
+            color: #4867aa;
+            border: 1px solid #fcff9e; }
+            #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane .social_wrapper .social-items li a .fb_icon:hover, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane .social_wrapper .social-items li a .fb_icon:hover {
+              background: #fcff9e;
+              color: #ffffff; }
+          #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane .social_wrapper .social-items li a .tw_icon, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane .social_wrapper .social-items li a .tw_icon {
+            color: #1da1f2;
+            border: 1px solid #fcff9e; }
+            #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane .social_wrapper .social-items li a .tw_icon:hover, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane .social_wrapper .social-items li a .tw_icon:hover {
+              background: #fcff9e;
+              color: #ffffff; }
+          #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane .social_wrapper .social-items li a .link_icon, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane .social_wrapper .social-items li a .link_icon {
+            color: #0077B5;
+            border: 1px solid #fcff9e; }
+            #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane .social_wrapper .social-items li a .link_icon:hover, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane .social_wrapper .social-items li a .link_icon:hover {
+              background: #fcff9e;
+              color: #ffffff; }
+          #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane .social_wrapper .social-items li a .in_icon, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane .social_wrapper .social-items li a .in_icon {
+            color: #262223;
+            border: 1px solid #262223; }
+            #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane .social_wrapper .social-items li a .in_icon:hover, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .tab-pane .social_wrapper .social-items li a .in_icon:hover {
+              background: #262223;
+              color: #ffffff; }
+      #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .curriculum-text-box h2, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .curriculum-text-box h2 {
+        border-bottom: 3px solid #eaeaea;
+        margin-bottom: 40px;
+        padding: 40px 0 15px; }
+      #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .curriculum-text-box .curriculum-section .panel-group .panel + .panel, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .curriculum-text-box .curriculum-section .panel-group .panel + .panel {
+        margin-top: 30px;
+        -webkit-box-shadow: none;
+                box-shadow: none;
+        margin-bottom: 35px; }
+      #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .curriculum-text-box .curriculum-section .panel-group .panel-default, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .curriculum-text-box .curriculum-section .panel-group .panel-default {
+        border-color: transparent; }
+      #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .curriculum-text-box .curriculum-section .panel-group .panel .panel-heading, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .curriculum-text-box .curriculum-section .panel-group .panel .panel-heading {
+        background-color: #fafafa;
+        border: 0px solid;
+        border-color: transparent;
+        padding: 0; }
+      #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .curriculum-text-box .curriculum-section .panel-group .panel .panel-title, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .curriculum-text-box .curriculum-section .panel-group .panel .panel-title {
+        -webkit-box-shadow: 8px 13px 60px 0px rgba(47, 47, 47, 0.05);
+                box-shadow: 8px 13px 60px 0px rgba(47, 47, 47, 0.05);
+        width: 100%;
+        height: 70px;
+        display: table;
+        padding: 0 30px;
+        -webkit-transition: all .3s linear;
+        transition: all .3s linear; }
+        #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .curriculum-text-box .curriculum-section .panel-group .panel .panel-title .click, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .curriculum-text-box .curriculum-section .panel-group .panel .panel-title .click {
+          background: #fafafa; }
+        #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .curriculum-text-box .curriculum-section .panel-group .panel .panel-title span, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .curriculum-text-box .curriculum-section .panel-group .panel .panel-title span {
+          float: right;
+          font-size: 15px;
+          padding-right: 30px;
+          line-height: 20px; }
+        #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .curriculum-text-box .curriculum-section .panel-group .panel .panel-title a, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .curriculum-text-box .curriculum-section .panel-group .panel .panel-title a {
+          display: block;
+          display: table-cell;
+          font-size: 20px;
+          font-weight: 700;
+          position: relative;
+          -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+          vertical-align: middle;
+          text-decoration: none; }
+          #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .curriculum-text-box .curriculum-section .panel-group .panel .panel-title a.collapsed:before, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .curriculum-text-box .curriculum-section .panel-group .panel .panel-title a.collapsed:before {
+            color: #ffc107;
+            position: absolute;
+            content: "\f100";
+            font-family: "Flaticon";
+            font-size: 12px;
+            text-align: center;
+            top: 50%;
+            right: 0;
+            -webkit-transform: translateY(-50%) rotate(0deg);
+            transform: translateY(-50%) rotate(0deg);
+            -webkit-transition: all .4s ease-in;
+            -webkit-transition: all .3s ease-in;
+            transition: all .3s ease-in; }
+          #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .curriculum-text-box .curriculum-section .panel-group .panel .panel-title a:before, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .curriculum-text-box .curriculum-section .panel-group .panel .panel-title a:before {
+            color: #ffc107;
+            position: absolute;
+            content: "\f125";
+            font-family: "Flaticon";
+            font-size: 12px;
+            text-align: center;
+            top: 50%;
+            right: 0;
+            -webkit-transition: all .4s ease-in;
+            transition: all .4s ease-in;
+            line-height: 38px;
+            -webkit-transform: translateY(-50%) rotate(180deg);
+            transform: translateY(-50%) rotate(180deg); }
+      #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .curriculum-text-box .curriculum-section .panel-group .panel .panel-body, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .curriculum-text-box .curriculum-section .panel-group .panel .panel-body {
+        background: #ffffff;
+        padding: 35px; }
+        #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .curriculum-text-box .curriculum-section .panel-group .panel .panel-body .curriculum-single, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .curriculum-text-box .curriculum-section .panel-group .panel .panel-body .curriculum-single {
+          margin-bottom: 25px;
+          display: -webkit-inline-box;
+          display: -ms-inline-flexbox;
+          display: inline-flex;
+          -webkit-box-pack: justify;
+              -ms-flex-pack: justify;
+                  justify-content: space-between;
+          width: 100%; }
+          #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .curriculum-text-box .curriculum-section .panel-group .panel .panel-body .curriculum-single:last-child, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .curriculum-text-box .curriculum-section .panel-group .panel .panel-body .curriculum-single:last-child {
+            margin-bottom: 0px; }
+          #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .curriculum-text-box .curriculum-section .panel-group .panel .panel-body .curriculum-single .lecture span, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .curriculum-text-box .curriculum-section .panel-group .panel .panel-body .curriculum-single .lecture span {
+            padding-right: 50px;
+            font-family: "Rubik", sans-serif; }
+          #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .curriculum-text-box .curriculum-section .panel-group .panel .panel-body .curriculum-single .lecture i, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .curriculum-text-box .curriculum-section .panel-group .panel .panel-body .curriculum-single .lecture i {
+            color: #ffc107;
+            font-size: 18px;
+            padding-right: 10px; }
+          #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .curriculum-text-box .curriculum-section .panel-group .panel .panel-body .curriculum-single a, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .curriculum-text-box .curriculum-section .panel-group .panel .panel-body .curriculum-single a {
+            text-align: center;
+            font-size: 12px;
+            padding: 0px 15px;
+            text-decoration: none;
+            font-family: "Rubik", sans-serif;
+            border: 1px solid #ffc107;
+            font-weight: 500;
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out; }
+            #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .curriculum-text-box .curriculum-section .panel-group .panel .panel-body .curriculum-single a:hover, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .curriculum-text-box .curriculum-section .panel-group .panel .panel-body .curriculum-single a:hover {
+              background: #ffc107;
+              color: #ffffff; }
+      #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .courses_teacher .tutor_signle, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .courses_teacher .tutor_signle {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        padding: 30px;
+        margin-bottom: 30px;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        -webkit-box-shadow: 9px 16px 46px 0px rgba(47, 47, 47, 0.05);
+                box-shadow: 9px 16px 46px 0px rgba(47, 47, 47, 0.05);
+        max-width: 350px; }
+        #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .courses_teacher .tutor_signle:hover, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .courses_teacher .tutor_signle:hover {
+          -webkit-box-shadow: 9px 16px 46px 0px rgba(47, 47, 47, 0.1);
+                  box-shadow: 9px 16px 46px 0px rgba(47, 47, 47, 0.1); }
+          #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .courses_teacher .tutor_signle:hover .tutor_pro img, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .courses_teacher .tutor_signle:hover .tutor_pro img {
+            -webkit-transform: scale(1);
+                    transform: scale(1); }
+          #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .courses_teacher .tutor_signle:hover .teachers_name h5 a, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .courses_teacher .tutor_signle:hover .teachers_name h5 a {
+            color: #ffc107; }
+        #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .courses_teacher .tutor_signle .tutor_pro, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .courses_teacher .tutor_signle .tutor_pro {
+          margin-right: 30px;
+          overflow: hidden;
+          border-radius: 50%; }
+          #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .courses_teacher .tutor_signle .tutor_pro img, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .courses_teacher .tutor_signle .tutor_pro img {
+            height: auto;
+            width: 80px;
+            border-radius: 50%;
+            -webkit-transform: scale(1.1);
+                    transform: scale(1.1);
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out; }
+        #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .courses_teacher .tutor_signle .teachers_name h5, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .courses_teacher .tutor_signle .teachers_name h5 {
+          font-size: 18px;
+          font-weight: 700; }
+
+        #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .courses_teacher .tutor_signle .teachers_name span, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .courses_teacher .tutor_signle .teachers_name span {
+          font-weight: 500;
+          font-size: 14px;
+          color: #ffc107;
+          margin-top: 5px; }
+      #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .review-content, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .review-content {
+        margin-bottom: 70px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between; }
+        #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .review-content .five-star-rating, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .review-content .five-star-rating {
+          height: 180px;
+          text-align: center;
+          width: 30%;
+          float: left; }
+          #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .review-content .five-star-rating .rating_box_count, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .review-content .five-star-rating .rating_box_count {
+            padding: 31px 0; }
+            #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .review-content .five-star-rating .rating_box_count ul, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .review-content .five-star-rating .rating_box_count ul {
+              margin: 0;
+              padding: 10px; }
+              #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .review-content .five-star-rating .rating_box_count ul li, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .review-content .five-star-rating .rating_box_count ul li {
+                color: #ffc107;
+                display: inline-block; }
+                #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .review-content .five-star-rating .rating_box_count ul li i:before, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .review-content .five-star-rating .rating_box_count ul li i:before {
+                  font-size: 26px;
+                  margin: 0; }
+        #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .review-content .rating-box, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .review-content .rating-box {
+          width: 65%; }
+          #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .review-content .rating-box .detailed-rating, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .review-content .rating-box .detailed-rating {
+            width: auto;
+            display: inline-block;
+            max-width: 100%; }
+            #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .review-content .rating-box .detailed-rating .stars, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .review-content .rating-box .detailed-rating .stars {
+              clear: both;
+              padding: 0 30px 16px;
+              display: -webkit-inline-box;
+              display: -ms-inline-flexbox;
+              display: inline-flex;
+              line-height: 14px; }
+              #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .review-content .rating-box .detailed-rating .stars .key, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .review-content .rating-box .detailed-rating .stars .key {
+                min-width: 52px;
+                font-weight: 400;
+                color: #1a1a23;
+                font-size: 16px; }
+              #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .review-content .rating-box .detailed-rating .stars .bar, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .review-content .rating-box .detailed-rating .stars .bar {
+                width: 270px;
+                margin: 0 7px; }
+              #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .review-content .rating-box .detailed-rating .stars .full_bar, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .review-content .rating-box .detailed-rating .stars .full_bar {
+                background: #eee;
+                height: 12px;
+                position: relative; }
+                #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .review-content .rating-box .detailed-rating .stars .full_bar span, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .review-content .rating-box .detailed-rating .stars .full_bar span {
+                  background: #000000;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  bottom: 0; }
+              #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .review-content .rating-box .detailed-rating .stars .value, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .review-content .rating-box .detailed-rating .stars .value {
+                font-size: 16px;
+                font-weight: 400;
+                color: #000000; }
+      #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .commnet-wrapper, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .commnet-wrapper {
+        margin-bottom: 50px; }
+        #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .commnet-wrapper .comment-list-items .comment-list-wrapper, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .commnet-wrapper .comment-list-items .comment-list-wrapper {
+          margin-bottom: 30px; }
+          #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .commnet-wrapper .comment-list-items .comment-list-wrapper:last-child, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .commnet-wrapper .comment-list-items .comment-list-wrapper:last-child {
+            margin-bottom: 0; }
+            #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .commnet-wrapper .comment-list-items .comment-list-wrapper .comment-list .commnet_img, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .commnet-wrapper .comment-list-items .comment-list-wrapper .comment-list .commnet_img {
+              width: 13%; }
+              #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .commnet-wrapper .comment-list-items .comment-list-wrapper .comment-list .commnet_img img, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .commnet-wrapper .comment-list-items .comment-list-wrapper .comment-list .commnet_img img {
+                border-radius: 50%; }
+            #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .commnet-wrapper .comment-list-items .comment-list-wrapper .comment-list .comment-text, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .commnet-wrapper .comment-list-items .comment-list-wrapper .comment-list .comment-text {
+              padding: 0 15px 0 30px;
+              width: 87%; }
+              #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .commnet-wrapper .comment-list-items .comment-list-wrapper .comment-list .comment-text .author_info, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .commnet-wrapper .comment-list-items .comment-list-wrapper .comment-list .comment-text .author_info {
+                line-height: 14px; }
+                #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .commnet-wrapper .comment-list-items .comment-list-wrapper .comment-list .comment-text .author_info .author_name, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .commnet-wrapper .comment-list-items .comment-list-wrapper .comment-list .comment-text .author_info .author_name {
+                  font-size: 14px;
+                  font-weight: 600;
+                  color: #000000;
+                  margin-right: 25px;
+                  font-family: "Rubik", sans-serif; }
+                #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .commnet-wrapper .comment-list-items .comment-list-wrapper .comment-list .comment-text .author_info span, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .commnet-wrapper .comment-list-items .comment-list-wrapper .comment-list .comment-text .author_info span {
+                  font-size: 14px;
+                  font-weight: 400;
+                  line-height: 24px;
+                  color: #000000; }
+              #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .commnet-wrapper .comment-list-items .comment-list-wrapper .comment-list .comment-text .rating ul, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .commnet-wrapper .comment-list-items .comment-list-wrapper .comment-list .comment-text .rating ul {
+                margin: 0; }
+                #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .commnet-wrapper .comment-list-items .comment-list-wrapper .comment-list .comment-text .rating ul li, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .commnet-wrapper .comment-list-items .comment-list-wrapper .comment-list .comment-text .rating ul li {
+                  padding: 0 1px; }
+                  #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .commnet-wrapper .comment-list-items .comment-list-wrapper .comment-list .comment-text .rating ul li i:before, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .commnet-wrapper .comment-list-items .comment-list-wrapper .comment-list .comment-text .rating ul li i:before {
+                    font-size: 14px;
+                    color: #ffc107;
+                    margin-left: 0px; }
+              #courses_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .commnet-wrapper .comment-list-items .comment-list-wrapper .comment-list .comment-text p, .event_details_wrapper .courses_details .courses_tab_wrapper .tab_contents .commnet-wrapper .comment-list-items .comment-list-wrapper .comment-list .comment-text p {
+                margin: 19px 0 0; }
+  #courses_details_wrapper .blog-right-items .courses_features, .event_details_wrapper .blog-right-items .courses_features {
+    background: linear-gradient(65deg, #5958a0 0%, #111b51 100%);
+    padding: 50px 0px;
+    position: relative;
+    z-index: 1;
+    margin: 0 0 50px; }
+    #courses_details_wrapper .blog-right-items .courses_features .items-title, .event_details_wrapper .blog-right-items .courses_features .items-title {
+      text-align: left; }
+      #courses_details_wrapper .blog-right-items .courses_features .items-title h3, .event_details_wrapper .blog-right-items .courses_features .items-title h3 {
+        color: #ffffff; }
+        #courses_details_wrapper .blog-right-items .courses_features .items-title h3:before, .event_details_wrapper .blog-right-items .courses_features .items-title h3:before {
+          background: #ffc107; }
+    #courses_details_wrapper .blog-right-items .courses_features .features_items, .event_details_wrapper .blog-right-items .courses_features .features_items {
+      padding-left: 80px;
+      padding-right: 50px; }
+      #courses_details_wrapper .blog-right-items .courses_features .features_items ul li, .event_details_wrapper .blog-right-items .courses_features .features_items ul li {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        padding-bottom: 25px; }
+        #courses_details_wrapper .blog-right-items .courses_features .features_items ul li:last-child, .event_details_wrapper .blog-right-items .courses_features .features_items ul li:last-child {
+          padding-bottom: 0; }
+        #courses_details_wrapper .blog-right-items .courses_features .features_items ul li a, .event_details_wrapper .blog-right-items .courses_features .features_items ul li a {
+          -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+          font-size: 16px;
+          font-weight: 500;
+          position: relative;
+          color: rgba(255, 255, 255, 0.7); }
+          #courses_details_wrapper .blog-right-items .courses_features .features_items ul li a i:before, .event_details_wrapper .blog-right-items .courses_features .features_items ul li a i:before {
+            margin: 0;
+            color: #ffc107;
+            padding-right: 15px;
+            font-size: 15px;
+            font-weight: 600;
+            opacity: 0.8; }
+          #courses_details_wrapper .blog-right-items .courses_features .features_items ul li a:hover, .event_details_wrapper .blog-right-items .courses_features .features_items ul li a:hover {
+            color: #ffc107; }
+            #courses_details_wrapper .blog-right-items .courses_features .features_items ul li a:hover:before, .event_details_wrapper .blog-right-items .courses_features .features_items ul li a:hover:before {
+              color: #ffc107; }
+        #courses_details_wrapper .blog-right-items .courses_features .features_items ul li span, .event_details_wrapper .blog-right-items .courses_features .features_items ul li span {
+          color: rgba(255, 255, 255, 0.7);
+          font-family: "Rubik", sans-serif; }
+    #courses_details_wrapper .blog-right-items .courses_features .courses_feaures_shpe, .event_details_wrapper .blog-right-items .courses_features .courses_feaures_shpe {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: 50%;
+      width: 85%;
+      z-index: -1; }
+  #courses_details_wrapper .blog-right-items .popular_courses_post .courses_price .price span, .event_details_wrapper .blog-right-items .popular_courses_post .courses_price .price span {
+    font-family: "Rubik", sans-serif;
+    font-size: 12px;
+    color: #000000;
+    font-weight: 500;
+    padding-right: 15px; }
+  #courses_details_wrapper .blog-right-items .popular_courses_post .courses_price .price .new_price, .event_details_wrapper .blog-right-items .popular_courses_post .courses_price .price .new_price {
+    color: #ffc107 !important;
+    padding-right: 0px;
+    font-weight: 600; }
+  #courses_details_wrapper .blog-right-items .get_discount, .event_details_wrapper .blog-right-items .get_discount {
+    background: linear-gradient(-125deg, #e6793b 0%, #c9270e 100%);
+    padding: 50px 0px 60px;
+    position: relative;
+    z-index: 1; }
+    #courses_details_wrapper .blog-right-items .get_discount .items-title, .event_details_wrapper .blog-right-items .get_discount .items-title {
+      text-align: center; }
+      #courses_details_wrapper .blog-right-items .get_discount .items-title p, .event_details_wrapper .blog-right-items .get_discount .items-title p {
+        font-size: 20px;
+        margin: 0;
+        color: #ffffff; }
+      #courses_details_wrapper .blog-right-items .get_discount .items-title h3, .event_details_wrapper .blog-right-items .get_discount .items-title h3 {
+        color: #ffffff;
+        font-size: 50px;
+        font-weight: 700;
+        padding: 15px 15px 25px; }
+      #courses_details_wrapper .blog-right-items .get_discount .items-title a, .event_details_wrapper .blog-right-items .get_discount .items-title a {
+        background: #fcff9e;
+        height: 50px;
+        padding: 0 40px;
+        display: inline-block;
+        line-height: 50px;
+        color: #ffffff;
+        border-radius: 4px;
+        font-family: "Rubik", sans-serif;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 500;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out; }
+    #courses_details_wrapper .blog-right-items .get_discount .courses_feaures_shpe, .event_details_wrapper .blog-right-items .get_discount .courses_feaures_shpe {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1; }
+
+#related_courses_wrapper {
+  position: relative; }
+  #related_courses_wrapper .title {
+    padding-bottom: 40px; }
+    #related_courses_wrapper .title h2 {
+      font-size: 30px;
+      font-weight: 900;
+      padding-left: 15px;
+      position: relative; }
+      #related_courses_wrapper .title h2:before {
+        position: absolute;
+        content: "";
+        height: 1px;
+        width: 100px;
+        background: #d7d7d7;
+        bottom: -30px;
+        left: 15px; }
+  #related_courses_wrapper #related_courses {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    #related_courses_wrapper #related_courses .single-courses {
+      margin: 50px 15px;
+      -webkit-box-shadow: 0px 0px 20px 0px rgba(47, 47, 47, 0.05);
+              box-shadow: 0px 0px 20px 0px rgba(47, 47, 47, 0.05); }
+  #related_courses_wrapper .owl-buttons {
+    position: absolute;
+    top: -50px;
+    right: 0; }
+    #related_courses_wrapper .owl-buttons .owl-prev {
+      border-radius: 0 15px 0px 15px !important; }
+    #related_courses_wrapper .owl-buttons .owl-next {
+      border-radius: 15px 0px 15px 0px !important; }
+    #related_courses_wrapper .owl-buttons .owl-prev, #related_courses_wrapper .owl-buttons .owl-next {
+      height: 40px;
+      border: 1px solid #111b51;
+      width: 40px;
+      line-height: 40px;
+      text-align: center;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      padding: 0 !important; }
+      #related_courses_wrapper .owl-buttons .owl-prev i:before, #related_courses_wrapper .owl-buttons .owl-next i:before {
+        color: #111b51;
+        font-size: 12px;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        font-weight: 700; }
+      #related_courses_wrapper .owl-buttons .owl-prev:hover, #related_courses_wrapper .owl-buttons .owl-next:hover {
+        border: 1px solid #ffc107; }
+        #related_courses_wrapper .owl-buttons .owl-prev:hover i:before, #related_courses_wrapper .owl-buttons .owl-next:hover i:before {
+          color: #ffc107; }
+

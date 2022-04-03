@@ -63,6 +63,7 @@ Route::get('/login/contentCreator', [LoginController::class, 'showContentCreator
 
 Route::get('/quiz', [StudentController::class, 'quiz'] );
 Route::get('/news', [NewsApiController::class, 'showNews'] );
+Route::get('/course/{id}', [CoursesController::class, 'showCourse'] );
 
 
 Route::post('/register/contentCreator', [RegisterController::class, 'contentCreatorRegister'])->name('contentCreatorRegisterForm');
