@@ -5,12 +5,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\SocialController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\CoursesController;
-use App\Http\Controllers\StudentController;
-use App\Http\Controllers\AdminLoginController;
-use App\Http\Controllers\CartController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 /*
@@ -59,12 +53,16 @@ Route::prefix('admin')->middleware(['auth' , 'isAdmin'])->group(function(){
 
 
 Route::get('/register/contentCreator', [RegisterController::class,'showContentCreatorRegister']);
+
 Route::get('/login/contentCreator', [LoginController::class, 'showContentCreatorLogin']);
 
 Route::get('/quiz', [StudentController::class, 'quiz'] );
+
 Route::get('/news', [NewsApiController::class, 'showNews'] );
+
 Route::get('/course/{id}', [CoursesController::class, 'showCourse'] );
 
+Route::get('contentCreator/upload',[ContentCreatorController::class,'requestUploadContent']);
 
 Route::post('/register/contentCreator', [RegisterController::class, 'contentCreatorRegister'])->name('contentCreatorRegisterForm');
 Route::post('/login/contentCreator', [LoginController::class, 'contentCreatorLogin'])->name('contentCreatorLoginForm');

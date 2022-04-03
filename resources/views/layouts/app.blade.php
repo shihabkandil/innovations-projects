@@ -7,8 +7,6 @@
     <meta content="" name="keywords">
     <meta content="" name="description">
 
-    <!-- Favicon -->
-    <link href="{{asset('img/favicon.ico')}}" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,7 +47,9 @@
                 <a href="/articles" class="nav-item nav-link">{{ __('Articles') }}</a>
                 <a href="/about" class="nav-item nav-link">{{ __('About') }}</a>
                 <a href="/contact" class="nav-item nav-link">{{ __('Contact') }}</a>
+                <a href="/contentCreator/upload" class="nav-item nav-link" style="color:red; font-weight:bold;" >{{ __('Upload Content') }}</a>
 
+                @guest('contentCreator')
                 <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ __('Browse Courses') }}</a>
@@ -61,6 +61,8 @@
                         </ul>
                     </li>
                 </ul>
+                @endguest
+                
                 @auth('contentCreator')
                 <!-- Navbar-->
                 <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
@@ -116,7 +118,7 @@
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">{{ __('Quick Link') }}</h4>
-                    <a class="btn btn-link" href="/about">{{ __('About Us') }}</a>
+                    <a class="btn btn-link" style="!important"href="/about">{{ __('About Us') }}</a>
                     <a class="btn btn-link" href="/contact">{{ __('Contact Us') }}</a>
                     <a class="btn btn-link" href="/privacy-policy">{{ __('Privacy Policy') }}</a>
                     <a class="btn btn-link" href="/terms-conditions">{{ __('Terms & Conditions') }}</a>
