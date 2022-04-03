@@ -12,11 +12,10 @@ class Category extends Model
   use HasFactory;
 
   public function __construct(){
-        
-}
+          
+  }
 
- public  function  getall(){ 
+  public function getall(){ 
     return Category::all(); 
   }
-   
 }

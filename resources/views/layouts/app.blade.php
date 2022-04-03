@@ -6,6 +6,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
     <!-- Google Web Fonts -->
@@ -57,7 +58,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ __('Browse Courses') }}</a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li><a href="/Catigories" class="dropdown-item">{{ __('Browse Courses') }}</a></li>
+                            <li><a href="/categories" class="dropdown-item">{{ __('Browse Courses') }}</a></li>
                             <li><a href="/bundles" class="dropdown-item">{{ __('Bundles') }}</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a href="/subscriptions" class="dropdown-item" style="color:red; font-weight:bold;" >{{ __('Subscribe') }}</a></li>
