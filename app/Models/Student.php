@@ -17,7 +17,7 @@ class Student extends Authenticatable implements MustVerifyEmail
     protected $table = 'students';
 
         protected $fillable = [
-            'name', 'email', 'password'
+            'name', 'email', 'password', 'facebook_id',
         ];
 
         protected $hidden = [
