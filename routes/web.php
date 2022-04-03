@@ -32,7 +32,7 @@ Route::get('/editProfile', [PagesController::class, 'editProfile']);
 
 
 Route::get('/Catigories', [CategoryController::class, 'index'] );
-Route::get('/editProfile', [PagesController::class, 'editProfile'] );
+Route::get('/editProfile/{id}', [StudentController::class, 'editProfile'] );
 Route::get('/categories', [CategoryController::class, 'index'] );
 Route::get('/checkout', [PagesController::class, 'checkout'] );
 Route::get('/contact', [PagesController::class, 'contact'] );
@@ -79,5 +79,6 @@ Route::post('/login/contentCreator', [LoginController::class, 'contentCreatorLog
 
 Route::post('/register/student', [RegisterController::class, 'studentRegister'])->name('studentRegisterForm');
 Route::post('/login', [LoginController::class, 'studentLogin'])->name('studentLoginForm');
+Route::post('/home', [StudentController::class, 'updateStudent'])->name('update');
 
 
