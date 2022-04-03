@@ -20,6 +20,14 @@ class Courses extends Model
         return Courses::where('CategoryID', 'LIKE', $id)->get(); 
     }
 
+    public function getAll(){
+        return Courses::all(); 
+    }
+
+    public function getCourse($id){
+        return Courses::findOrFail($id);
+    }
+
     
 
     
