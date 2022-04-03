@@ -7,8 +7,6 @@
     <meta content="" name="keywords">
     <meta content="" name="description">
 
-    <!-- Favicon -->
-    <link href="{{asset('img/favicon.ico')}}" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -120,7 +118,7 @@
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">{{ __('Quick Link') }}</h4>
-                    <a class="btn btn-link" href="/about">{{ __('About Us') }}</a>
+                    <a class="btn btn-link" style="!important"href="/about">{{ __('About Us') }}</a>
                     <a class="btn btn-link" href="/contact">{{ __('Contact Us') }}</a>
                     <a class="btn btn-link" href="/privacy-policy">{{ __('Privacy Policy') }}</a>
                     <a class="btn btn-link" href="/terms-conditions">{{ __('Terms & Conditions') }}</a>
