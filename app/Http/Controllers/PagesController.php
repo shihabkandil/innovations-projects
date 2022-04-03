@@ -34,10 +34,6 @@ class PagesController extends Controller
         return view('auth.login');
     }
 
-    public function editProfile(){
-        return view('pages.editProfile');
-    }
-
     public function checkout(){
         if(Auth::check()){
             return view('pages.checkout');

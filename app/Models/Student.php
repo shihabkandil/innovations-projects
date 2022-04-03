@@ -23,4 +23,8 @@ class Student extends Authenticatable implements MustVerifyEmail
         protected $hidden = [
             'password', 'remember_token',
         ];
+
+        public  function  getStudent($id){ 
+            return Student::where('id', 'LIKE', $id)->get(); 
+        }
 }

@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <!--  This file has been downloaded from bootdey.com @bootdey on twitter -->
     <!--  All snippets are MIT license http://bootdey.com/license -->
-    <title>Edit Profile</title>
+    <title>@section('title')Student {{$id}} Edit-Profile page @endsection</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -20,19 +20,20 @@
 		<div class="account-settings">
 			<div class="user-profile">
 				<div class="user-avatar">
-					<img src="img/default_profile.png" alt="profile_picture">
+					<img src="img/{{$student[0]->PP}}" alt="profile_picture">
 				</div>
-				<h5 class="user-name text-warning">Username</h5>
-				<h6 class="user-email">username@gmail.com</h6>
+				<h5 class="user-name text-warning">{{$student[0]->name}}</h5>
+				<h6 class="user-email">{{$student[0]->email}}</h6>
 			</div>
 			<div class="about">
 				<h5 class="text-warning">About</h5>
-				<p>This is the user's bio.</p>
+				<p>{{$student[0]->BIO}}</p>
 			</div>
 		</div>
 	</div>
 </div>
 </div>
+
 <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
 <div class="card h-100">
 	<div class="card-body">
@@ -52,42 +53,17 @@
 					<input type="email" class="form-control" id="eMail" placeholder="Enter email" name="email">
 				</div>
 			</div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-4 mb-4">
-				<div class="form-group">
-					<label for="male">Male</label>
-					<input type="radio" class="form-check-input" id="male" name="gender">
-                    <label for="female">Female</label>
-                    <input type="radio" class="form-check-input" id="Female" name="gender">
-				</div>
-			</div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-				<div class="form-group">
-					<label for="date">Date of Birth</label>
-                    <input type="date" class="form-control" id="date" name="date">
-				</div>
-			</div>
-		</div>
-		<div class="row gutters">
-			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-				<h6 class="mt-3 mb-2 text-warning">Address</h6>
-			</div>
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
-					<label for="Country">Country</label>
-					<input type="name" class="form-control" id="Country" placeholder="Enter Country" name="country">
-				</div>
-			</div>
-			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-				<div class="form-group">
-					<label for="ciTy">City</label>
-					<input type="name" class="form-control" id="ciTy" placeholder="Enter City" name="city">
+					<label for="Bio">Bio</label>
+					<input type="text" class="form-control" id="bio" placeholder="Enter Bio" name="Bio">
 				</div>
 			</div>
 		</div>
 		<div class="row gutters">
 			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 				<div class="text-right">
-					<button type="button" id="submit" name="submit" class="btn btn-secondary" style="float: right; margin: 10px;">Cancel</button>
+					<button  type="button" id="submit" name="submit" class="btn btn-secondary" style="float: right; margin: 10px;">Cancel</button>
 					<button type="button" id="submit" name="submit" class="btn btn-warning" style="float: right; margin: 10px;">Update</button>
 				</div>
 			</div>

@@ -1,8 +1,5 @@
 @extends('layouts.app')
     @section('content')
-
-<title>HOME</title>
-
     <head>
         <meta charset="utf-8">
         <title>{{ __('Innovations Projects')}}</title>

@@ -32,7 +32,7 @@ Route::get('/editProfile', [PagesController::class, 'editProfile']);
 
 
 Route::get('/Catigories', [CategoryController::class, 'index'] );
-Route::get('/editProfile', [PagesController::class, 'editProfile'] );
+Route::get('/editProfile/{id}', [StudentController::class, 'editProfile'] );
 Route::get('/categories', [CategoryController::class, 'index'] );
 Route::get('/checkout', [PagesController::class, 'checkout'] );
 Route::get('/contact', [PagesController::class, 'contact'] );
