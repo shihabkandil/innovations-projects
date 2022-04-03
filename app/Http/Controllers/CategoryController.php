@@ -9,7 +9,7 @@ class CategoryController extends Controller
     public $cat; 
 
    public function __construct(){
-     $this->cat= new Category();
+        $this->cat= new Category();
    }
    
     /**
@@ -19,10 +19,17 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories= $this->cat->getall();
-        return view("pages.browseCategory")->with(array('categories'=>$categories));
-       
+        return view("pages.browseCategory");
     }
+
+
+    public function fetchCategory(){
+        $categories = Category::all();
+        return response()->json([
+            'categories'=>$categories,
+        ]);
+    }
+    
 
     /**
      * Show the form for creating a new resource.
