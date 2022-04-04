@@ -20,7 +20,7 @@
 		<div class="account-settings">
 			<div class="user-profile">
 				<div class="user-avatar">
-					<img src="img/{{$student[0]->PP}}" alt="profile_picture">
+					<img src={{ asset('img/'.$student[0]->PP)}}>
 				</div>
 				<h5 class="user-name text-warning">{{$student[0]->name}}</h5>
 				<h6 class="user-email">{{$student[0]->email}}</h6>
@@ -48,13 +48,13 @@
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
 					<label for="name">Name</label>
-					<input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
+					<input type="text" class="form-control" id="name" placeholder="Enter name" name="name" required>
 				</div>
 			</div>
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
 					<label for="eMail">Email</label>
-					<input type="email" pattern=".+@globex.com" size="30" class="form-control" id="eMail" placeholder="Enter email" name="email" value="{{$student[0]->email}}">
+					<input type="email" class="form-control" id="eMail" placeholder="Enter email" name="email" value="{{$student[0]->email}}" required>
 				</div>
 			</div>
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">

@@ -27,11 +27,11 @@ class StudentController extends Controller
     }
 
     public function updateStudent(Request $req){
-
         $data = Student::find($req->id);
         $data->name = $req->name;
         $data->email = $req->email;
         $data->BIO = $req->BIO;
         $data->save();
+        return redirect('/');
     }
 }

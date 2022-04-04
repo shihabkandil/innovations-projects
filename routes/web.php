@@ -25,12 +25,6 @@ Route::get('/instructor_register', [PagesController::class, 'InstructorRegister'
 Route::get('/login', [PagesController::class, 'login'] );
 Route::get('/bundles', [PagesController::class, 'bundles'] );
 
-
-
-
-Route::get('/editProfile', [PagesController::class, 'editProfile']);
-
-
 Route::get('/Catigories', [CategoryController::class, 'index'] );
 Route::get('/editProfile/{id}', [StudentController::class, 'editProfile'] );
 Route::get('/categories', [CategoryController::class, 'index'] );
