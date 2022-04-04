@@ -1,8 +1,5 @@
 @extends('layouts.app')
     @section('content')
-
-<title>HOME</title>
-
     <head>
         <meta charset="utf-8">
         <title>{{ __('Innovations Projects')}}</title>
@@ -42,9 +39,9 @@
                                 <h1 class="display-3 text-white animated slideInDown">{{ __('Effective Video Lessons')}}</h1>
                                 <p class="fs-5 text-white mb-4 pb-2">{{ __('Browse our courses catalog and see what can help you develop yourself')}} </p>
                                 <a href="/browse_courses" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">{{ __('Browse Courses')}}</a>
-                                @guest
+                                @if(!(Auth::guard('student')->check() || Auth::guard('contentCreator')->check()))
                                 <a href="/register" class="btn btn-light py-md-3 px-md-5 animated slideInRight">{{ __('Join Now')}}</a>
-                                @endguest
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -61,9 +58,9 @@
                                 <h1 class="display-3 text-white animated slideInDown">{{ __('Articles written by experts')}}</h1>
                                 <p class="fs-5 text-white mb-4 pb-2">{{ __('Articles are written by researchers or experts in order to share the results of their original research or analysis with other researchers and students')}}.</p>
                                 <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">{{ __('Read More')}}</a>
-                                @guest
+                                @if(!(Auth::guard('student')->check() || Auth::guard('contentCreator')->check()))
                                 <a href="/register" class="btn btn-light py-md-3 px-md-5 animated slideInRight">{{ __('Join Now')}}</a>
-                                @endguest
+                                @endif
                             </div>
                         </div>
                     </div>
