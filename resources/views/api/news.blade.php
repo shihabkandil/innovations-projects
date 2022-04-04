@@ -13,17 +13,32 @@
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
 
 <section class="mx-auto d-flex flex-wrap " data-masonry='{"itemSelector:".grid-item}'>
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="4s">
+                <h6 class="section-title bg-white text-center text-primary px-3">{{ __('News Section')}}</h6>
+                <h1 class="mb-5">News</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4 justify-content-center">
     @foreach($news as $selectedNews)
         <figure class="snip grid-item">
             <div class="image"><img src={{$selectedNews['urlToImage']}} alt="" /></div>
+            <a href={{$selectedNews['url']}}></a>
             <figcaption>
                 <h3>{{\Illuminate\Support\Str::limit($selectedNews['title'],50,$end='...')}}</h3>
                 <p style="font-size: 14px">{{\Illuminate\Support\Str::limit($selectedNews['description'],120,$end='...')}}</p>
                 <h3>{{\Illuminate\Support\Str::limit($selectedNews['author'],30,$end='...')}}</h3>
             </figcaption>
         </figure>
+    
     @endforeach
+
+    </div>
 </section>
+
 
 
 @endsection
