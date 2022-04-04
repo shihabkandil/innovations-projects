@@ -14,7 +14,7 @@
 
          setInterval(function(){ 
              fetchCategory();
-         }, 10000);
+         }, 2000);
 
         function fetchCategory(){
             $.ajax({
@@ -28,7 +28,7 @@
                             '<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">\
                                 <div class="course-item bg-light">\
                                     <div class="position-relative overflow-hidden">\
-                                        <a href="Categories/'+item.id+'"><img class="img-fluid" src="img/'+item.picture+'" alt="'+item.name+'"></a>\
+                                        <a href="Categories/'+item.id+'"><img class="img-fluid" src="img/'+item.picture+'" alt="'+item.name+'" style="height:350px;"></a>\
                                     </div>\
                                     <div class="text-center p-4 pb-0">\
                                         <h5 class="mb-4">'+item.name+'</h5>\

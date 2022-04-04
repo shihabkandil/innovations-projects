@@ -37,7 +37,7 @@
                                 <h5 class="text-primary text-uppercase mb-3 animated slideInDown">{{ __('Start your journey')}}</h5>
                                 <h1 class="display-3 text-white animated slideInDown">{{ __('Effective Video Lessons')}}</h1>
                                 <p class="fs-5 text-white mb-4 pb-2">{{ __('Browse our courses catalog and see what can help you develop yourself')}} </p>
-                                <a href="/browse_courses" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">{{ __('Browse Courses')}}</a>
+                                <a href="/categories" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">{{ __('Browse Courses')}}</a>
                                 @if(!(Auth::guard('student')->check() || Auth::guard('contentCreator')->check()))
                                 <a href="/register" class="btn btn-light py-md-3 px-md-5 animated slideInRight">{{ __('Join Now')}}</a>
                                 @endif
@@ -56,7 +56,7 @@
                                 <h5 class="text-primary text-uppercase mb-3 animated slideInDown">{{ __('Helpful Articles')}}</h5>
                                 <h1 class="display-3 text-white animated slideInDown">{{ __('Articles written by experts')}}</h1>
                                 <p class="fs-5 text-white mb-4 pb-2">{{ __('Articles are written by researchers or experts in order to share the results of their original research or analysis with other researchers and students')}}.</p>
-                                <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">{{ __('Read More')}}</a>
+                                <a href="/articles" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">{{ __('Read More')}}</a>
                                 @if(!(Auth::guard('student')->check() || Auth::guard('contentCreator')->check()))
                                 <a href="/register" class="btn btn-light py-md-3 px-md-5 animated slideInRight">{{ __('Join Now')}}</a>
                                 @endif
