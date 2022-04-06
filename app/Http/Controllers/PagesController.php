@@ -3,11 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
+use App\Models\NewsApiModel;
 
 class PagesController extends Controller
 {
+
+    private $apiModel;
+
+    public function __construct(){
+        $this->apiModel = new NewsApiModel();
+    }
+
     public function index(){
-        return view('pages.index');
+        $response['news'] = $this->apiModel->fetchNews();
+        return view('pages.index', $response);
     }
 
     public function StudentRegister(){
