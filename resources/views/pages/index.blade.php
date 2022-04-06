@@ -22,6 +22,7 @@
     
         <!-- Template Stylesheet -->
         <link href="{{ asset('css/style.css')}}" rel="stylesheet">
+        <link href="{{ asset('css/news-snip.css')}}" rel="stylesheet">
     </head>
     
 
@@ -174,15 +175,30 @@
         </div>
         <!-- Courses End -->
 
-
         <div class="container-xxl py-5">
             <div class="container">
-                <div class="text-center wow fadeInUp" data-wow-delay="4s">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                     <h6 class="section-title bg-white text-center text-primary px-3">{{ __('News Section')}}</h6>
-                    <h1 class="mb-5">News</h1>
+                    <h1 class="mb-5">{{ __('News')}}</h1>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    @for ($i = 0; $i < 3; $i++)
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <figure class="snip grid-item">
+                            <div class="image"><img src={{$news[$i]['urlToImage']}} alt="" /></div>
+                            <a href={{$news[$i]['url']}}></a>
+                            <figcaption>
+                                <h3>{{\Illuminate\Support\Str::limit($news[$i]['title'],50,$end='...')}}</h3>
+                                <p style="font-size: 14px">{{\Illuminate\Support\Str::limit($news[$i]['description'],120,$end='...')}}</p>
+                                <h3>{{\Illuminate\Support\Str::limit($news[$i]['author'],30,$end='...')}}</h3>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    @endfor
                 </div>
             </div>
         </div>
+
 
         <div class="container-xxl py-5">
             <div class="container">
@@ -204,5 +220,4 @@
         <script src="{{ asset('lib/easing/easing.min.js') }}"></script>
         <script src="{{ asset('/lib/waypoints/waypoints.min.js') }}"></script>
         <script src="{{ asset('/lib/owlcarousel/owl.carousel.min.js') }}"></script>
-    
 @endsection
