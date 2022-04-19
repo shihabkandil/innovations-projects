@@ -50,7 +50,16 @@
                 <a href="/contact" class="nav-item nav-link">{{ __('Contact') }}</a>
 
                 @auth('contentCreator')
-                <a href="/contentCreator/upload" class="nav-item nav-link" style="color:red; font-weight:bold;" >{{ __('Upload Content') }}</a>
+                <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" style="color:red; font-weight:bold;" data-bs-toggle="dropdown" aria-expanded="false">{{ __('Request') }}</a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a href="contentCreator/addCourseRequest" class="dropdown-item">{{ __('Adding Course') }}</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a href="contentCreator/addContentRequest" class="dropdown-item">{{ __('Adding Content') }}</a></li>
+                        </ul>
+                    </li>
+                </ul>
                 @endauth
 
                 @auth('student')
@@ -75,8 +84,8 @@
                         <ul class="dropdown-menu" style="right: 0; left: auto;" aria-labelledby="navbarDropdown">
                             @if(Auth::guard('student')->check())
                             <li><a class="dropdown-item" href="/editProfile/{{Auth::guard('student')->user()->id}}"> Edit Profile </a></li>
-                            @endif
                             <li><hr class="dropdown-divider" /></li>
+                            @endif
                             <li><a class="dropdown-item" href="/logout">Logout</a></li>
                         </ul>
                     </li>
