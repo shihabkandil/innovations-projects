@@ -75,6 +75,6 @@ Route::post('/register/student', [RegisterController::class, 'studentRegister'])
 Route::post('/login', [LoginController::class, 'studentLogin'])->name('studentLoginForm');
 Route::post('/home', [StudentController::class, 'updateStudent'])->name('update');
 
-Route::post('/uploadFile', [FirestorageController::class, 'store']);
+Route::post('/uploadFile', [FirestorageController::class, 'firebaseStore']);
 
 
