@@ -7,6 +7,8 @@ use Kreait\Firebase\Exception\FirebaseException;
 use Kreait\Firebase\Auth as FirebaseAuth;
 use Kreait\Firebase\Auth\SignInResult\SignInResult;
 use Google\Cloud\Firestore\FirestoreClient;
+use App\Models\UploadedContent;
+use App\Models\File;
 
 class FirestorageController extends Controller
 {
@@ -17,17 +19,6 @@ class FirestorageController extends Controller
      */
     public function index()
     {
-        //
-        $expiresAt = new \DateTime('tomorrow');
-        $imageReference = app('firebase.storage')->getBucket()->object("Images/defT5uT7SDu9K5RFtIdl.png");
-
-        if ($imageReference->exists()) {
-          $image = $imageReference->signedUrl($expiresAt);
-        } else {
-          $image = null;
-        }
-
-        return view('img',compact('image'));
     }
 
     /**
@@ -46,45 +37,34 @@ class FirestorageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-
-/*
-        $i = 0;
-        foreach($request->file('fileNames') as $file){
-            // name it differently by time and count
-            $fileName = time() . $i . '.' . $file->getClientOriginalExtension();
-            // move the file to desired folder
-            $file->move('folderName/', $imageName);
-            // assign the location of folder to the model
-            $photo->image = 'folderName/' . $imageName;
-            $photo->status = 1;
-            $photo->save();
-            $i++;
-        }
-        
-*/
+    public function firebaseStore(Request $request)
+    { 
         $request->validate([
           'uploadFiles' => 'required',
         ]);
         $input = $request->all();
         $files = $request->file('uploadFiles');
 
+        $id = UploadedContent::getFreeID();
+
         foreach($files as $singleFile){
-        $firebase_storage_path = 'Images/';
+        $firebase_storage_path = 'ContentCreatorsContent/';
         $localfolder = public_path('firebase-temp-uploads') .'/';
         $extension = $singleFile->getClientOriginalExtension();
         $file = time().'.'.$singleFile->extension();
-
         if ($singleFile->move($localfolder, $file)) {
           $uploadedfile = fopen($localfolder.$file, 'r');
+          
+          //Save name in sql database
+          $sqlFileSave = new File();
+          $sqlFileSave->store($file,$id);
+
           app('firebase.storage')->getBucket()->upload($uploadedfile, ['name' => $firebase_storage_path . $file]);
           unlink($localfolder . $file);
+            }
         }
+      return back()->withInput();
     }
-    return back()->withInput();
-}
 
     /**
      * Display the specified resource.
