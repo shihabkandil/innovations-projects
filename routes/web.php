@@ -66,7 +66,7 @@ Route::get('/news', [NewsApiController::class, 'showNews'] );
 
 Route::get('/course/{id}', [CoursesController::class, 'showCourse'] );
 
-Route::get('contentCreator/upload',[ContentCreatorController::class,'requestUploadContent']);
+Route::get('contentCreator/addContentRequest',[ContentCreatorController::class,'requestUploadContent']);
 
 Route::post('/register/contentCreator', [RegisterController::class, 'contentCreatorRegister'])->name('contentCreatorRegisterForm');
 Route::post('/login/contentCreator', [LoginController::class, 'contentCreatorLogin'])->name('contentCreatorLoginForm');
@@ -74,5 +74,7 @@ Route::post('/login/contentCreator', [LoginController::class, 'contentCreatorLog
 Route::post('/register/student', [RegisterController::class, 'studentRegister'])->name('studentRegisterForm');
 Route::post('/login', [LoginController::class, 'studentLogin'])->name('studentLoginForm');
 Route::post('/home', [StudentController::class, 'updateStudent'])->name('update');
+
+Route::post('/uploadFile', [FirestorageController::class, 'firebaseStore']);
 
 
