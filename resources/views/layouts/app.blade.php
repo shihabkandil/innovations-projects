@@ -57,6 +57,8 @@
                             <li><a href="contentCreator/addCourseRequest" class="dropdown-item">{{ __('Adding Course') }}</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a href="contentCreator/addContentRequest" class="dropdown-item">{{ __('Adding Content') }}</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a href="contentCreator/writeArticle" class="dropdown-item">{{ __('Write an Article') }}</a></li>
                         </ul>
                     </li>
                 </ul>

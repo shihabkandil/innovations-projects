@@ -44,7 +44,6 @@ Route::get('/callback/{service}', [SocialController::class, 'callback']);
 Route::get('/Categories/{id}' , [CoursesController::class , 'CoursesCategories'] );
 Route::get('/fetch-categories' , [CategoryController::class , 'fetchCategory'] );
 
-
 Route::resource('category','CategoryController');
 
 Route::get('/cart', [CartController::class, 'index'] );
@@ -67,6 +66,8 @@ Route::get('/news', [NewsApiController::class, 'showNews'] );
 Route::get('/course/{id}', [CoursesController::class, 'showCourse'] );
 
 Route::get('contentCreator/addContentRequest',[ContentCreatorController::class,'requestUploadContent']);
+Route::get('contentCreator/writeArticle',[ContentCreatorController::class,'writeArticle']);
+Route::post('contentCreator/submitArticle',[ArticleController::class,'submitArticle']);
 
 Route::post('/register/contentCreator', [RegisterController::class, 'contentCreatorRegister'])->name('contentCreatorRegisterForm');
 Route::post('/login/contentCreator', [LoginController::class, 'contentCreatorLogin'])->name('contentCreatorLoginForm');
