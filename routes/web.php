@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\AdminCoursesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,10 +49,10 @@ Route::resource('category','CategoryController');
 
 Route::get('/cart', [CartController::class, 'index'] );
 
-Route::prefix('admin')->middleware(['auth' , 'isAdmin'])->group(function(){
+
     Route::get('/dashboard' , [DashboardController::class,'index']);
     Route::get('/AdminLogin', [AdminLoginController::class, 'index'] );
-});
+
 
 Route::get('/register/contentCreator', [RegisterController::class,'showContentCreatorRegister']);
 Route::get('/login/contentCreator', [LoginController::class, 'showContentCreatorLogin']);
@@ -78,4 +79,4 @@ Route::post('/home', [StudentController::class, 'updateStudent'])->name('update'
 
 Route::post('/uploadFile', [FirestorageController::class, 'firebaseStore']);
 
-
+Route::get('/dashboardAdminCourses', [AdminCoursesController::class , 'index']);
