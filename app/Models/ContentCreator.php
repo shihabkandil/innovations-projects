@@ -17,7 +17,7 @@ class ContentCreator extends Authenticatable implements MustVerifyEmail
     protected $table = 'contentcreators';
 
         protected $fillable = [
-            'name', 'email', 'password'
+            'name', 'email', 'password', 'cv'
         ];
 
         protected $hidden = [
