@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@if(App::getLocale() == 'en')
+<html lang="{{App::getLocale()}}" dir="ltr">
+ @else
+ <html lang="{{App::getLocale()}}" dir="rtl">
+ @endif
 <head>
     <meta charset="utf-8">
     <title>@yield('title')</title>
@@ -43,11 +47,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="/home" class="nav-item nav-link">{{ __('Home') }}</a>
-                <a href="/news" class="nav-item nav-link">{{ __('News') }}</a>
-                <a href="/articles" class="nav-item nav-link">{{ __('Articles') }}</a>
-                <a href="/about" class="nav-item nav-link">{{ __('About') }}</a>
-                <a href="/contact" class="nav-item nav-link">{{ __('Contact') }}</a>
+                <a href="/home" class="nav-item nav-link">{{ __('messages.Home') }}</a>
+                <a href="/news" class="nav-item nav-link">{{ __('messages.News') }}</a>
+                <a href="/articles" class="nav-item nav-link">{{ __('messages.Articles') }}</a>
+                <a href="/about" class="nav-item nav-link">{{ __('messages.About us') }}</a>
+                <a href="/contact" class="nav-item nav-link">{{ __('messages.Contact us') }}</a>
 
                 @auth('contentCreator')
                 <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
@@ -62,13 +66,23 @@
                 </ul>
                 @endauth
 
+                <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ __('messages.Language') }}</a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a href="/changeLocale/en" class="dropdown-item">{{ __('messages.English') }}</a></li>
+                            <li><a href="/changeLocale/ar" class="dropdown-item">{{ __('messages.Arabic') }}</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
                 @auth('student')
                 <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ __('Browse Courses') }}</a>
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ __('Courses') }}</a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li><a href="/categories" class="dropdown-item">{{ __('Browse Courses') }}</a></li>
-                            <li><a href="/bundles" class="dropdown-item">{{ __('Bundles') }}</a></li>
+                            <li><a href="/categories" class="dropdown-item">{{ __('messages.View Courses') }}</a></li>
+                            <li><a href="/bundles" class="dropdown-item">{{ __('messages.Bundles') }}</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a href="/subscriptions" class="dropdown-item" style="color:red; font-weight:bold;" >{{ __('Subscribe') }}</a></li>
                         </ul>
@@ -83,7 +97,7 @@
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                         <ul class="dropdown-menu" style="right: 0; left: auto;" aria-labelledby="navbarDropdown">
                             @if(Auth::guard('student')->check())
-                            <li><a class="dropdown-item" href="/editProfile/{{Auth::guard('student')->user()->id}}"> Edit Profile </a></li>
+                            <li><a class="dropdown-item" href="/editProfile/{{Auth::guard('student')->user()->id}}">Edit Profile</a></li>
                             <li><hr class="dropdown-divider" /></li>
                             @endif
                             <li><a class="dropdown-item" href="/logout">Logout</a></li>
@@ -113,8 +127,8 @@
                 @endif
                 
                 @if(!(Auth::guard('contentCreator')->check() || Auth::guard('student')->check()))
-                    <a href="/login" id="Login" class="nav-item nav-link">{{ __('Login') }}</a>
-                    <a href="/register" id="Join us"class="btn btn-warning py-4 px-lg-5 d-none d-lg-block" style="border-radius:0px;">{{ __('Join us') }}<i class="fa fa-arrow-right ms-3"></i></a>
+                    <a href="/login" id="Login" class="nav-item nav-link">{{ __('messages.Login') }}</a>
+                    <a href="/register" id="Join us"class="btn btn-warning py-4 px-lg-5 d-none d-lg-block" style="border-radius:0px;">{{ __('messages.Join us') }}<i class="fa fa-arrow-right ms-3"></i></a>
                 @endif
         </div>
       
