@@ -35,7 +35,7 @@ class SocialController extends Controller
                         'facebook_id' => $user->getId(),
                     ],[
                         'name' => $user->getName(),
-                        'email' => $user->getEmail(),
+                        'email' => $user->getEmail() . ':facebook',
                         'password' => Hash::make($user->getId())
                     ]);
              
@@ -53,9 +53,10 @@ class SocialController extends Controller
                     $user = Socialite::driver('google') -> user();
         
                     $saveUser = Student::updateOrCreate([
-                        'email' => $user->getEmail(),
+                        'google_id' => $user->getId(),
                     ],[
                         'name' => $user->getName(),
+                        'email' => $user->getEmail() . ':google',
                         'password' => Hash::make($user->getId())
                     ]);
              

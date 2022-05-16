@@ -10,7 +10,7 @@
             </div>
             <div class="row g-4">
                 <div class="col-lg-4 col-md-12 mx-auto">
-                    <form method="POST" action="{{ route('contentCreatorRegisterForm') }}">
+                    <form method="POST" action="{{ route('contentCreatorRegisterForm') }}" enctype="multipart/form-data">
                         @csrf 
                         <div class="row g-3"> 
                             <div class="col-12">
@@ -63,10 +63,14 @@
                             </div>
 
                             <div class="mb-3">
-                                <label for="formFile" class="form-label">Upload your CV</label>
-                                <input class="form-control" type="file" id="formFile">
+                                <label for="formFile" class="form-label">Upload your CV as a PDF file</label>
+                                <input class="form-control" type="file" id="formFile"  name="cv">
                             </div>
-
+                                @error('cv')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             <div class="col-12 ">
                                 <button class="btn btn-warning w-100 py-3" type="submit">{{ __('Register') }}</button>
                             </div>
