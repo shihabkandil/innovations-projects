@@ -23,6 +23,10 @@ class ContentCreator extends Authenticatable implements MustVerifyEmail
         protected $hidden = [
             'password', 'remember_token',
         ];
+
+        static public function getall(){ 
+            return ContentCreator::all(); 
+        }
 }
 
 

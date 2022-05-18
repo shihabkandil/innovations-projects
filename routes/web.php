@@ -48,10 +48,11 @@ Route::resource('category','CategoryController');
 
 Route::get('/cart', [CartController::class, 'index'] );
 
-Route::prefix('admin')->middleware(['auth' , 'isAdmin'])->group(function(){
+//Route::prefix('admin')->middleware(['auth' , 'isAdmin'])->group(function(){
     Route::get('/dashboard' , [DashboardController::class,'index']);
     Route::get('/AdminLogin', [AdminLoginController::class, 'index'] );
-});
+    Route::get('/viewContentCreators', [AdminController::class, 'viewContentCreators'] );
+//});
 
 Route::get('/register/contentCreator', [RegisterController::class,'showContentCreatorRegister']);
 Route::get('/login/contentCreator', [LoginController::class, 'showContentCreatorLogin']);
