@@ -46,17 +46,26 @@ Route::group(['middleware'=>'language'], function () {
         Route::get('/fetch-categories' , [CategoryController::class , 'fetchCategory'] );
 
 
+
         Route::resource('category','CategoryController');
 
         Route::get('/cart', [CartController::class, 'index'] );
+
+        Route::resource('category','CategoryController');
 
         Route::prefix('admin')->middleware(['auth' , 'isAdmin'])->group(function(){
             Route::get('/dashboard' , [DashboardController::class,'index']);
             Route::get('/AdminLogin', [AdminLoginController::class, 'index'] );
         });
 
+
         Route::get('/register/contentCreator', [RegisterController::class,'showContentCreatorRegister']);
         Route::get('/login/contentCreator', [LoginController::class, 'showContentCreatorLogin']);
+//Route::prefix('admin')->middleware(['auth' , 'isAdmin'])->group(function(){
+    Route::get('/dashboard' , [DashboardController::class,'index']);
+    Route::get('/AdminLogin', [AdminLoginController::class, 'index'] );
+    Route::get('/viewContentCreators', [AdminController::class, 'viewContentCreators'] );
+//});
 
         Route::get('/register/student', [RegisterController::class,'showStudentRegister'])->name('studentRegisterForm');
         Route::get('/login', [LoginController::class, 'showStudentLogin'])->name('studentLoginForm');
@@ -71,6 +80,9 @@ Route::group(['middleware'=>'language'], function () {
 
         Route::post('/register/contentCreator', [RegisterController::class, 'contentCreatorRegister'])->name('contentCreatorRegisterForm');
         Route::post('/login/contentCreator', [LoginController::class, 'contentCreatorLogin'])->name('contentCreatorLoginForm');
+        Route::get('contentCreator/addContentRequest',[ContentCreatorController::class,'requestUploadContent']);
+        Route::get('contentCreator/writeArticle',[ContentCreatorController::class,'writeArticle']);
+        Route::post('contentCreator/submitArticle',[ArticleController::class,'submitArticle']);
 
         Route::post('/register/student', [RegisterController::class, 'studentRegister'])->name('studentRegisterForm');
         Route::post('/login', [LoginController::class, 'studentLogin'])->name('studentLoginForm');
