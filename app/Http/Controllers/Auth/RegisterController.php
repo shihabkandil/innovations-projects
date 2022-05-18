@@ -61,6 +61,7 @@ class RegisterController extends Controller
                 'name' => ['required', 'string', 'max:255'],
                 'email' => ['required', 'string', 'email', 'max:255', 'unique:contentCreators,email'],
                 'password' => ['required', 'string', 'min:8', 'confirmed'],
+                'cv'=> ['required','mimes:pdf','max:10000'],
             ]);
         }
         else if($guard == 'student'){
@@ -98,10 +99,24 @@ class RegisterController extends Controller
 
         $this->validator($request->all(),'contentCreator')->validate();
 
+        $CVFile = $request->file('cv');
+
+        $firebase_storage_path = 'ContentCreatorsContent/CV/';
+        $localfolder = public_path('firebase-temp-uploads') .'/';
+        $extension = $CVFile->getClientOriginalExtension();
+        $file = time().'.'.$CVFile->extension();
+        if ($CVFile->move($localfolder, $file)) {
+          $uploadedfile = fopen($localfolder.$file, 'r');
+
+          app('firebase.storage')->getBucket()->upload($uploadedfile, ['name' => $firebase_storage_path . $file]);
+          unlink($localfolder . $file);
+        }
+
         $contentCreator = ContentCreator::create([
             'name' => $request['name'],
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
+            'cv'=> $file,
         ]);
 
         if (Auth::guard('contentCreator')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {

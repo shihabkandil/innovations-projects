@@ -3,7 +3,8 @@
 <title>Category {{$id}} Courses</title>
 
 @section('content')
-
+<br><br>
+<div class="row g-4 justify-content-center">
     @foreach($courses as $course)
     
     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -18,7 +19,7 @@
     </div>
      
     @endforeach
-
+</div>
     
 
 

@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@if(App::getLocale() == 'en')
+<html lang="{{App::getLocale()}}" dir="ltr">
+ @else
+ <html lang="{{App::getLocale()}}" dir="rtl">
+ @endif
 <head>
     <meta charset="utf-8">
     <title>@yield('title')</title>
@@ -19,13 +23,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Libraries Stylesheet -->
-    <link href="{{asset('lib/animate/animate.min.css')}}" rel="stylesheet">
-    <link href="{{asset('lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
-
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
-
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
     <!-- Template Stylesheet -->
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
 
@@ -35,34 +34,63 @@
 <body>
 
 <!-- Navbar Start -->
-<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0 d-flex" >
+        @if(App::getLocale() == 'en')
         <a href="/" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+        @else
+        <a href="/" class="navbar-brand d-flex align-items-center px-4 px-lg-5 collapse navbar-collapse" id="navbarCollapse">
+        @endif  
             <h2 class="m-0 text-warning"><i class="fa fa-book me-3"></i>{{ __('Innovations Projects')}}</h2>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
+        @if(App::getLocale() == 'en')
         <div class="collapse navbar-collapse" id="navbarCollapse">
+        @else
+        <div>
+        @endif
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="/home" class="nav-item nav-link">{{ __('Home') }}</a>
-                <a href="/news" class="nav-item nav-link">{{ __('News') }}</a>
-                <a href="/articles" class="nav-item nav-link">{{ __('Articles') }}</a>
-                <a href="/about" class="nav-item nav-link">{{ __('About') }}</a>
-                <a href="/contact" class="nav-item nav-link">{{ __('Contact') }}</a>
+                <a href="/home" class="nav-item nav-link">{{ __('messages.Home') }}</a>
+                <a href="/news" class="nav-item nav-link">{{ __('messages.News') }}</a>
+                <a href="/articles" class="nav-item nav-link">{{ __('messages.Articles') }}</a>
+                <a href="/about" class="nav-item nav-link">{{ __('messages.About us') }}</a>
+                <a href="/contact" class="nav-item nav-link">{{ __('messages.Contact us') }}</a>
 
                 @auth('contentCreator')
-                <a href="/contentCreator/upload" class="nav-item nav-link" style="color:red; font-weight:bold;" >{{ __('Upload Content') }}</a>
+                <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" style="color:red; font-weight:bold;" data-bs-toggle="dropdown" aria-expanded="false">{{ __('Request') }}</a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a href="contentCreator/addCourseRequest" class="dropdown-item">{{ __('messages.Adding Course') }}</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a href="contentCreator/addContentRequest" class="dropdown-item">{{ __('messages.Adding Content') }}</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a href="contentCreator/writeArticle" class="dropdown-item">{{ __('Write an Article') }}</a></li>
+                        </ul>
+                    </li>
+                </ul>
                 @endauth
+
+                <ul class="navbar-nav ms-auto ms-md-0 p-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ __('messages.Language') }}</a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a href="/changeLocale/en" class="dropdown-item">{{ __('messages.English') }}</a></li>
+                            <li><a href="/changeLocale/ar" class="dropdown-item">{{ __('messages.Arabic') }}</a></li>
+                        </ul>
+                    </li>
+                </ul>
 
                 @auth('student')
                 <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ __('Browse Courses') }}</a>
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ __('messages.Courses') }}</a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li><a href="/categories" class="dropdown-item">{{ __('Browse Courses') }}</a></li>
-                            <li><a href="/bundles" class="dropdown-item">{{ __('Bundles') }}</a></li>
+                            <li><a href="/categories" class="dropdown-item">{{ __('messages.View Courses') }}</a></li>
+                            <li><a href="/bundles" class="dropdown-item">{{ __('messages.Bundles') }}</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a href="/subscriptions" class="dropdown-item" style="color:red; font-weight:bold;" >{{ __('Subscribe') }}</a></li>
+                            <li><a href="/subscriptions" class="dropdown-item" style="color:red; font-weight:bold;" >{{ __('messages.Subscribe') }}</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -75,10 +103,10 @@
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                         <ul class="dropdown-menu" style="right: 0; left: auto;" aria-labelledby="navbarDropdown">
                             @if(Auth::guard('student')->check())
-                            <li><a class="dropdown-item" href="/editProfile/{{Auth::guard('student')->user()->id}}"> Edit Profile </a></li>
-                            @endif
+                            <li><a class="dropdown-item" href="/editProfile/{{Auth::guard('student')->user()->id}}">Edit Profile</a></li>
                             <li><hr class="dropdown-divider" /></li>
-                            <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                            @endif
+                            <li><a class="dropdown-item" href="/logout">{{__('messages.Logout')}}</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -105,8 +133,15 @@
                 @endif
                 
                 @if(!(Auth::guard('contentCreator')->check() || Auth::guard('student')->check()))
-                    <a href="/login" id="Login" class="nav-item nav-link">{{ __('Login') }}</a>
-                    <a href="/register" id="Join us"class="btn btn-warning py-4 px-lg-5 d-none d-lg-block" style="border-radius:0px;">{{ __('Join us') }}<i class="fa fa-arrow-right ms-3"></i></a>
+                    <a href="/login" id="Login" class="nav-item nav-link px-2">{{ __('messages.Login') }}</a>
+                     @if(App::getLocale() == 'en')
+                     <a href="/register" id="Join us"class="btn btn-warning py-4 px-lg-5 nav-item" style="border-radius: 10px 0px 0px 10px;">{{ __('messages.Join us') }}
+                        <i class="fa fa-arrow-right mx-2"></i></a>
+                         @else
+                         <a href="/register" id="Join us"class="btn btn-warning py-4 px-lg-5 nav-item" style="border-radius: 0px 10px 10px 0px;">{{ __('messages.Join us') }}
+                         <i class="fa fa-arrow-left mx-2"></i></a>
+                         @endif 
+                        
                 @endif
         </div>
       
@@ -118,7 +153,7 @@
     </div>
 
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s" dir="ltr">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
@@ -188,7 +223,7 @@
     <script src="{{asset('lib/wow/wow.min.js')}}"></script>
     <script src="{{asset('lib/easing/easing.min.js')}}"></script>
     <script src="{{asset('lib/waypoints/waypoints.min.js')}}"></script>
-    <script src="{{asset('lib/owlcarousel/owl.carousel.min.js')}}"></script>
+    <script src="{{asset('lib/owlcarousel/owl.carousel.js')}}"></script>
 
     <!-- Template Javascript -->
     <script src="{{asset('js/main.js')}}"></script>

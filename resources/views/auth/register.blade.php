@@ -35,7 +35,7 @@
                                         <img class="img-fluid" src="{{ asset('img/instructor.jpg')}}" alt="">
                                     </div>
                                     <div class="text-center p-4 pb-0">
-                                        <h5 class="mb-4">Join as Instructor</h5>
+                                        <h5 class="mb-4">Join as Content Creator</h5>
                                     </div>
                                 </div>
                             </div>
