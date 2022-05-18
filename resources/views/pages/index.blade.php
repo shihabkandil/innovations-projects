@@ -52,7 +52,7 @@
                             <div class="col-sm-10 col-lg-8">
                                 <h5 class="mx-4 text-primary text-uppercase mb-3 animated slideInDown">{{ __('messages.Helpful Articles')}}</h5>
                                 <h1 class="mx-4 display-3 text-white animated slideInDown">{{ __('messages.Articles written by experts')}}</h1>
-                                <p class="mx-4 fs-5 text-white mb-4 pb-2">{{ __('Articles are written by researchers or experts in order to share the results of their original research or analysis with other researchers and students')}}.</p>
+                                <p class="mx-4 fs-5 text-white mb-4 pb-2">{{ __('messages.Articles are written by researchers or experts in order to share the results of their original research or analysis with other researchers and students')}}.</p>
                                 <a href="/articles" class="mx-4 btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">{{ __('messages.Read More')}}</a>
                                 @if(!(Auth::guard('student')->check() || Auth::guard('contentCreator')->check()))
                                 <a href="/register" class="mx-4 btn btn-light py-md-3 px-md-5 animated slideInRight">{{ __('messages.Join Now')}}</a>
