@@ -73,6 +73,7 @@ return [
             'password' => env('DB_PASSWORD', ''),
             'charset' => 'utf8',
             'prefix' => '',
+            'schema'   => 'public',
             'prefix_indexes' => true,
             'search_path' => 'public',
             'sslmode' => 'prefer',
@@ -138,7 +139,7 @@ return [
             'url' => env('REDIS_URL'),
             'host' => env('REDIS_HOST', '127.0.0.1'),
             'password' => env('REDIS_PASSWORD'),
-            'port' => env('REDIS_PORT', '6379'),
+            'port' => env('REDIS_PORT', '5432'),
             'database' => env('REDIS_CACHE_DB', '1'),
         ],
 

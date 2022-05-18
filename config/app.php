@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'https://innovationsprojectsweb.herokuapp.com'),
 
     'asset_url' => env('ASSET_URL'),
 
@@ -135,7 +135,7 @@ return [
     | Environment variables for News API
     |
     */
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'https://innovationsprojectsweb.herokuapp.com'),
 
     'news_api_url' => env('NEWS_API_URL', null),
     'news_api_key' => env('NEWS_API_KEY', null),
