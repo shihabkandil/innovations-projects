@@ -19,15 +19,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view("pages.browseCategory");
-    }
-
-
-    public function fetchCategory(){
-        $categories = Category::all();
-        return response()->json([
-            'categories'=>$categories,
-        ]);
+        return view('pages.browseCategory',['categories' => $this->cat->getAll()]);
     }
     
 
