@@ -43,7 +43,6 @@ Route::group(['middleware'=>'language'], function () {
         Route::get('/callback/{service}', [SocialController::class, 'callback']);
 
         Route::get('/Categories/{id}' , [CoursesController::class , 'CoursesCategories'] );
-        Route::get('/fetch-categories' , [CategoryController::class , 'fetchCategory'] );
 
 
 
