@@ -58,11 +58,12 @@ Route::group(['middleware'=>'language'], function () {
 
         Route::resource('category','CategoryController');
 
-        Route::middleware(['auth'])->group(function(){
-            Route::get('/dashboard' , [AdminController::class,'adminDash']);
-        });
-
+       
+        Route::get('/dashboard' , [AdminController::class,'adminDash']);
+        
+        
         Route::get('/AdminLogin', [AdminController::class, 'index'] );
+        Route::post('/AdminLogin', [AdminController::class, 'adminLogin'])->name('adminLoginForm');
 
 
         Route::get('/register/contentCreator', [RegisterController::class,'showContentCreatorRegister']);

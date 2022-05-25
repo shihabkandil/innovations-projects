@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ContentCreator;
+use Auth;
+use App\Http\Controllers\Controller;
 
 class AdminController extends Controller
 {
@@ -23,8 +25,23 @@ class AdminController extends Controller
         
      }
 
-    
+
     public function viewContentCreators(){
         return view('admin.viewContentCreators',['contentCreators' => ContentCreator::getall()]);
     }
+
+    public function adminLogin(Request $request){
+            
+        $this->validate($request, [
+            'email' => 'required|email',
+            'password' => 'required|min:8'
+        ]);
+
+        if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
+            return redirect('/dashboard');
+        }
+
+        return back()->withInput($request->only('email'))->withErrors(['email' => 'Please enter correct credentials']);
+}
+
 }
