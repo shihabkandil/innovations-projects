@@ -17,6 +17,12 @@ class AdminController extends Controller
         return view('pages.AdminLogin');
     }
 
+    public function adminDash(){
+        
+        return view('admin.dashboard');
+        
+     }
+
     
     public function viewContentCreators(){
         return view('admin.viewContentCreators',['contentCreators' => ContentCreator::getall()]);
