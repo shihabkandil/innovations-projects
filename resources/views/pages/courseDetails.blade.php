@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+<?php 
+    use App\Http\Controllers\FirestorageController;
+    use App\Models\ContentCreator;
+    ?>
+
 <html lang="en">
 
 <head>
@@ -23,21 +28,21 @@
 <body>
     
 <div class="banner-image">
-    <img src="{{asset('img/img_2.jpg')}}">
+    <img src="{{asset('img/img_2.jpg')}}" style="width: 100%;">
     <div class="text-block">
         <div  id="courses_details_wrapper">       
                         <div class="courses_details">
                             <div class="single-curses-contert">
                                 <div class="details-img-bxo">
-                                    <img src="{{asset('img/img.jpg')}}" alt="" class="img-fluid">
+                                    <img src="<?php echo FirestorageController::fetch('Courses/Picture/',$course->CoursePicture)?>" alt="{{$course->CourseName}}" class="img-fluid">
                                 </div>
                                 <h2 style="color:white">{{$course->CourseName}} Course</h2>
                                 <div class="review-option ">
                                     <div class="teacher-info">
                                         <img src="{{asset('img/review_1.jpg')}}" alt="" class="img-fluid">
                                         <div class="teacher-name m-2">
-                                            <h4 class="sub-header-course">Teacher</h4>
-                                            <span>DAVID MARTIN</span>
+                                            <h4 class="sub-header-course">Instructor</h4>
+                                            <span><?php echo ContentCreator::getContentCreator($course->CourseInstructorID)[0]->name; ?></span>
                                         </div>
                                     </div>
                                     <div class="review-rank mx-5">
@@ -55,7 +60,7 @@
                                     </div>
                                     <div class="teacher_fee single_items m-2 ">
                                         <h4 class="sub-header-course">Price</h4>
-                                        <h2 style="color: antiquewhite" class="sub-header-course">EG 5000</h2>
+                                        <h2 style="color: antiquewhite" class="sub-header-course">EGP {{$course->CoursePrice}}</h2>
                                     </div>
                                     <div class="buy_btn single_items mx-2">
                                         <a style="color:black" href="#" title="">Add to cart</a>
@@ -255,8 +260,7 @@
                                             <a href="#" title=""><img src="" alt="" class="img-fluid"></a>
                                         </div>
                                         <div class="teachers_name">
-                                            <h5><a href="#" title="">Jonson Park</a></h5>
-                                            <span>Associate Professor</span>
+                                            <h5 class='text-warning'><?php echo ContentCreator::getContentCreator($course->CourseInstructorID)[0]->name;?></h5>
                                         </div>
                                     </div>
                                 </div>
