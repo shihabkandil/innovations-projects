@@ -2,6 +2,7 @@
 
 return [
     'Language' => 'Language',
+    'Logout' => 'Logout',
     'Subscribe' => 'Subscribe',
     'Courses' => 'Courses' ,
     'View Courses' => 'View Courses',
