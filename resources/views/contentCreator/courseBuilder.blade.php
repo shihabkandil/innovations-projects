@@ -154,22 +154,28 @@
     
     var counter = 1;
     $('#add_lesson_btn').click(function(event) {
-    var lesson = 
-    '<div class="panel panel-default">'+
-    '<div class="panel-heading">'+
-    '<h4 class="panel-title">'+
-    '<a data-toggle="collapse" data-parent="#accordion" href="#collapse'+counter+'" class="collapsed">'+
-    'Lesson '+counter+' Name: <input type="text" name="lesson'+counter+'"Name/> </a>'+
-    '</h4>'+
-    '</div>'+
-    '<div id="collapse'+counter+'" class="panel-collapse collapse">'+
-    '<div class="panel-body">'+
-    '<textarea name="lesson '+counter+'Body" cols="80" rows="10"></textarea>'+
-    '</div>'+
-    '</div>'+
-    '</div>';
-    $('#accordion').append(lesson);
-    counter++;
+        var lesson = 
+        '<div class="panel panel-default">'+
+        '<div class="panel-heading">'+
+        '<h4 class="panel-title">'+
+        '<a data-toggle="collapse" data-parent="#accordion" href="#collapse'+counter+'" class="collapsed">'+
+        'Lesson Name: <input type="text" name="lesson'+counter+'"Name/> </a>'+
+        '</h4>'+
+        '</div>'+
+        '<div id="collapse'+counter+'" class="panel-collapse collapse">'+
+        '<div class="panel-body">'+
+        '<textarea name="lesson '+counter+'Body" cols="80" rows="10"></textarea>'+
+        '</div>'+
+        '</div>'+
+        '<button type="button" style="background-color: red; color: white; border: none;" id="delete_lesson_btn">Delete Lesson</button>';
+        '</div>'+
+        $('#accordion').append(lesson);
+        counter++;
+    });
+
+    $(document).on('click', '#delete_lesson_btn', function(){
+        $(this).closest("div").remove();
+        counter--;
     });
 
 </script>
