@@ -6,10 +6,10 @@ use App\Models\Category;
 class CategoryController extends Controller
 {
 
-    public $cat; 
+    public $category; 
 
    public function __construct(){
-        $this->cat= new Category();
+        $this->category= new Category();
    }
    
     /**
@@ -19,7 +19,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('pages.browseCategory',['categories' => $this->cat->getAll()]);
+        return view('pages.browseCategory',['categories' => $this->category->getAll()]);
     }
     
 
