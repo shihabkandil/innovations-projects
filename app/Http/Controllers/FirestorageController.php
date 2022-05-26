@@ -66,6 +66,17 @@ class FirestorageController extends Controller
       return back()->withInput();
     }
 
+
+    public static function fetch($path, $id){
+        $expiresAt = new \DateTime('tomorrow');  
+        $fileReference = app('firebase.storage')->getBucket()->object($path.$id);  
+        if($fileReference->exists()){
+            return $file = $fileReference->signedUrl($expiresAt); 
+        }  
+            
+    }
+    
+
     /**
      * Display the specified resource.
      *
