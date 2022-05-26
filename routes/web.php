@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\AdminCoursesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,6 +50,9 @@ Route::group(['middleware'=>'language'], function () {
 
         Route::resource('category','CategoryController');
 
+        Route::get('/dashboard' , [DashboardController::class,'index']);
+        Route::get('/AdminLogin', [AdminLoginController::class, 'index'] );
+
         Route::get('/cart', [CartController::class, 'index'] );
 
         Route::resource('category','CategoryController');
@@ -57,15 +61,17 @@ Route::group(['middleware'=>'language'], function () {
             Route::get('/dashboard' , [DashboardController::class,'index']);
             Route::get('/AdminLogin', [AdminLoginController::class, 'index'] );
         });
-
+        
+        // Without Middleware for testing only !
+        Route::get('/dashboard' , [DashboardController::class,'index']);
+        Route::get('/AdminLogin', [AdminLoginController::class, 'index'] );
 
         Route::get('/register/contentCreator', [RegisterController::class,'showContentCreatorRegister']);
         Route::get('/login/contentCreator', [LoginController::class, 'showContentCreatorLogin']);
-//Route::prefix('admin')->middleware(['auth' , 'isAdmin'])->group(function(){
-    Route::get('/dashboard' , [DashboardController::class,'index']);
-    Route::get('/AdminLogin', [AdminLoginController::class, 'index'] );
-    Route::get('/viewContentCreators', [AdminController::class, 'viewContentCreators'] );
-//});
+  
+
+  
+        Route::get('/viewContentCreators', [AdminController::class, 'viewContentCreators'] );
 
         Route::get('/register/student', [RegisterController::class,'showStudentRegister'])->name('studentRegisterForm');
         Route::get('/login', [LoginController::class, 'showStudentLogin'])->name('studentLoginForm');
@@ -94,6 +100,8 @@ Route::group(['middleware'=>'language'], function () {
             \Session::put('locale', $lang);
             return redirect()->back();
         });
+
+Route::get('/dashboardAdminCourses', [AdminCoursesController::class , 'index']);
 
 });
 
