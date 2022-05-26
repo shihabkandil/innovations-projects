@@ -669,9 +669,9 @@
             ],
             "support": {
                 "issues": "https://github.com/firebase/php-jwt/issues",
-                "source": "https://github.com/firebase/php-jwt/tree/v6.1.2"
+                "source": "https://github.com/firebase/php-jwt/tree/v6.2.0"
             },
-            "time": "2022-04-21T14:37:18+00:00"
+            "time": "2022-05-13T20:54:50+00:00"
         },
         {
             "name": "fruitcake/php-cors",
@@ -804,16 +804,16 @@
         },
         {
             "name": "google/cloud-core",
-            "version": "v1.44.4",
+            "version": "v1.45.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-cloud-php-core.git",
-                "reference": "971b7e163e0cc2b282c462d3a709891af7004d53"
+                "reference": "28181b5ec2d40e9c9cdf2085096b33bac1f237fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-cloud-php-core/zipball/971b7e163e0cc2b282c462d3a709891af7004d53",
-                "reference": "971b7e163e0cc2b282c462d3a709891af7004d53",
+                "url": "https://api.github.com/repos/googleapis/google-cloud-php-core/zipball/28181b5ec2d40e9c9cdf2085096b33bac1f237fd",
+                "reference": "28181b5ec2d40e9c9cdf2085096b33bac1f237fd",
                 "shasum": ""
             },
             "require": {
@@ -863,6 +863,23 @@
             ],
             "description": "Google Cloud PHP shared dependency, providing functionality useful to all components.",
             "support": {
+                "source": "https://github.com/googleapis/google-cloud-php-core/tree/v1.45.0"
+            },
+            "time": "2022-05-13T22:51:50+00:00"
+        },
+        {
+            "name": "google/cloud-storage",
+            "version": "v1.27.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/googleapis/google-cloud-php-storage.git",
+                "reference": "51edfafd86ca3fc71e542a16961fb35bd59d7186"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/googleapis/google-cloud-php-storage/zipball/51edfafd86ca3fc71e542a16961fb35bd59d7186",
+                "reference": "51edfafd86ca3fc71e542a16961fb35bd59d7186",
+
                 "source": "https://github.com/googleapis/google-cloud-php-core/tree/v1.44.4"
             },
             "time": "2022-05-04T00:38:37+00:00"
@@ -918,9 +935,9 @@
             ],
             "description": "Cloud Storage Client for PHP",
             "support": {
-                "source": "https://github.com/googleapis/google-cloud-php-storage/tree/v1.26.3"
+                "source": "https://github.com/googleapis/google-cloud-php-storage/tree/v1.27.0"
             },
-            "time": "2022-04-27T23:24:15+00:00"
+            "time": "2022-05-13T22:51:50+00:00"
         },
         {
             "name": "google/crc32",
@@ -9246,7 +9263,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-05-16T13:16:07+00:00"
+            "time": "2022-05-12T08:19:04+00:00"
         },
         {
             "name": "spatie/laravel-ignition",
