@@ -80,8 +80,11 @@ Route::group(['middleware'=>'language'], function () {
         Route::post('/register/contentCreator', [RegisterController::class, 'contentCreatorRegister'])->name('contentCreatorRegisterForm');
         Route::post('/login/contentCreator', [LoginController::class, 'contentCreatorLogin'])->name('contentCreatorLoginForm');
         Route::get('contentCreator/addContentRequest',[ContentCreatorController::class,'requestUploadContent']);
+        Route::get('contentCreator/addCourse',[ContentCreatorController::class,'addCourse']);
+        Route::get('contentCreator/courseBuilder',[ContentCreatorController::class,'courseBuilder']);
         Route::get('contentCreator/writeArticle',[ContentCreatorController::class,'writeArticle']);
         Route::post('contentCreator/submitArticle',[ArticleController::class,'submitArticle']);
+        
 
         Route::post('/register/student', [RegisterController::class, 'studentRegister'])->name('studentRegisterForm');
         Route::post('/login', [LoginController::class, 'studentLogin'])->name('studentLoginForm');
