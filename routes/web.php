@@ -28,7 +28,12 @@ Route::group(['middleware'=>'language'], function () {
         Route::get('/bundles', [PagesController::class, 'bundles'] );
 
         Route::get('/Catigories', [CategoryController::class, 'index'] );
-        Route::get('/editProfile/{id}', [StudentController::class, 'editProfile'] );
+
+        Route::middleware(['auth'])->group(function(){
+            Route::get('/editProfile/{id}', [StudentController::class, 'editProfile'] );
+        });
+
+        
         Route::get('/categories', [CategoryController::class, 'index'] );
         Route::get('/checkout', [PagesController::class, 'checkout'] );
         Route::get('/contact', [PagesController::class, 'contact'] );
@@ -37,6 +42,7 @@ Route::group(['middleware'=>'language'], function () {
         Route::get('/subscriptions', [PagesController::class, 'subscribe'] );
 
         Route::get('/logout', [LoginController::class,'logout']);
+        
 
         Route::get('/register', [RegisterController::class,'showRegisterAs']);
 
@@ -57,22 +63,21 @@ Route::group(['middleware'=>'language'], function () {
 
         Route::resource('category','CategoryController');
 
-        Route::prefix('admin')->middleware(['auth' , 'isAdmin'])->group(function(){
-            Route::get('/dashboard' , [DashboardController::class,'index']);
-            Route::get('/AdminLogin', [AdminLoginController::class, 'index'] );
-        });
+        Route::group(['middleware' => ['auth:admin']], function() {
+            Route::get('/dashboard' , [AdminController::class,'adminDash']);
+            Route::get('/AdminLogout', [AdminController::class,'logout']);
+            Route::get('/viewContentCreators', [AdminController::class, 'viewContentCreators'] );
+          });
         
-        // Without Middleware for testing only !
-        Route::get('/dashboard' , [DashboardController::class,'index']);
-        Route::get('/AdminLogin', [AdminLoginController::class, 'index'] );
+        
+        Route::get('/AdminLogin', [AdminController::class, 'index'] );
+        Route::post('/AdminLogin', [AdminController::class, 'adminLogin'])->name('adminLoginForm');
+
 
         Route::get('/register/contentCreator', [RegisterController::class,'showContentCreatorRegister']);
         Route::get('/login/contentCreator', [LoginController::class, 'showContentCreatorLogin']);
-  
 
-  
-        Route::get('/viewContentCreators', [AdminController::class, 'viewContentCreators'] );
-
+        
         Route::get('/register/student', [RegisterController::class,'showStudentRegister'])->name('studentRegisterForm');
         Route::get('/login', [LoginController::class, 'showStudentLogin'])->name('studentLoginForm');
 
