@@ -95,7 +95,7 @@
             </div> <!--End Blog Siderbar Left-->
 
 
-            <div class="col-12 col-sm-12 col-md-5 col-lg-5 blog_wrapper_right ">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 blog_wrapper_right ">
                 <div class="blog-right-items">
                     <div class="courses_features widget_single">
                         <div class="items-title">
@@ -103,39 +103,37 @@
                         </div>
                         <div class="features_items">
                             <ul class="list-unstyled">
-                                <li><a href="#">Requirements </a>
-                                <input type="text" name="courseRequirements" size="16"/>
                                 <li><a href="#">Duration</a>
                                 <input type="text" name="courseDuration" onkeypress="return onlyNumberKey(event)" maxlength="2" size="2"/>
-                                    <select name="duration" id="duration">
-                                        <option value="hour">H</option>
-                                        <option value="week">W</option>
-                                        <option value="month">M</option>
-                                    </select>
+                                <select name="duration" id="duration">
+                                    <option value="hour">H</option>
+                                    <option value="week">W</option>
+                                    <option value="month">M</option>
+                                </select>
                                 </li>
                                 <li><a href="#">Certificate</a>
-                                    <select name="certificate" id="certificate">
-                                        <option value="yes">Yes</option>
-                                        <option value="no">No</option>
-                                    </select></li>                                
+                                <select name="certificate" id="certificate">
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select></li>                                
                                 <li><a href="#">Language</a>
-                                    <select name="language" id="language">
-                                        <option value="english">English</option>
-                                        <option value="arabic">Arabic</option>
-                                    </select></li>   
+                                <select name="language" id="language">
+                                    <option value="english">English</option>
+                                    <option value="arabic">Arabic</option>
+                                </select></li>   
                                 <li><a href="#">Skills</a>
-                                    <select name="skills" id="skills">
-                                        <option value="beginner">Beginner</option>
-                                        <option value="intermediate">Intermediate</option>
-                                        <option value="advanced">Advanced</option>
-                                    </select>
+                                <select name="skills" id="skills">
+                                    <option value="beginner">Beginner</option>
+                                    <option value="intermediate">Intermediate</option>
+                                    <option value="advanced">Advanced</option>
+                                </select>
                                 </li>
                                 <li><a href="#">Category</a>
-                                    <select name="courseCategory" id="courseCategory">
-                                    @foreach($categories as $data)
-                                        <option value="{{$data->id}}">{{$data->name}}</option>
-                                    @endforeach
-                                    </select>
+                                <select name="courseCategory" id="courseCategory">
+                                @foreach($categories as $data)
+                                    <option value="{{$data->id}}">{{$data->name}}</option>
+                                @endforeach
+                                </select>
                                 </li>   
                             </ul>
                         </div>
