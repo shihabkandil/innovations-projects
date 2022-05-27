@@ -1,17 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Category;
 use App\Models\Courses;
 use Illuminate\Http\Request;
+use Auth;
+
+
 
 class ContentCreatorController extends Controller
 {
-    public $category; 
+    public $category, $courses; 
 
     public function __construct(){
             $this->category= new Category();
+            $this->courses= new Courses();
     }
     
     public function requestUploadContent(){
@@ -23,11 +26,11 @@ class ContentCreatorController extends Controller
     }
 
     public function addCourse(){
-        return view('contentCreator.addCourse');
+        return view('contentCreator.addCourse', ['courses'=> $this->courses->getCoursesByInstructor(Auth::guard('contentCreator')->user()->id)]);
     }
 
     public function courseBuilder(){
-        return view('contentCreator.courseBuilder',['categories' => $this->category->getAll()]);
+        return view('contentCreator.courseBuilder', ['categories' => $this->category->getAll()]);
     }
 
     public function submitCourse(Request $request){
