@@ -27,8 +27,8 @@ class Courses extends Model
     public function getCourse($id){
         return Courses::findOrFail($id);
     }
-
-    
-
+    public function getnotapproved(){
+        return Courses::where('approved', '=' ,'0')->get(); 
+    }
     
 }

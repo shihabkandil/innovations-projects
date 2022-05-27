@@ -864,6 +864,24 @@
             "description": "Google Cloud PHP shared dependency, providing functionality useful to all components.",
             "support": {
                 "source": "https://github.com/googleapis/google-cloud-php-core/tree/v1.45.0"
+              
+            },
+            "time": "2022-05-13T22:51:50+00:00"
+        },
+        {
+            "name": "google/cloud-storage",
+            "version": "v1.27.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/googleapis/google-cloud-php-storage.git",
+                "reference": "51edfafd86ca3fc71e542a16961fb35bd59d7186"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/googleapis/google-cloud-php-storage/zipball/51edfafd86ca3fc71e542a16961fb35bd59d7186",
+                "reference": "51edfafd86ca3fc71e542a16961fb35bd59d7186",
+
+                "source": "https://github.com/googleapis/google-cloud-php-core/tree/v1.44.4"
             },
             "time": "2022-05-13T22:51:50+00:00"
         },
@@ -9246,7 +9264,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-05-16T13:16:07+00:00"
+            "time": "2022-05-12T08:19:04+00:00"
         },
         {
             "name": "spatie/laravel-ignition",
