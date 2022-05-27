@@ -59,11 +59,11 @@
                 @auth('contentCreator')
                 <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" style="color:red; font-weight:bold;" data-bs-toggle="dropdown" aria-expanded="false">{{ __('Request') }}</a>
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" style="color:red; font-weight:bold;" data-bs-toggle="dropdown" aria-expanded="false">{{ __('messages.Request') }}</a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li><a href="contentCreator/addCourseRequest" class="dropdown-item">{{ __('messages.Adding Course') }}</a></li>
+                            <li><a href="contentCreator/addCourseRequest" class="dropdown-item">{{ __('messages.Add Course') }}</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a href="contentCreator/addContentRequest" class="dropdown-item">{{ __('messages.Adding Content') }}</a></li>
+                            <li><a href="contentCreator/addContentRequest" class="dropdown-item">{{ __('messages.Add Content') }}</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a href="contentCreator/writeArticle" class="dropdown-item">{{ __('Write an Article') }}</a></li>
                         </ul>

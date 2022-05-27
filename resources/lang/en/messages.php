@@ -27,6 +27,10 @@ return [
     'Articles are written by researchers or experts in order to share the results of their original research or analysis with other researchers and students' => 'Articles are written by researchers or experts in order to share the results of their original research or analysis with other researchers and students',
     'Join Now' => 'Join Now',
     'Read More' => 'Read More',
+    'Add Course' => 'Add Course',
+    'Add Content' =>'Add Content',
+    'Helpful Articles' => 'Helpful Articles',
+    'Request' => 'Request',
 ];
 
 ?>

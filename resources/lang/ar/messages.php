@@ -27,6 +27,10 @@ return [
     'Articles are written by researchers or experts in order to share the results of their original research or analysis with other researchers and students' => 'تتم كتابة المقالات بواسطة باحثين أو خبراء من أجل مشاركة نتائج أبحاثهم أو تحليلاتهم الأصلية مع الباحثين والطلاب الآخرين',
     'Join Now' => 'انضم الان',
     'Read More' => 'اقرأ المزيد',
+    'Add Course' => 'اضافه دوره تدريبيه',
+    'Add Content' => 'اضافه محتوى',
+    'Helpful Articles' => 'مقالات مفيده',
+    'Request' => 'طلب',
 ];
 
 ?>
