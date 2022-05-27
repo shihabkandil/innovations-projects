@@ -41,6 +41,7 @@ Route::group(['middleware'=>'language'], function () {
         Route::get('/subscriptions', [PagesController::class, 'subscribe'] );
 
         Route::get('/logout', [LoginController::class,'logout']);
+        
 
         Route::get('/register', [RegisterController::class,'showRegisterAs']);
 
@@ -58,8 +59,10 @@ Route::group(['middleware'=>'language'], function () {
 
         Route::resource('category','CategoryController');
 
-       
-        Route::get('/dashboard' , [AdminController::class,'adminDash']);
+        Route::group(['middleware' => ['auth:admin']], function() {
+            Route::get('/dashboard' , [AdminController::class,'adminDash']);
+            Route::get('/AdminLogout', [AdminController::class,'logout']);
+          });
         
         
         Route::get('/AdminLogin', [AdminController::class, 'index'] );

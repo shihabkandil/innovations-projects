@@ -42,6 +42,14 @@ class AdminController extends Controller
         }
 
         return back()->withInput($request->only('email'))->withErrors(['email' => 'Please enter correct credentials']);
-}
+    }
+
+    public function logout(Request $request) {
+        if(Auth::guard('admin')->check())
+        {
+            Auth::guard('admin')->logout();
+            return redirect('/AdminLogin');
+         }
+    }
 
 }
