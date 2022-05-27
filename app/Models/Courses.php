@@ -13,7 +13,16 @@ class Courses extends Model
         'CourseName',
         'CategoryID',
         'CoursePrice',
+        'CourseInstructorID',
         'CoursePicture',
+        'duration',
+        'certificate',
+        'lang',
+        'skills',
+        'courseDesc',
+        'whatWillILearn',
+        'learningOutcomes',
+        'approved',
     ];
 
     public  function  getCategoryID($id){ 

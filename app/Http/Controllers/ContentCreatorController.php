@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Courses;
 use Illuminate\Http\Request;
 
 class ContentCreatorController extends Controller
@@ -27,5 +28,23 @@ class ContentCreatorController extends Controller
 
     public function courseBuilder(){
         return view('contentCreator.courseBuilder',['categories' => $this->category->getAll()]);
+    }
+
+    public function submitCourse(Request $request){
+        $course = Courses::create([
+            'CourseName' => $request['courseName'],
+            'CategoryID' => $request['courseCategory'],
+            'CoursePrice' => $request['coursePrice'],
+            'CourseInstructorID' => $request['currentUserID'],
+            'CoursePicture' => $request['coursePicture'],
+            'duration' => $request['courseDuration'] . $request['duration'],
+            'certificate' => $request['certificate'],
+            'lang' => $request['language'],
+            'skills' => $request['skills'],
+            'courseDesc' => $request['courseDescription'],
+            'whatWillILearn' => $request['whatWillILearn'],
+            'learningOutcomes' => $request['learningOutcomes'],
+        ]);
+        return redirect('/contentCreator/addCourse');
     }
 }

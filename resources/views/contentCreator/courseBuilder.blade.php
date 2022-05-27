@@ -33,8 +33,9 @@
     <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
 </head>
 <body>
-<form method="POST" action="" enctype="multipart/form-data">
+<form method="POST" action="submitCourse" enctype="multipart/form-data">
 @csrf 
+<input type="hidden" name='currentUserID' value="{{ Auth::guard('contentCreator')->user()->id }}">
 <div class="banner-image">
     <img src="{{asset('img/img_2.jpg')}}" style="width: 100%;">
     <div class="text-block">
@@ -42,7 +43,7 @@
                         <div class="courses_details">
                             <div class="single-curses-contert">
                                 <div class="details-img-bxo">
-                                <h2 style="color:white">Course Picture<input class="form-control" type="file" id="formFile"  name="coursePicture"></h2>
+                                <h2 style="color:white">Course Picture<input class="form-control" type="file" id="coursePicture"  name="coursePicture"></h2>
                                 <br>
                                 </div>
                                 <h2 style="color:white">Name: <input type="text" name="courseName"></h2>
@@ -106,15 +107,15 @@
                                 <li><a href="#">Duration</a>
                                 <input type="text" name="courseDuration" onkeypress="return onlyNumberKey(event)" maxlength="2" size="2"/>
                                 <select name="duration" id="duration">
-                                    <option value="hour">H</option>
-                                    <option value="week">W</option>
-                                    <option value="month">M</option>
+                                    <option value="H">H</option>
+                                    <option value="W">W</option>
+                                    <option value="M">M</option>
                                 </select>
                                 </li>
                                 <li><a href="#">Certificate</a>
                                 <select name="certificate" id="certificate">
-                                    <option value="yes">Yes</option>
-                                    <option value="no">No</option>
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
                                 </select></li>                                
                                 <li><a href="#">Language</a>
                                 <select name="language" id="language">
