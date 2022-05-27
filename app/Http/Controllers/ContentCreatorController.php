@@ -2,10 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class ContentCreatorController extends Controller
 {
+    public $category; 
+
+    public function __construct(){
+            $this->category= new Category();
+    }
     
     public function requestUploadContent(){
         return view('contentCreator.addContent');
@@ -20,6 +26,6 @@ class ContentCreatorController extends Controller
     }
 
     public function courseBuilder(){
-        return view('contentCreator.courseBuilder');
+        return view('contentCreator.courseBuilder',['categories' => $this->category->getAll()]);
     }
 }
