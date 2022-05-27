@@ -37,7 +37,9 @@ class Courses extends Model
         return Courses::findOrFail($id);
     }
 
-    
+    public function getCoursesByInstructor($id){
+        return Courses::where('CourseInstructorID', '=' , $id)->get(); 
+    }
 
     
 }

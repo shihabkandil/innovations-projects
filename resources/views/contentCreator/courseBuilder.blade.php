@@ -103,8 +103,8 @@
                             <h3 class="title">Courses Features</h3>
                         </div>
                         <div class="features_items">
-                            <ul class="list-unstyled">
-                                <li><a href="#">Duration</a>
+                            <ul class="list-unstyled" style="color: lightgrey;">
+                                <li>Duration
                                 <input type="text" name="courseDuration" onkeypress="return onlyNumberKey(event)" maxlength="2" size="2"/>
                                 <select name="duration" id="duration">
                                     <option value="H">H</option>
@@ -112,24 +112,24 @@
                                     <option value="M">M</option>
                                 </select>
                                 </li>
-                                <li><a href="#">Certificate</a>
+                                <li>Certificate
                                 <select name="certificate" id="certificate">
                                     <option value="1">Yes</option>
                                     <option value="0">No</option>
                                 </select></li>                                
-                                <li><a href="#">Language</a>
+                                <li>Language
                                 <select name="language" id="language">
-                                    <option value="english">English</option>
-                                    <option value="arabic">Arabic</option>
+                                    <option value="English">English</option>
+                                    <option value="Arabic">Arabic</option>
                                 </select></li>   
-                                <li><a href="#">Skills</a>
+                                <li>Skills
                                 <select name="skills" id="skills">
-                                    <option value="beginner">Beginner</option>
-                                    <option value="intermediate">Intermediate</option>
-                                    <option value="advanced">Advanced</option>
+                                    <option value="Beginner">Beginner</option>
+                                    <option value="Intermediate">Intermediate</option>
+                                    <option value="Advanced">Advanced</option>
                                 </select>
                                 </li>
-                                <li><a href="#">Category</a>
+                                <li>Category
                                 <select name="courseCategory" id="courseCategory">
                                 @foreach($categories as $data)
                                     <option value="{{$data->id}}">{{$data->name}}</option>
