@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-class AdminLoginController extends Controller
+use App\Models\Courses;
+class AdminCoursesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,8 @@ class AdminLoginController extends Controller
      */
     public function index()
     {
-        return view('pages.AdminLogin');
+        $data =  Courses::where('approved', '=' ,'0')->get(); 
+        return view('admin.Courses',['CourseID'=>$data] );
     }
 
     /**
