@@ -50,7 +50,6 @@ Route::group(['middleware'=>'language'], function () {
         Route::get('/callback/{service}', [SocialController::class, 'callback']);
 
         Route::get('/Categories/{id}' , [CoursesController::class , 'CoursesCategories'] );
-        Route::get('/fetch-categories' , [CategoryController::class , 'fetchCategory'] );
 
 
 
@@ -92,8 +91,12 @@ Route::group(['middleware'=>'language'], function () {
         Route::post('/register/contentCreator', [RegisterController::class, 'contentCreatorRegister'])->name('contentCreatorRegisterForm');
         Route::post('/login/contentCreator', [LoginController::class, 'contentCreatorLogin'])->name('contentCreatorLoginForm');
         Route::get('contentCreator/addContentRequest',[ContentCreatorController::class,'requestUploadContent']);
+        Route::get('contentCreator/addCourse',[ContentCreatorController::class,'addCourse']);
+        Route::get('contentCreator/courseBuilder',[ContentCreatorController::class,'courseBuilder']);
+        Route::post('contentCreator/submitCourse',[ContentCreatorController::class,'submitCourse']);
         Route::get('contentCreator/writeArticle',[ContentCreatorController::class,'writeArticle']);
         Route::post('contentCreator/submitArticle',[ArticleController::class,'submitArticle']);
+        
 
         Route::post('/register/student', [RegisterController::class, 'studentRegister'])->name('studentRegisterForm');
         Route::post('/login', [LoginController::class, 'studentLogin'])->name('studentLoginForm');

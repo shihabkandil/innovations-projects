@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+<?php 
+    use App\Http\Controllers\FirestorageController;
+    use App\Models\ContentCreator;
+    ?>
+
 <html lang="en">
 
 <head>
@@ -23,21 +28,21 @@
 <body>
     
 <div class="banner-image">
-    <img src="{{asset('img/img_2.jpg')}}">
+    <img src="{{asset('img/img_2.jpg')}}" style="width: 100%;">
     <div class="text-block">
         <div  id="courses_details_wrapper">       
                         <div class="courses_details">
                             <div class="single-curses-contert">
                                 <div class="details-img-bxo">
-                                    <img src="{{asset('img/img.jpg')}}" alt="" class="img-fluid">
+                                    <img src="<?php echo FirestorageController::fetch('Courses/Picture/',$course->CoursePicture)?>" alt="{{$course->CourseName}}" class="img-fluid">
                                 </div>
                                 <h2 style="color:white">{{$course->CourseName}} Course</h2>
                                 <div class="review-option ">
                                     <div class="teacher-info">
                                         <img src="{{asset('img/review_1.jpg')}}" alt="" class="img-fluid">
                                         <div class="teacher-name m-2">
-                                            <h4 class="sub-header-course">Teacher</h4>
-                                            <span>DAVID MARTIN</span>
+                                            <h4 class="sub-header-course">Instructor</h4>
+                                            <span><?php echo ContentCreator::getContentCreator($course->CourseInstructorID)[0]->name; ?></span>
                                         </div>
                                     </div>
                                     <div class="review-rank mx-5">
@@ -55,7 +60,7 @@
                                     </div>
                                     <div class="teacher_fee single_items m-2 ">
                                         <h4 class="sub-header-course">Price</h4>
-                                        <h2 style="color: antiquewhite" class="sub-header-course">EG 5000</h2>
+                                        <h2 style="color: antiquewhite" class="sub-header-course">EGP {{$course->CoursePrice}}</h2>
                                     </div>
                                     <div class="buy_btn single_items mx-2">
                                         <a style="color:black" href="#" title="">Add to cart</a>
@@ -76,7 +81,6 @@
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item"><a class="nav-link active" href="#information" role="tab" data-toggle="tab">Information</a></li>
                                 <li class="nav-item"><a class="nav-link" href="#curricularm" role="tab" data-toggle="tab">Curricularm</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#instructor" role="tab" data-toggle="tab">Instructor</a></li> 
                                 <li class="nav-item"><a class="nav-link" href="#reviews" role="tab" data-toggle="tab">Reviews</a></li>
                             </ul>
                         </div>   
@@ -85,37 +89,11 @@
                         <div class="tab_contents tab-content">
                             <div role="tabpanel" class="tab-pane fade in active show" id="information">
                                 <h3>Courses Description <span>:</span></h3>
-                                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                                <p>{{$course->courseDesc}}</p>
                                 <h3>What Will I Learn? <span>:</span></h3>
-                                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>  
-                                <ul class="step_point">
-                                    <li>Create static HTML and CSS portfolio sites and landing pages.</li>
-                                    <li>Think like a developer. Become an expert at Googling code questions!</li>
-                                    <li>Write complex web apps with multiple models and data associations.</li>
-                                    <li>Create a blog application from scratch using Express, MongoDB, and Semantic UI.</li>
-                                    <li>Using Express and MongoDB to create full-stack JS applications.</li>
-                                </ul>                              
+                                <p>{{$course->whatWillILearn}}</p>                            
                                 <h3>Learning Outcomes <span>:</span></h3>
-                                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                                <ul class="step_point">
-                                    <li>Over 37 lectures and 55.5 hours of content!</li>
-                                    <li>LIVE PROJECT End to End Software Testing Training Included.</li>
-                                    <li>Learn Software Testing and Automation basics from a professional trainer from your own desk.</li>
-                                    <li>Information packed practical training starting from basics to advanced testing techniques.</li>
-                                    <li>Best suitable for beginners to advanced level users and who learn faster when demonstrated.</li>
-                                    <li>Course content designed by considering current software testing technology and the job market.</li>
-                                    <li>Practical assignments at the end of every session.</li>
-                                    <li>Practical learning experience with live project work and examples.</li>
-                                </ul>
-                                <div class="social_wrapper d-flex">
-                                    <span>Share : </span>
-                                    <ul class="social-items d-flex list-unstyled">
-                                        <li><a href="#"><i class="fab fa-facebook-f fb_icon"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter tw_icon"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-linkedin-in link_icon"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram in_icon"></i></a></li>
-                                    </ul>   
-                                </div>
+                                <p>{{$course->learningOutcomes}}</p>                            
                             </div>
                             <div role="tabpanel" class="tab-pane fade" id="curricularm">
                                 <div class="curriculum-text-box">
@@ -245,19 +223,6 @@
                                             </div>
 
                                         </div> <!-- .curriculum-section-text END -->
-                                    </div>
-                                </div>
-                            </div>
-                            <div role="tabpanel" class="tab-pane fade" id="instructor">
-                                <div class="courses_teacher">
-                                    <div class="tutor_signle">
-                                        <div class="tutor_pro">
-                                            <a href="#" title=""><img src="" alt="" class="img-fluid"></a>
-                                        </div>
-                                        <div class="teachers_name">
-                                            <h5><a href="#" title="">Jonson Park</a></h5>
-                                            <span>Associate Professor</span>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -395,62 +360,16 @@
                             <h3 class="title">Courses Features</h3>
                         </div>
                         <div class="features_items">
-                            <ul class="list-unstyled">
-                                <li><a href="#" title=""><i class="flaticon-page"></i> Lessons </a><span>69</span></li>
-                                <li><a href="#" title=""><i class="flaticon-eye-open"></i> Viewers</a><span>56</span></li>
-                                <li><a href="#" title=""><i class="flaticon-clock-circular-outline"></i> Duration</a><span>5H</span></li>
-                                <li><a href="#" title=""><i class="flaticon-padlock"></i> Prequisite</a><span>No</span></li>
-                                <li><a href="#" title=""><i class="flaticon-diploma"></i> Certificate</a><span>Yes</span></li>                                
-                                <li><a href="#" title=""><i class="flaticon-language"></i> Language</a><span>Eng</span></li>                                
-                                <li><a href="#" title=""><i class="flaticon-thumbs-up-hand-symbol"></i> Skills</a><span>Any</span></li>                                
-                                <li><a href="#" title=""><i class="flaticon-edit"></i> Assessments</a><span>Yes</span></li>
+                            <ul class="list-unstyled" style="color: lightgrey;">
+                                <li>Duration<span>{{$course->duration}}</span></li>
+                                <li>Certificate<span>{{$course->certificate}}</span></li>
+                                <li>Language<span>{{$course->lang}}</span></li>
+                                <li>Skills<span>{{$course->skills}}</span></li>
+                                <li>Lessons<span>32</span></li>
                             </ul>
                         </div>
                         <img src="{{asset('img/testimonial_2_shpe_2.png')}}" alt="" class="courses_feaures_shpe">
                     </div>  
-
-
-
-                    <div class="recent_post_wrapper popular_courses_post widget_single">
-                        <div class="items-title">
-                            <h3 class="title">Our Popular Courses</h3>
-                        </div>
-                        <div class="single-post">
-                            <div class="recent_img">
-                                 <a href="#" title=""><img src="{{asset('img/img.jpg')}}" alt="" class="img-fluid"></a>
-                            </div>
-                            <div class="post_title">
-                                <a href="#" title="">How to Become Master In CSS within qa Week.</a>
-                                <div class="courses_price">
-                                    <div class="price"><span><del>74$</del></span> <span class="new_price">49$</span></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="single-post">
-                            <div class="recent_img">
-                                <a href="#" title=""><img src="{{asset('img/img_2.jpg')}}" alt="" class="img-fluid"></a>
-                            </div>
-                            <div class="post_title">
-                                <a href="#" title="">Connecting volunteers & nonprofitsz worldwide.</a>
-                                <div class="courses_price">
-                                    <div class="price"><span><del>60$</del></span> <span class="new_price">38$</span></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="single-post">
-                            <div class="recent_img">
-                                <a href="#" title=""><img src="{{asset('img/img.jpg')}}" alt="" class="img-fluid"></a>
-                            </div>
-                            <div class="post_title">
-                                <a href="#" title="">Research of Learn training process</a>
-                                <div class="courses_price">
-                                    <div class="price"><span class="new_price">79$</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
             </div> <!-- End Right Sidebar-->
             
         </div>

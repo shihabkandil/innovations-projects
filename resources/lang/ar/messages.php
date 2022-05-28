@@ -14,6 +14,7 @@ return [
     'About us' => 'معلومات عنا',
     'Contact us' => 'اتصل بنا',
     'Login' => 'تسجيل الدخول',
+    'Logout' => 'تسجيل الخروج',
     'Join us' => 'انضم إلينا',
     'Effective Video Lessons' => 'دروس فيديو فعاله',
     'Browse our courses catalog and see what can help you develop yourself' => 'تصفح كتالوج دوراتنا واطلع على ما يمكن أن يساعدك في تطوير نفسك',
