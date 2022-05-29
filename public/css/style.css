@@ -1,4 +1,8 @@
 /********** Template CSS **********/
+body {
+    overflow-x: hidden;
+}
+
 :root {
     --primary: #06BBCC;
     --light: #F0FBFC;
