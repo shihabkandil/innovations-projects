@@ -37,19 +37,19 @@
 @csrf 
 <input type="hidden" name='currentUserID' value="{{ Auth::guard('contentCreator')->user()->id }}">
 <div class="banner-image">
-    <img src="{{asset('img/img_2.jpg')}}" style="width: 100%;">
+    <img src="{{asset('img/img_2.jpg')}}">
     <div class="text-block">
         <div  id="courses_details_wrapper">       
                         <div class="courses_details">
                             <div class="single-curses-contert">
                                 <div class="details-img-bxo">
-                                <h2 style="color:white">Course Picture<input class="form-control" type="file" id="coursePicture"  name="coursePicture"></h2>
+                                <h2 style="color:white">Course Picture<input class="form-control" type="file" id="coursePicture"  name="coursePicture" required></h2>
                                 <br>
                                 </div>
-                                <h2 style="color:white">Name: <input type="text" name="courseName"></h2>
+                                <h2 style="color:white">Name: <input type="text" name="courseName" required></h2>
                                 <div class="review-option ">
                                     <div class="teacher_fee single_items m-2 ">
-                                        <h4 class="sub-header-course">Price: EGP <input type="text" name="coursePrice" onkeypress="return onlyNumberKey(event)"/></h4>
+                                        <h4 class="sub-header-course">Price: EGP <input type="text" name="coursePrice" onkeypress="return onlyNumberKey(event)" required/></h4>
                                     </div>
                                 </div>
                             </div>
@@ -73,11 +73,11 @@
                         <div class="tab_contents tab-content">
                             <div role="tabpanel" class="tab-pane fade in active show" id="information">
                                 <h3>Courses Description <span>:</span></h3>
-                                <textarea name="courseDescription" cols="80" rows="10"></textarea>
+                                <textarea name="courseDescription" cols="80" rows="10" style="max-width: 95%;"></textarea>
                                 <h3>What Will I Learn? <span>:</span></h3>
-                                <textarea name="whatWillILearn" cols="80" rows="10"></textarea>                            
+                                <textarea name="whatWillILearn" cols="80" rows="10" style="max-width: 95%;"></textarea>                            
                                 <h3>Learning Outcomes <span>:</span></h3>
-                                <textarea name="learningOutcomes" cols="80" rows="10"></textarea> 
+                                <textarea name="learningOutcomes" cols="80" rows="10" style="max-width: 95%;"></textarea> 
                             </div>
                             <div role="tabpanel" class="tab-pane fade" id="curricularm">
                                 <div class="curriculum-text-box">
@@ -105,7 +105,7 @@
                         <div class="features_items">
                             <ul class="list-unstyled" style="color: lightgrey;">
                                 <li>Duration
-                                <input type="text" name="courseDuration" onkeypress="return onlyNumberKey(event)" maxlength="2" size="2"/>
+                                <input type="text" name="courseDuration" onkeypress="return onlyNumberKey(event)" maxlength="2" size="2" required/>
                                 <select name="duration" id="duration">
                                     <option value="H">H</option>
                                     <option value="W">W</option>
@@ -170,7 +170,7 @@
         '</div>'+
         '<div id="collapse'+counter+'" class="panel-collapse collapse">'+
         '<div class="panel-body">'+
-        '<textarea name="lesson '+counter+'Body" cols="80" rows="10"></textarea>'+
+        '<textarea name="lesson '+counter+'Body" cols="80" rows="10" style="max-width: 95%;"></textarea>'+
         '</div>'+
         '</div>'+
         '<button type="button" style="background-color: red; color: white; border: none;" id="delete_lesson_btn">Delete Lesson</button>';

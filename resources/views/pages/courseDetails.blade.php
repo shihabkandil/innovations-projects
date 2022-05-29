@@ -28,13 +28,13 @@
 <body>
     
 <div class="banner-image">
-    <img src="{{asset('img/img_2.jpg')}}" style="width: 100%;">
+    <img src="{{asset('img/img_2.jpg')}}">
     <div class="text-block">
         <div  id="courses_details_wrapper">       
                         <div class="courses_details">
                             <div class="single-curses-contert">
                                 <div class="details-img-bxo">
-                                    <img src="<?php echo FirestorageController::fetch('Courses/Picture/',$course->CoursePicture)?>" alt="{{$course->CourseName}}" class="img-fluid">
+                                    <img src="<?php echo FirestorageController::fetch('Courses/Pictures/',$course->CoursePicture)?>" alt="{{$course->CourseName}}" class="img-fluid">
                                 </div>
                                 <h2 style="color:white">{{$course->CourseName}} Course</h2>
                                 <div class="review-option ">

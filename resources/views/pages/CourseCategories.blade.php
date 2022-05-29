@@ -3,11 +3,6 @@
 <title>Category {{$id}} Courses</title>
 
 @section('content')
-<style>
-    body {
-     overflow-x: hidden;
-    }
-</style>
 <?php 
     use App\Http\Controllers\FirestorageController;
     use App\Models\ContentCreator;
