@@ -1,6 +1,10 @@
 @extends('layouts.app')
 @section('content')
 
+@if(session('message'))
+    <div>{{session('message')}}</div>
+@endif
+
 <!-- imports -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
@@ -25,6 +29,7 @@
       <div class="col-5">
      <h4 class="heading">Cart</h4>
       </div>
+
       <div class="col-7">
           <div class="row text-right">
               <div class="col-4">
@@ -33,54 +38,46 @@
               <div class="col-4">
                   <h6 class="mt-2">Price</h6>
               </div>
+              <div class="col-4">
+                  <h6 class="mt-2">Button</h6>
+              </div>
           </div>
       </div>
   </div>
-  <div class="row d-flex justify-content-center border-top">
-      <div class="col-5">
-          <div class="row d-flex">
-              <div class="book"> <img src="https://i.imgur.com/2DsA49b.jpg" class="book-img"> </div>
-              <div class="my-auto flex-column d-flex pad-left">
-                  <h6> <a class="mob-text" href ="#">Thinking, Fast and Slow </a> </h6>
+  
+  @foreach ($cart as $data)
+  <form action="{{route('cart.remove')}}" method="POST">
+    <div class="row d-flex justify-content-center border-top">
+        <div class="col-5">
+            <div class="row d-flex">
+                <div class="book"> <img src="https://i.imgur.com/2DsA49b.jpg" class="book-img"> </div>
+                <div class="my-auto flex-column d-flex pad-left">
+                    <h6> <a class="mob-text" href ="#">{{ $cart->where('id',$data->id) }}</a> </h6>
 
-                  <p class = "mob-text" >Daniel Kahneman </p>
+                    <p class = "mob-text" >{{ $data->CourseInstructorID }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="my-auto col-7">
+            <div class="row text-right">
 
-              </div>
-          </div>
-      </div>
-      <div class="my-auto col-7">
-          <div class="row text-right">
-              <div class="col-4">
-                  <p class="mob-text">Hospitality</p>
-              </div>
-              <div class="col-4">
-                  <h6 class="mob-text">$9.99</h6>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row d-flex justify-content-center border-top">
-      <div class="col-5">
-          <div class="row d-flex">
-              <div class="book"> <img src="https://i.imgur.com/Oj1iQUX.jpg" class="book-img"> </div>
-              <div class="my-auto flex-column d-flex pad-left">
-              <h6> <a href = "#"  class="mob-text">Homo Deus: A Brief<br> History of Tomorrow </a> </h6>
-                  <p class="mob-text">Yuval Noah Harari</p>
-              </div>
-          </div>
-      </div>
-      <div class="my-auto col-7">
-          <div class="row text-right">
-              <div class="col-4">
-                  <p class="mob-text">Retail</p>
-              </div>
-             
-              <div class="col-4">
-                  <h6 class="mob-text">$13.50</h6>
-              </div>
-          </div>
-      </div>
-  </div>
+                <div class="col-4">
+                    <p class="mob-text">{{ $data->CategoryID }}</p>
+                </div>
+
+                <div class="col-4">
+                    <h6 class="mob-text">EGP {{ $data->CoursePrice }}</h6>
+                </div>
+
+                <div class="col-4">
+                    <input type="hidden" name="Course_id" value={{ $data->id }}></input>
+                    <button type="submit" class="btn btn-danger">Remove</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+  @endforeach
 
 
 <!-- checkbox button -->
@@ -91,7 +88,7 @@
 </div>
 
 <button  type="button" class="btn btn-primary btn-lg">Checkout</button>
-<a  class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">29.6$</a>
+<a  class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">{{\Gloudemans\Shoppingcart\Facades\Cart::total()}} EGP</a>
       </div>
       
   </div>

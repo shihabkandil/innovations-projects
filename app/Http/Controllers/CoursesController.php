@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Courses;
 use App\Models\Lesson;
 use Google\Cloud\Storage\StorageClient;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 
 class CoursesController extends Controller
@@ -30,7 +31,10 @@ class CoursesController extends Controller
     }
 
     public function CoursesCategories($id){
-        return view('pages.CourseCategories' , ['id'=>$id] )->with(array('courses'=>$this->fetchCourses($id)));
+
+        $cart = Cart::content();
+        return view('pages.CourseCategories' , ['id'=>$id] , ['cart' => $cart] )->with(array('courses'=>$this->fetchCourses($id)));
+
     }
 
     /**

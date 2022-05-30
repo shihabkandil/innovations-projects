@@ -55,6 +55,7 @@
                 <a href="/articles" class="nav-item nav-link">{{ __('messages.Articles') }}</a>
                 <a href="/about" class="nav-item nav-link">{{ __('messages.About us') }}</a>
                 <a href="/contact" class="nav-item nav-link">{{ __('messages.Contact us') }}</a>
+                
 
                 @auth('contentCreator')
                 <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
@@ -146,8 +147,14 @@
                          @endif 
                         
                 @endif
-        </div>
-      
+                <div class="p-3">
+                    <a href="/cart" class="cart position-relative d-inline-flex" aria-label="View your shopping cart">
+                        <i class="fas fa fa-shopping-cart fa-lg"></i>
+                        <span class="cart-basket d-flex align-items-center justify-content-center">
+                            Cart({{\Gloudemans\Shoppingcart\Facades\Cart::content()->count()}})
+                        </span>
+                    </a>
+                </div>
     </nav>
     <!-- Navbar End -->
     
