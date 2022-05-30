@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Category;
+use App\Models\CategoryModel;
 use App\Models\Courses;
 use Illuminate\Http\Request;
 use Auth;
@@ -13,7 +13,7 @@ class ContentCreatorController extends Controller
     public $category, $courses; 
 
     public function __construct(){
-            $this->category= new Category();
+            $this->category= new CategoryModel();
             $this->courses= new Courses();
     }
     
