@@ -37,9 +37,10 @@ class CartController extends Controller
     public function store(Request $request)
     {
         $course = Courses::findOrFail($request->input(key:'Course_id'));
+    
         Cart::add($course->id, $course->CourseName, $request->input(key:'QTY'), $course->CoursePrice/100);
 
-        return back()->with('message' , 'Successfully added');
+        return back()->with('message' , 'Successfully added' ,'cart' , $cart);
     }
 
     /**

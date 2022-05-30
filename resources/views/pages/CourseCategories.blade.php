@@ -13,6 +13,7 @@
      overflow-x: hidden;
     }
 </style>
+
 <?php 
     use App\Http\Controllers\FirestorageController;
     use App\Models\ContentCreator;
@@ -58,8 +59,12 @@
 
             <div class="flex-fill text-center border-end py-2">
                 <input type="hidden" name="Course_id" value={{ $data->id }}></input>
-                <input type="number" value="1" name="QTY" class="col-xs-2">
+                @if($cart->where('id',$data->id)->count())
+                    IN Cart
+                @else
                 <button type="submit" class="btn btn-primary">Add to Cart</button>
+                <input type="number" value="1" name="QTY" class="col-xs-2">
+                @endif
             </div>
         </div>
     </div>
