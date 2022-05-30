@@ -34,7 +34,7 @@
                         <div class="courses_details">
                             <div class="single-curses-contert">
                                 <div class="details-img-bxo">
-                                    <img src="<?php echo FirestorageController::fetch('Courses/Pictures/',$course->CoursePicture)?>" alt="{{$course->CourseName}}" class="img-fluid">
+                                    <img src="<?php echo FirestorageController::fetch('Courses/Pictures/',$course->CoursePicture)?>" alt="{{$course->CourseName}}" class="img-fluid" width="25%">
                                 </div>
                                 <h2 style="color:white">{{$course->CourseName}} Course</h2>
                                 <div class="review-option ">
@@ -89,139 +89,32 @@
                         <div class="tab_contents tab-content">
                             <div role="tabpanel" class="tab-pane fade in active show" id="information">
                                 <h3>Courses Description <span>:</span></h3>
-                                <p>{{$course->courseDesc}}</p>
+                                <p style="white-space: pre-wrap; overflow-wrap: break-word;">{{$course->courseDesc}}</p>
                                 <h3>What Will I Learn? <span>:</span></h3>
-                                <p>{{$course->whatWillILearn}}</p>                            
+                                <p style="white-space: pre-wrap; overflow-wrap: break-word;">{{$course->whatWillILearn}}</p>                            
                                 <h3>Learning Outcomes <span>:</span></h3>
-                                <p>{{$course->learningOutcomes}}</p>                            
+                                <p style="white-space: pre-wrap; overflow-wrap: break-word;">{{$course->learningOutcomes}}</p>                            
                             </div>
                             <div role="tabpanel" class="tab-pane fade" id="curricularm">
                                 <div class="curriculum-text-box">
                                     <div class="curriculum-section">
                                         <div class="panel-group" id="accordion">
+                                            <?php $i = 0; ?>
+                                            @foreach ($lesson as $lessonData)
                                             <div class="panel panel-default">
                                                 <div class="panel-heading">
-                                                    <h4 class="panel-title click">
-                                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" class="">
-                                                        1. Welcome to the Courses<span>0/5</span></a>
+                                                    <h4 class="panel-title"> {{$lessonData->name}}
+                                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{$i}}" class="collapsed"> </a> 
                                                     </h4>
-
                                                 </div>
-                                                <div id="collapse1" class="panel-collapse collapse in show">
+                                                <div id="collapse{{$i}}" class="panel-collapse collapse">
                                                     <div class="panel-body">
-                                                        <div class="curriculum-single">
-                                                            <div class="lecture">
-                                                                <span><i class="fa fa-file-text-o"></i>Lecture 2. 1</span>
-                                                                <span><i class="fa fa-clock-o"></i>Duration: 30mins</span>
-                                                            </div>
-                                                            <a href="#">Preview</a>
-                                                        </div>
-                                                         <div class="curriculum-single">
-                                                            <div class="lecture">
-                                                                <span><i class="fa fa-file-text-o"></i>Lecture 2. 1</span>
-                                                                <span><i class="fa fa-clock-o"></i>Duration: 30mins</span>
-                                                            </div>
-                                                           <a href="#">Preview</a>
-                                                        </div>
-                                                         <div class="curriculum-single">
-                                                            <div class="lecture">
-                                                                <span><i class="fa fa-file-text-o"></i>Lecture 2. 1</span>
-                                                                <span><i class="fa fa-clock-o"></i>Duration: 30mins</span>
-                                                            </div>
-                                                            <a href="#">Preview</a>
-                                                        </div>
-                                                        <div class="curriculum-single">
-                                                            <div class="lecture">
-                                                                <span><i class="fa fa-file-text-o"></i>Lecture 2. 1</span>
-                                                                <span><i class="fa fa-clock-o"></i>Duration: 30mins</span>
-                                                            </div>
-                                                            <a href="#">Preview</a>
-                                                        </div>
-                                                        <div class="curriculum-single">
-                                                            <div class="lecture">
-                                                                <span><i class="fa fa-file-text-o"></i>Lecture 2. 1</span>
-                                                                <span><i class="fa fa-clock-o"></i>Duration: 30mins</span>
-                                                            </div>
-                                                            <a href="#">Preview</a>
-                                                        </div>
+                                                    <p style="white-space: pre-wrap; overflow-wrap: break-word;">{{$lessonData->body}}</p>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="panel panel-default">
-                                                <div class="panel-heading">
-                                                    <h4 class="panel-title">
-                                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="collapsed">
-                                                        2. How to use Wordpress<span>0/4</span></a>
-                                                    </h4>
-                                                </div>
-                                                <div id="collapse2" class="panel-collapse collapse">
-                                                    <div class="panel-body">
-                                                        <div class="curriculum-single">
-                                                            <div class="lecture">
-                                                                <span><i class="fa fa-file-text-o"></i>Lecture 2. 1</span>
-                                                                <span><i class="fa fa-clock-o"></i>Duration: 30mins</span>
-                                                            </div>
-                                                            <a href="#">Preview</a>
-                                                        </div>
-                                                         <div class="curriculum-single">
-                                                            <div class="lecture">
-                                                                <span><i class="fa fa-file-text-o"></i>Lecture 2. 1</span>
-                                                                <span><i class="fa fa-clock-o"></i>Duration: 30mins</span>
-                                                            </div>
-                                                            <a href="#">Preview</a>
-                                                        </div>
-                                                         <div class="curriculum-single">
-                                                            <div class="lecture">
-                                                                <span><i class="fa fa-file-text-o"></i>Lecture 2. 1</span>
-                                                                <span><i class="fa fa-clock-o"></i>Duration: 30mins</span>
-                                                            </div>
-                                                            <a href="#">Preview</a>
-                                                        </div>
-                                                         <div class="curriculum-single">
-                                                            <div class="lecture">
-                                                                <span><i class="fa fa-file-text-o"></i>Lecture 2. 1</span>
-                                                                <span><i class="fa fa-clock-o"></i>Duration: 30mins</span>
-                                                            </div>
-                                                            <a href="#">Preview</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="panel panel-default">
-                                                <div class="panel-heading">
-                                                    <h4 class="panel-title">
-                                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" class="collapsed">
-                                                    3. Final chapters<span>0/3</span></a>
-                                                    </h4>
-                                                </div>
-                                                <div id="collapse3" class="panel-collapse collapse">
-                                                    <div class="panel-body">
-                                                         <div class="curriculum-single">
-                                                            <div class="lecture">
-                                                                <span><i class="fa fa-file-text-o"></i>Lecture 2. 1</span>
-                                                                <span><i class="fa fa-clock-o"></i>Duration: 30mins</span>
-                                                            </div>
-                                                            <a href="#">Preview</a>
-                                                        </div>
-                                                         <div class="curriculum-single">
-                                                            <div class="lecture">
-                                                                <span><i class="fa fa-file-text-o"></i>Lecture 2. 1</span>
-                                                                <span><i class="fa fa-clock-o"></i>Duration: 30mins</span>
-                                                            </div>
-                                                            <a href="#">Preview</a>
-                                                        </div>
-                                                         <div class="curriculum-single">
-                                                            <div class="lecture">
-                                                                <span><i class="fa fa-file-text-o"></i>Lecture 2. 1</span>
-                                                                <span><i class="fa fa-clock-o"></i>Duration: 30mins</span>
-                                                            </div>
-                                                            <a href="#">Preview</a>
-                                                        </div>
-                                                        
-                                                    </div>
-                                                </div>
-                                            </div>
-
+                                            <?php $i++; ?>
+                                            @endforeach
                                         </div> <!-- .curriculum-section-text END -->
                                     </div>
                                 </div>
@@ -365,7 +258,7 @@
                                 <li>Certificate<span>{{$course->certificate}}</span></li>
                                 <li>Language<span>{{$course->lang}}</span></li>
                                 <li>Skills<span>{{$course->skills}}</span></li>
-                                <li>Lessons<span>32</span></li>
+                                <li>Lessons<span>{{$i}}</span></li>
                             </ul>
                         </div>
                         <img src="{{asset('img/testimonial_2_shpe_2.png')}}" alt="" class="courses_feaures_shpe">

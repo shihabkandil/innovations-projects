@@ -73,11 +73,11 @@
                         <div class="tab_contents tab-content">
                             <div role="tabpanel" class="tab-pane fade in active show" id="information">
                                 <h3>Courses Description <span>:</span></h3>
-                                <textarea name="courseDescription" cols="80" rows="10" style="max-width: 95%;"></textarea>
+                                <textarea name="courseDescription" cols="80" rows="10" style="max-width: 95%; white-space: pre-wrap;"></textarea>
                                 <h3>What Will I Learn? <span>:</span></h3>
-                                <textarea name="whatWillILearn" cols="80" rows="10" style="max-width: 95%;"></textarea>                            
+                                <textarea name="whatWillILearn" cols="80" rows="10" style="max-width: 95%; white-space: pre-wrap;"></textarea>                            
                                 <h3>Learning Outcomes <span>:</span></h3>
-                                <textarea name="learningOutcomes" cols="80" rows="10" style="max-width: 95%;"></textarea> 
+                                <textarea name="learningOutcomes" cols="80" rows="10" style="max-width: 95%; white-space: pre-wrap;"></textarea> 
                             </div>
                             <div role="tabpanel" class="tab-pane fade" id="curricularm">
                                 <div class="curriculum-text-box">
@@ -163,14 +163,14 @@
         var lesson = 
         '<div class="panel panel-default">'+
         '<div class="panel-heading">'+
-        '<h4 class="panel-title">'+
-        '<a data-toggle="collapse" data-parent="#accordion" href="#collapse'+counter+'" class="collapsed">'+
-        'Lesson Name: <input type="text" name="lesson'+counter+'"Name/> </a>'+
+        '<h4 class="panel-title"> Lesson Name:<input style="margin-top:10px;" type="text" name="lessonName[]" required/>'+
+        '<a data-toggle="collapse" data-parent="#accordion" href="#collapse'+counter+'" class="collapsed">'+ 
+        '</a> '+
         '</h4>'+
         '</div>'+
         '<div id="collapse'+counter+'" class="panel-collapse collapse">'+
         '<div class="panel-body">'+
-        '<textarea name="lesson '+counter+'Body" cols="80" rows="10" style="max-width: 95%;"></textarea>'+
+        '<textarea name="lessonBody[]" cols="80" rows="10" style="max-width: 95%; white-space: pre-wrap;" required></textarea>'+
         '</div>'+
         '</div>'+
         '<button type="button" style="background-color: red; color: white; border: none;" id="delete_lesson_btn">Delete Lesson</button>';
