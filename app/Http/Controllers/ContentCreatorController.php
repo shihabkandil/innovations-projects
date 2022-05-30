@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-use Models\Category;
-use Models\Courses;
+use app\App\Models\Category;
+use app\App\Models\Courses;
 use Illuminate\Http\Request;
 use Auth;
 
