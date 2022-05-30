@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Courses;
+use App\Models\Lesson;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -49,6 +50,8 @@ class ContentCreatorController extends Controller
             'learningOutcomes' => ['required','string'],
         ]);
 
+
+
         $picture = FirestorageController::store($request['coursePicture'], 'Courses/Pictures/');
 
         $course = Courses::create([
@@ -65,6 +68,36 @@ class ContentCreatorController extends Controller
             'whatWillILearn' => $request['whatWillILearn'],
             'learningOutcomes' => $request['learningOutcomes'],
         ]);
+
+        if($request['lessonName']!=NULL){
+            $name = $request['lessonName'];
+            $body = $request['lessonBody'];
+            $prevLesson = [];
+            $id = $course->id;
+            for($i = 0; $i < count($name); $i++){
+                if($i == 0){
+                    $lesson = Lesson::create([
+                        'courseId' => $id,
+                        'name' => $name[$i],
+                        'body' => $body[$i],
+                        'prerequisiteLesson' => 0,
+                    ]);
+                    array_push($prevLesson, $lesson->id);
+                }else{
+                    $lesson = Lesson::create([
+                        'courseId' => $course->id,
+                        'name' => $name[$i],
+                        'body' => $body[$i],
+                        'prerequisiteLesson' => end($prevLesson),
+                    ]);
+                    array_push($prevLesson, $lesson->id);
+                }
+                
+            }
+        }
+        
+        
+
         return redirect('/contentCreator/addCourse');
     }
 }
