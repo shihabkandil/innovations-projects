@@ -104,6 +104,8 @@ Route::group(['middleware'=>'language'], function () {
 
         Route::post('/uploadFile', [FirestorageController::class, 'firebaseStore']);
         Route::post('/', [CartController::class, 'store'])->name(name:'cart.store');
+        Route::post('/', [CartController::class, 'remove'])->name(name:'cart.remove');
+        Route::get('/cart' , [CartController::class , 'index'])->name(name:'cart');
 
         Route::get('changeLocale/{locale}', function($lang) {
             \Session::put('locale', $lang);
