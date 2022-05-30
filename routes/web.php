@@ -103,6 +103,7 @@ Route::group(['middleware'=>'language'], function () {
         Route::post('/home', [StudentController::class, 'updateStudent'])->name('update');
 
         Route::post('/uploadFile', [FirestorageController::class, 'firebaseStore']);
+        Route::post('/', [CartController::class, 'store'])->name(name:'cart.store');
 
         Route::get('changeLocale/{locale}', function($lang) {
             \Session::put('locale', $lang);

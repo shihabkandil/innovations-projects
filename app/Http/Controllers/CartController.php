@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Gloudemans\Shoppingcart\Facades\Cart;
+use App\Models\Courses;
 
 class CartController extends Controller
 {
@@ -34,7 +36,10 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $course = Courses::findOrFail($request->input(key:'Course_id'));
+        Cart::add($course->id, $course->CourseName, $request->input(key:'QTY'), $course->CoursePrice/100);
+
+        return back()->with('message' , 'Successfully added');
     }
 
     /**
