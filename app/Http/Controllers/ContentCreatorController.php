@@ -14,4 +14,9 @@ class ContentCreatorController extends Controller
     public function writeArticle(){
         return view('contentCreator.writeArticle');
     }
+
+    public function requestAddCourse(){
+        return view('contentCreator.requestAddCourse');
+    }
+
 }
