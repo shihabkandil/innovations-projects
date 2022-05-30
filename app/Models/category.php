@@ -15,7 +15,7 @@ class Category extends Model
           
   }
 
-  public function getall(){ 
+  public function getAll(){ 
     return Category::all(); 
   }
 }

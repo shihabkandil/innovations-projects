@@ -27,6 +27,10 @@ class ContentCreator extends Authenticatable implements MustVerifyEmail
         static public function getall(){ 
             return ContentCreator::all(); 
         }
+
+        static public  function  getContentCreator($id){ 
+            return ContentCreator::where('id', 'LIKE', $id)->get(); 
+        }
 }
 
 

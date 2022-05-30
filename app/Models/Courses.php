@@ -13,7 +13,16 @@ class Courses extends Model
         'CourseName',
         'CategoryID',
         'CoursePrice',
+        'CourseInstructorID',
         'CoursePicture',
+        'duration',
+        'certificate',
+        'lang',
+        'skills',
+        'courseDesc',
+        'whatWillILearn',
+        'learningOutcomes',
+        'approved',
     ];
 
     public  function  getCategoryID($id){ 
@@ -27,6 +36,11 @@ class Courses extends Model
     public function getCourse($id){
         return Courses::findOrFail($id);
     }
+
+    public function getCoursesByInstructor($id){
+        return Courses::where('CourseInstructorID', '=' , $id)->get(); 
+    }
+
     public function getnotapproved(){
         return Courses::where('approved', '=' ,'0')->get(); 
     }

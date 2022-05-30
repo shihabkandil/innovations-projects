@@ -13,8 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('facebook_id')->nullable();
+        Schema::table('courses', function (Blueprint $table) {
+            $table->string("duration");
+            $table->integer("certificate");
+            $table->string("lang");
+            $table->string("skills");
+            $table->text("courseDesc");
+            $table->text("whatWillILearn");
+            $table->text("learningOutcomes");
         });
     }
 
@@ -25,7 +31,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('courses', function (Blueprint $table) {
             //
         });
     }
