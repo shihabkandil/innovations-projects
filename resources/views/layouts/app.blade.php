@@ -144,10 +144,10 @@
                         
                 @endif
                 <div class="p-3">
-                    <a href="#" class="cart position-relative d-inline-flex" aria-label="View your shopping cart">
+                    <a href="/cart" class="cart position-relative d-inline-flex" aria-label="View your shopping cart">
                         <i class="fas fa fa-shopping-cart fa-lg"></i>
                         <span class="cart-basket d-flex align-items-center justify-content-center">
-                            0
+                            Cart({{\Gloudemans\Shoppingcart\Facades\Cart::content()->count()}})
                         </span>
                     </a>
                 </div>

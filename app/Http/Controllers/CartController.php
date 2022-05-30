@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Gloudemans\Shoppingcart\Facades\Cart;
+use App\Models\Courses;
 
 class CartController extends Controller
 {
@@ -13,7 +15,9 @@ class CartController extends Controller
      */
     public function index()
     {
-        return view('pages.cart');
+        $cart = Cart::content();
+        $cart->toArray();
+        return view('pages.cart' , ['cart' => $cart]);
     }
 
     /**
@@ -34,7 +38,20 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $course = Courses::findOrFail($request->input(key:'Course_id'));
+    
+        Cart::add($course->id, $course->CourseName, $request->input(key:'QTY'), $course->CoursePrice);
+
+        return back()->with('message' , 'Successfully added');
+    }
+
+    public function remove(Request $request)
+    {
+        $course = Courses::findOrFail($request->input(key:'Course_id'));
+    
+        Cart::remove($course->id);
+
+        return redirect()->route('cart')->with('message' , 'Successfully Removed');
     }
 
     /**
