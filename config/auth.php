@@ -42,7 +42,7 @@ return [
         ],
         'contentCreator' => [
             'driver' => 'session',
-            'provider' => 'contentCreators',
+            'provider' => 'contentcreators',
         ],
         'student' => [
             'driver' => 'session',
@@ -76,7 +76,7 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
-        'contentCreators' => [
+        'contentcreators' => [
             'driver' => 'eloquent',
             'model' => App\Models\ContentCreator::class,
         ],
@@ -113,8 +113,8 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
-        'contentCreators' => [
-            'provider' => 'contentCreators',
+        'contentcreators' => [
+            'provider' => 'contencreators',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
