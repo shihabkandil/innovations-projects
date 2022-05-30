@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class CategoryModel extends Model
 {
-    
+  
   use HasFactory;
 
-  protected $table ='category'; 
+  protected $table ='categories'; 
 
   public function __construct(){
           
