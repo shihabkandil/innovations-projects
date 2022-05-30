@@ -59,7 +59,7 @@ class RegisterController extends Controller
         if($guard == 'contentCreator'){
             return Validator::make($data, [
                 'name' => ['required', 'string', 'max:255'],
-                'email' => ['required', 'string', 'email', 'max:255', 'unique:contentCreators,email'],
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:contentcreators,email'],
                 'password' => ['required', 'string', 'min:8', 'confirmed'],
                 'cv'=> ['required','mimes:pdf','max:10000'],
             ]);
