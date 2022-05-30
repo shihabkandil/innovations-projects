@@ -2,6 +2,9 @@
 
 return [
     'Language' => 'Language',
+    'Add Course' => 'Add Course',
+    'Write an Article' => 'Write an Article',
+    'Adding Content' => 'Adding Content',
     'Logout' => 'Logout',
     'Subscribe' => 'Subscribe',
     'Courses' => 'Courses' ,

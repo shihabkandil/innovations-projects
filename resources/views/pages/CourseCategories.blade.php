@@ -8,11 +8,6 @@
     <div>{{session('message')}}</div>
 @endif
 
-<style>
-    body {
-     overflow-x: hidden;
-    }
-</style>
 
 <?php 
     use App\Http\Controllers\FirestorageController;

@@ -2,6 +2,9 @@
 
 return [
     'Language' => 'اللغه',
+    'Write an Article' => 'اكتب مقال',
+    'Add Course' => 'أضف دورة',
+    'Adding Content' => 'إضافة المحتوى',
     'Subscribe' => 'اشتراك',
     'Courses' => 'الدورات',
     'View Courses' => 'عرض الدورات',

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Courses;
+use App\Models\Lesson;
 use Google\Cloud\Storage\StorageClient;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
@@ -12,9 +13,11 @@ class CoursesController extends Controller
 {
 
     public $courses; 
+    public $lessons;
 
     public function __construct(){
-      $this->courses= new Courses();
+      $this->courses = new Courses();
+      $this->lessons = new Lesson();
     }
     /**
      * Display a listing of the resource.
@@ -64,7 +67,8 @@ class CoursesController extends Controller
     public function showCourse($id)
     {
         $course = $this->courses->getCourse($id);
-        return view('pages.courseDetails', ['course'=>$course]);
+        $lesson = $this->lessons->getCourseLessons($id);
+        return view('pages.courseDetails', ['course'=>$course],['lesson'=>$lesson]);
     }
 
     /**
