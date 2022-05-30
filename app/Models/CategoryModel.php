@@ -10,6 +10,8 @@ class CategoryModel extends Model
     
   use HasFactory;
 
+  protected $table ='category'; 
+
   public function __construct(){
           
   }
