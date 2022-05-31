@@ -3,11 +3,6 @@
 <title>Categories</title>
 
 @section('content')
-<style>
-    body {
-     overflow-x: hidden;
-    }
-</style>
 <?php use App\Http\Controllers\FirestorageController;?>
 <br>
 <div class="container-xxl py-5">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\FirestorageController;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -99,19 +100,9 @@ class RegisterController extends Controller
 
         $this->validator($request->all(),'contentCreator')->validate();
 
-        $CVFile = $request->file('cv');
+        $file = FirestorageController::store($request['cv'],'ContentCreatorsContent/CV/');
 
-        $firebase_storage_path = 'ContentCreatorsContent/CV/';
-        $localfolder = public_path('firebase-temp-uploads') .'/';
-        $extension = $CVFile->getClientOriginalExtension();
-        $file = time().'.'.$CVFile->extension();
-        if ($CVFile->move($localfolder, $file)) {
-          $uploadedfile = fopen($localfolder.$file, 'r');
-
-          app('firebase.storage')->getBucket()->upload($uploadedfile, ['name' => $firebase_storage_path . $file]);
-          unlink($localfolder . $file);
-        }
-
+        
         $contentCreator = ContentCreator::create([
             'name' => $request['name'],
             'email' => $request['email'],

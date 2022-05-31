@@ -67,6 +67,23 @@ class FirestorageController extends Controller
     }
 
 
+    public static function store($request, $path){
+        $uploadedFile = $request;
+
+        $firebase_storage_path = $path;
+        $localfolder = public_path('firebase-temp-uploads') .'/';
+        $file = time().'.'.$uploadedFile->extension();
+        if ($uploadedFile->move($localfolder, $file)) {
+          $uploadedfile = fopen($localfolder.$file, 'r');
+
+          app('firebase.storage')->getBucket()->upload($uploadedfile, ['name' => $firebase_storage_path . $file]);
+          unlink($localfolder . $file);
+        }
+
+        return $file;
+    }
+
+
     public static function fetch($path, $id){
         $expiresAt = new \DateTime('tomorrow');  
         $fileReference = app('firebase.storage')->getBucket()->object($path.$id);  

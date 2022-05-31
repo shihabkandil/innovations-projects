@@ -3,11 +3,6 @@
 
 @section('content')
 <?php use App\Http\Controllers\FirestorageController;?>
-<style>
-    body {
-     overflow-x: hidden;
-    }
-</style>
 <div class="row g-4 justify-content-center">
     <a href="/contentCreator/courseBuilder" class="btn btn-info btn-lg" style="color: white;"><i class="fa fa-plus"></i> Request To Add A Course</a>
 
@@ -17,7 +12,7 @@
     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
         <div class="course-item bg-light">
             <div class="position-relative overflow-hidden">
-                <img class="img-fluid" src="<?php echo FirestorageController::fetch('Courses/Picture/',$data->CoursePicture)?>" alt="{{$data->CourseName}} picture">
+                <img class="img-fluid" src="<?php echo FirestorageController::fetch('Courses/Pictures/',$data->CoursePicture)?>" alt="{{$data->CourseName}} picture" width="100%">
                 <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
                     <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
                     <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Join Now</a>
