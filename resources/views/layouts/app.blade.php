@@ -87,6 +87,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ __('messages.Courses') }}</a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a href="/myCourses" class="dropdown-item">{{ __('messages.My Courses') }}</a></li>
                             <li><a href="/categories" class="dropdown-item">{{ __('messages.View Courses') }}</a></li>
                             <li><a href="/bundles" class="dropdown-item">{{ __('messages.Bundles') }}</a></li>
                             <li><hr class="dropdown-divider"></li>
