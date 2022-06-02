@@ -16,7 +16,7 @@
 
      @foreach($id as $Courses)[
         <form method = 'POST' action = "{{ route('updateCourse') }}">
-            
+        @csrf
 <tr>
 <input type="hidden" name="courseID" value="{{$Courses['id']}}">
     <td>{{$Courses['CourseID']}}</td>
