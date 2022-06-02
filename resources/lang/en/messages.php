@@ -19,6 +19,7 @@ return [
     'About us' => 'About us',
     'Contact us' => 'Contact us',
     'Login' => 'Login',
+    'About Us' => 'About Us',
     'Join us' => 'Join us',
     'Effective Video Lessons' => 'Effective Video Lessons',
     'Browse our courses catalog and see what can help you develop yourself' => 'Browse our courses catalog and see what can help you develop yourself',
@@ -32,6 +33,15 @@ return [
     'Articles are written by researchers or experts in order to share the results of their original research or analysis with other researchers and students' => 'Articles are written by researchers or experts in order to share the results of their original research or analysis with other researchers and students',
     'Join Now' => 'Join Now',
     'Read More' => 'Read More',
+    'required name' => 'Name is required',
+    'password less than 8' => 'password can\'t be less than 8',
+    'about us text 1' => 'The hospitality and retail industry has been steadily developing at a rapid speed in Egypt and due to its fast development the workers in this field haven’t been able to keep up with it and implement the newest cutting edge technologies and practices that will advance their quality of service to the next level',
+    'about us text 2' => 'Our web application will close this gap as it will include a variety of courses taught by experts in the field of retail and hospitality, and it will display the latest news in those fields',
+    'Online Lessons' => 'Online Lessons',
+    'Skilled Instructors' => 'Skilled Instructors',
+    'Verified Certificates' => 'Verified Certificates',
+    'Experts\' articles' => 'Experts\' articles',
+    'Bundles' => 'Bundles'
 ];
 
 ?>

@@ -63,15 +63,23 @@ class RegisterController extends Controller
                 'email' => ['required', 'string', 'email', 'max:255', 'unique:contentcreators,email'],
                 'password' => ['required', 'string', 'min:8', 'confirmed'],
                 'cv'=> ['required','mimes:pdf','max:10000'],
-            ]);
+            ],[
+                'name.required'=> trans('messages.required name'), // custom message translation
+                'email.required'=> trans('messages.email required'), // custom message translation
+                'password.min'=> trans('messages.password less than 8') // custom message translation
+             ]);
         }
         else if($guard == 'student'){
             return Validator::make($data, [
                 'name' => ['required', 'string', 'max:255'],
                 'email' => ['required', 'string', 'email', 'max:255', 'unique:students,email'],
                 'password' => ['required', 'string', 'min:8', 'confirmed'],
-            ]);
-
+            ],
+            [
+                'name.required'=> trans('messages.required name'), // custom message translation
+                'email.required'=> trans('messages.email required'), // custom message translation
+                'password.min'=> trans('messages.password less than 8') // custom message translation
+             ]);
     }
 }
 

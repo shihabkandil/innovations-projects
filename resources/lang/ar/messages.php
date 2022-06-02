@@ -27,11 +27,23 @@ return [
     'News Section' => 'قسم الأخبار',
     'Articles Section' => 'قسم المقالات',
     'Start your journey' => 'ابدأ رحلتك',
+    'About Us' => 'معلومات عنا',
     'Start your journey' => 'ابدأ رحلتك',
     'Articles written by experts' => 'مقالات كتبها خبراء',
     'Articles are written by researchers or experts in order to share the results of their original research or analysis with other researchers and students' => 'تتم كتابة المقالات بواسطة باحثين أو خبراء من أجل مشاركة نتائج أبحاثهم أو تحليلاتهم الأصلية مع الباحثين والطلاب الآخرين',
     'Join Now' => 'انضم الان',
     'Read More' => 'اقرأ المزيد',
+    'required name' => 'من فضلك ادخل اسمك',
+    'password less than 8' => 'الحد الادني لكلمه المرور هو 8 احرف',
+    'about us text 1' => 'تتطور صناعة الضيافة والبيع بالتجزئة بشكل مطرد وبسرعة سريعة في مصر ، وبسبب التطور السريع الذي تشهده ، لم يتمكن العمال في هذا المجال من مواكبة ذلك وتنفيذ أحدث التقنيات والممارسات المتطورة التي من شأنها تحسين جودتهم. من الخدمة إلى المستوى التالي.',
+    'about us text 2' => 'سوف يسد تطبيق الويب الخاص بنا هذه الفجوة لأنه سيشمل مجموعة متنوعة من الدورات التي يدرسها خبراء في مجال البيع بالتجزئة والضيافة ، وسيعرض آخر الأخبار في تلك المجالات.',
+    'Online Lessons' => 'دروس اونلاين',
+    'Skilled Instructors' => 'مدربين مهره',
+    'Verified Certificates' => 'شهادات موثقه',
+    'Experts\' articles' => 'مقالات الخبراء',
+    'Bundles' => 'حزم من الدورات التدريبيه'
+
+
 ];
 
 ?>
