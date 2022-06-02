@@ -51,6 +51,10 @@ class Courses extends Model
         return Courses::where('CourseInstructorID', '=' , $id)->get(); 
     }
 
+    public function checkCourseInstructor($courseID, $instructorID){
+       return Courses::where('id', '=' , $courseID)->where('CourseInstructorID', '=' , $instructorID)->exists();
+    }
+
     public function getnotapproved(){
         return Courses::where('approved', '=' ,'0')->get(); 
     }

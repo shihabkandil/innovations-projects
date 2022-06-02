@@ -81,6 +81,7 @@ Route::group(['middleware'=>'language'], function () {
         Route::get('/login', [LoginController::class, 'showStudentLogin'])->name('studentLoginForm');
 
         Route::get('/quiz', [StudentController::class, 'quiz'] );
+        Route::get('/myCourses', [StudentController::class, 'studentCourses'] );
 
         Route::get('/news', [NewsApiController::class, 'showNews'] );
 

@@ -1,35 +1,17 @@
 @extends('layouts.app')
 
-<title>Category {{$id}} Courses</title>
 
 @section('content')
-
-@if(session('message'))
-    <div>{{session('message')}}</div>
-@endif
-
-
 <?php 
     use App\Http\Controllers\FirestorageController;
     use App\Models\ContentCreator;
     ?>
-<br>
-<div class="container-xxl py-5">
-    <div class="container">
-        <div class="text-center wow fadeInUp" data-wow-delay="4s">
-            <h2 class="section-title bg-white text-center px-3">{{ __('Courses')}}</h2>
-        </div>
-    </div>
-</div>
-
-<form action="{{route('cart.store')}}" method="POST">
-    @csrf
 <div class="row g-4 justify-content-center">
-@foreach($courses as $data)
-    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+    @foreach($courses as $data)
+    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
         <div class="course-item bg-light">
             <div class="position-relative overflow-hidden">
-                <img class="img-fluid" src="<?php echo FirestorageController::fetch('Courses/Picture/',$data->CoursePicture)?>" alt="{{$data->CourseName}}">
+                <img class="img-fluid" src="<?php echo FirestorageController::fetch('Courses/Pictures/',$data->CoursePicture)?>" alt="{{$data->CourseName}} picture" width="100%">
                 <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
                 </div>
             </div>
@@ -45,23 +27,13 @@
                 </div>
                 <a href="/course/{{$data->id}}"><h5 class="mb-4">{{$data->CourseName}}</h5></a>
             </div>
-            
             <div class="d-flex border-top">
                 <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-tie text-primary me-2"></i><?php echo ContentCreator::getContentCreator($data->CourseInstructorID)[0]->name; ?></small>
-            </div>
-
-            <div class="flex-fill text-center border-end py-2">
-                <input type="hidden" name="Course_id" value={{ $data->id }}></input>
-                @if($cart->where('id',$data->id)->count())
-                    IN Cart
-                @else
-                <button type="submit" class="btn btn-primary">Add to Cart</button>
-                <input type="number" value="1" name="QTY" class="col-xs-2">
-                @endif
+                <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>{{$data->duration}}</small>
+                <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>30 Students</small>
             </div>
         </div>
     </div>
-@endforeach
+    @endforeach
 </div>
-</form>
 @endsection

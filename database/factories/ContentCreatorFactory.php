@@ -1,20 +1,15 @@
 <?php
 
 namespace Database\Factories;
-use App\Models\Student;
+use App\Models\ContentCreator;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-
-
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Student>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\\ContentCreator>
  */
-
-class StudentFactory extends Factory
+class ContentCreatorFactory extends Factory
 {
-    protected $model = Student::class;
-
-    /**
+    protected $model = ContentCreator::class;
 
     /*
      * Define the model's default state.
@@ -28,11 +23,9 @@ class StudentFactory extends Factory
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
             'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-            'address' => $this->faker->streetAddress,
-            'city' => $this->faker->city,
-            'state' => $this->faker->state,
-            'zip_code' => $this->faker->postcode,
+            'role'=> 'instructor',
+            'cv' => 'cv_default.pdf',
+            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password3
             'remember_token' => Str::random(10),
         ];
     }
@@ -50,8 +43,4 @@ class StudentFactory extends Factory
             ];
         });
     }
-
 }
-
-}
-

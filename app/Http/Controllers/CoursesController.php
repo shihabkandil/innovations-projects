@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Courses;
+use App\Models\Enrollment;
 use App\Models\Lesson;
-use Google\Cloud\Storage\StorageClient;
+use Auth;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
 
@@ -18,6 +19,7 @@ class CoursesController extends Controller
     public function __construct(){
       $this->courses = new Courses();
       $this->lessons = new Lesson();
+      $this->enrollments = new Enrollment();
     }
     /**
      * Display a listing of the resource.
@@ -68,7 +70,17 @@ class CoursesController extends Controller
     {
         $course = $this->courses->getCourse($id);
         $lesson = $this->lessons->getCourseLessons($id);
-        return view('pages.courseDetails', ['course'=>$course],['lesson'=>$lesson]);
+
+        if(Auth::guard('admin')->check()){
+            return view('pages.courseDetails', ['course'=>$course, 'lesson'=>$lesson, 'userType'=>'admin']);
+        }else if(Auth::guard('contentCreator')->check() && $this->courses->checkCourseInstructor($id, Auth::guard('contentCreator')->user()->id)){
+            return view('pages.courseDetails', ['course'=>$course, 'lesson'=>$lesson, 'userType'=>'contentCreator']);
+        }else if(Auth::guard('student')->check()){
+            return view('pages.courseDetails', ['course'=>$course, 'lesson'=>$lesson, 'userType'=>'student', 'enrolled'=>$this->enrollments->checkCourseStudent($id, Auth::guard('student')->user()->id)]);
+        }else{
+            return redirect()->route('home');
+        }
+        
     }
 
     /**

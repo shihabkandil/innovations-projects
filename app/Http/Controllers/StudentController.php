@@ -4,12 +4,22 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
+use App\Models\Courses;
+use App\Models\Enrollment;
+use Auth;
 
 class StudentController extends Controller
 {
+    public $student;
+    public $courses;
+    public $enrollment;
 
     public function __construct(){
+      
         $this->student= new Student();
+        $this->courses= new Courses();
+        $this->enrollment= new Enrollment();
+
     }
 
     public function quiz(){
@@ -37,5 +47,9 @@ class StudentController extends Controller
         $data->BIO = $req->BIO;
         $data->save();
         return redirect('/');
+    }
+
+    public function studentCourses(){
+        return view('student.myCourses', ['courses'=> $this->courses->getCourse($this->enrollment->getStudentCourses(Auth::guard('student')->user()->id))]);
     }
 }
