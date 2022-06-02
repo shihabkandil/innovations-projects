@@ -17,7 +17,13 @@ class AdminCoursesController extends Controller
         return view('admin.Courses',['id'=>$data] );
     }
          
-    
+    public function updateCourse(Request $request)
+    {
+        $Course = Courses::find($request["courseID"]);
+        $Course->approved = 1;
+        $Course->update();
+        return redirect('/dashboardAdminCourses');
+    }
 
 
 
