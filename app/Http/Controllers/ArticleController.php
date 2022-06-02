@@ -26,6 +26,12 @@ class ArticleController extends Controller
         return view('admin.Article',['id'=>$data] );
     }
 
-    
+    public function updateArticle(Request $request)
+    {
+        $Article = Article::find($request["articleID"]);
+        $Article->approved = 1;
+        $Article->update();
+        return redirect('/dashboardAdminArticles');
+    }
     
 }
