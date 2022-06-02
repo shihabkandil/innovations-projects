@@ -1,8 +1,9 @@
 <?php
 
+namespace Database\factories;
 namespace Database\Seeders;
-
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Courses;
+use App\Models\category;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,6 +15,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        Courses::factory()->count(20)->create();
+        category::factory()->count(5)->create();
+
+        $categories = category::all();
+        Courses::all()->each(function($course) use ($categories){
+            $course->categories()->attach(
+                $categories->random(2)->pluck('id')->toArray()
+            );
+        });
     }
 }

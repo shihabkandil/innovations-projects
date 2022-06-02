@@ -10,7 +10,7 @@ class StudentController extends Controller
 
     public function __construct(){
         $this->student= new Student();
-      }
+    }
 
     public function quiz(){
         return view('student.quiz');
@@ -24,6 +24,10 @@ class StudentController extends Controller
 
     public function editProfile($id){
         return view('pages.editProfile', ['id'=>$id] )->with(array('student'=>$this->fetchStudent($id)));
+    }
+
+    public function purchase(){
+        
     }
 
     public function updateStudent(Request $req){
