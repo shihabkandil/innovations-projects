@@ -25,6 +25,16 @@ class Courses extends Model
         'approved',
     ];
 
+    protected $guarded = [];
+
+    public function categories(){
+        return $this->belongsToMany(category::class);
+    }
+
+    public function orders(){
+        return $this->belongsToMany(Order::class);
+    }
+
     public  function  getCategoryID($id){ 
         return Courses::where('CategoryID', 'LIKE', $id)->get(); 
     }
