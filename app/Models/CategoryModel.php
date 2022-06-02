@@ -11,9 +11,14 @@ class CategoryModel extends Model
   use HasFactory;
 
   protected $table ='categories'; 
+  protected $guarded = [];
 
   public function __construct(){
           
+  }
+
+  public function courses(){
+    return $this->belongsToMany(Courses::class);
   }
 
   public function getAll(){ 

@@ -2,6 +2,7 @@
 
 return [
     'Language' => 'اللغه',
+    'My Courses' => 'دوراتي',
     'Write an Article' => 'اكتب مقال',
     'Add Course' => 'أضف دورة',
     'Adding Content' => 'إضافة المحتوى',

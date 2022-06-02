@@ -25,6 +25,16 @@ class Courses extends Model
         'approved',
     ];
 
+    protected $guarded = [];
+
+    public function categories(){
+        return $this->belongsToMany(category::class);
+    }
+
+    public function orders(){
+        return $this->belongsToMany(Order::class);
+    }
+
     public  function  getCategoryID($id){ 
         return Courses::where('CategoryID', 'LIKE', $id)->get(); 
     }
@@ -39,6 +49,10 @@ class Courses extends Model
 
     public function getCoursesByInstructor($id){
         return Courses::where('CourseInstructorID', '=' , $id)->get(); 
+    }
+
+    public function checkCourseInstructor($courseID, $instructorID){
+       return Courses::where('id', '=' , $courseID)->where('CourseInstructorID', '=' , $instructorID)->exists();
     }
 
     public function getnotapproved(){

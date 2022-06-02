@@ -81,6 +81,7 @@ Route::group(['middleware'=>'language'], function () {
         Route::get('/login', [LoginController::class, 'showStudentLogin'])->name('studentLoginForm');
 
         Route::get('/quiz', [StudentController::class, 'quiz'] );
+        Route::get('/myCourses', [StudentController::class, 'studentCourses'] );
 
         Route::get('/news', [NewsApiController::class, 'showNews'] );
 
@@ -106,6 +107,9 @@ Route::group(['middleware'=>'language'], function () {
         Route::post('/', [CartController::class, 'store'])->name(name:'cart.store');
         Route::post('/', [CartController::class, 'remove'])->name(name:'cart.remove');
         Route::get('/cart' , [CartController::class , 'index'])->name(name:'cart');
+
+        Route::post('/purchase' , [StudentController::class, 'purchase'] );
+
 
         Route::get('changeLocale/{locale}', function($lang) {
             \Session::put('locale', $lang);

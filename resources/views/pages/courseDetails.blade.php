@@ -62,9 +62,13 @@
                                         <h4 class="sub-header-course">Price</h4>
                                         <h2 style="color: antiquewhite" class="sub-header-course">EGP {{$course->CoursePrice}}</h2>
                                     </div>
+                                    @if($userType == 'student')
+                                    @if($enrolled == false)
                                     <div class="buy_btn single_items mx-2">
                                         <a style="color:black" href="#" title="">Add to cart</a>
                                     </div>
+                                    @endif
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -107,11 +111,21 @@
                                                         <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{$i}}" class="collapsed"> </a> 
                                                     </h4>
                                                 </div>
+                                                @if($userType == 'student')
+                                                @if($enrolled != false)
                                                 <div id="collapse{{$i}}" class="panel-collapse collapse">
                                                     <div class="panel-body">
                                                     <p style="white-space: pre-wrap; overflow-wrap: break-word;">{{$lessonData->body}}</p>
                                                     </div>
                                                 </div>
+                                                @endif
+                                                @else
+                                                <div id="collapse{{$i}}" class="panel-collapse collapse">
+                                                    <div class="panel-body">
+                                                    <p style="white-space: pre-wrap; overflow-wrap: break-word;">{{$lessonData->body}}</p>
+                                                    </div>
+                                                </div>
+                                                @endif
                                             </div>
                                             <?php $i++; ?>
                                             @endforeach

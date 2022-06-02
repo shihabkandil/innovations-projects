@@ -27,4 +27,8 @@ class Student extends Authenticatable implements MustVerifyEmail
         public  function  getStudent($id){ 
             return Student::where('id', 'LIKE', $id)->get(); 
         }
+
+        public function orders(){
+            return $this->belongsToMany(Order::class);
+        }
 }
