@@ -123,7 +123,8 @@ Route::get('/dashboardAdminArticles', [ArticleController::class , 'showArticles'
 
 Route::post('/dashboardAdminArticles', [ArticleController::class, 'updateArticle'])->name('updateArticle');
 
+Route::get('/dashboardAdminCourses',  [AdminCoursesController::class, 'index']);
 
-
+Route::post('/dashboardAdminCourses', [AdminCoursesController::class, 'updateCourse'])->name('updateCourse');
 });
 
