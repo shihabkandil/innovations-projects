@@ -119,9 +119,17 @@ Route::group(['middleware'=>'language'], function () {
         });
 
 
+
+// Articles admin view and acceptance        
 Route::get('/dashboardAdminArticles', [ArticleController::class , 'showArticles']);
 
 Route::post('/dashboardAdminArticles', [ArticleController::class, 'updateArticle'])->name('updateArticle');
+
+
+
+// courses admin view and acceptance 
+
+
 
 Route::get('/dashboardAdminCourses',  [AdminCoursesController::class, 'index']);
 
