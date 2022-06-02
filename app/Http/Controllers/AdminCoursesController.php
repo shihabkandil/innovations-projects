@@ -14,8 +14,16 @@ class AdminCoursesController extends Controller
     public function index()
     {
         $data =  Courses::where('approved', '=' ,'0')->get(); 
-        return view('admin.Courses',['CourseID'=>$data] );
+        return view('admin.Courses',['id'=>$data] );
     }
+         
+    
+
+
+
+
+
+
 
     /**
      * Show the form for creating a new resource.
