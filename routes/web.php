@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\AdminCoursesController;
+use App\Http\Controllers\ArticleController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -116,7 +118,12 @@ Route::group(['middleware'=>'language'], function () {
             return redirect()->back();
         });
 
-Route::get('/dashboardAdminCourses', [AdminCoursesController::class , 'index']);
+
+Route::get('/dashboardAdminArticles', [ArticleController::class , 'showArticles']);
+
+Route::post('/dashboardAdminArticles', [ArticleController::class, 'updateArticle'])->name('updateArticle');
+
+
 
 });
 
