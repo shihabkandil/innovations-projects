@@ -14,14 +14,22 @@
   </thead>
      
 
-     @foreach($CourseID as $Courses)[
+     @foreach($id as $Courses)[
+        <form method = 'POST' action = "{{ route('updateCourse') }}">
+            
 <tr>
+<input type="hidden" name="courseID" value="{{$Courses['id']}}">
     <td>{{$Courses['CourseID']}}</td>
     <td>{{$Courses['CourseName']}}</td>
     <td>{{$Courses['CoursePrice']}}</td>
-    <td><button  type="button" class="btn btn-primary">Accept</button></td>
+
+    <td><button type = 'submit'> Accept
+     </button></td>
+
 </tr>
+     </form>
 @endforeach
+     
 </table>
 
 
