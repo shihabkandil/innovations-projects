@@ -3,6 +3,7 @@
 return [
     'Language' => 'Language',
     'Add Course' => 'Add Course',
+    'My Courses' => 'My Courses',
     'Write an Article' => 'Write an Article',
     'Adding Content' => 'Adding Content',
     'Logout' => 'Logout',
