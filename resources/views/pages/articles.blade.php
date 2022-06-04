@@ -36,6 +36,7 @@
         </style>
     </head>
     <br>
+    <?php use App\Models\ContentCreator; ?>
 
     <div class="container-xxl py-5">
         <div class="container">
@@ -45,41 +46,25 @@
         </div>
     </div>
 
+    @foreach($articles as $data)
     <div class="container">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="card h-100">
                 <div class="card-body" style="background-color: #ffc107;">
-                <a href="#" class="title"><b>Shedding light on retail environments</b></a>
+                <a href="/article/{{$data->id}}" class="title"><b>{{$data->title}}</b></a>
                 </div>
                 <div class="card-body">
                     <p>
-                    Over the past several years, physical retail outlets have seen a noticeable decline in shoppers, as digital shopping has provided a newer and less costly shopping alternative for consumers. Online digital shopping provides immediate product information but lacks the experience of a physical product. Newer immersive digital shopping environments bring together digital product information with physical products. In this paper we present our early work in exploring the applicability and interaction space of spatially aware multi-surface environments in a retail space. We give an overview on our prototype designed with an industry partner, followed by early feedback on the role of multi-surface environments and interactions in the retail space.                    </p> 
+                    {{\Illuminate\Support\Str::limit($data->text,600,$end='...')}} 
                     </p> 
                     <hr>
-                    <p style="float: right;"><b>by <a href="#">Tracy Hardwood</a></b></p>
+                    <p style="float: right; "><b>by <?php echo ContentCreator::getContentCreator($data->written_by)[0]->name; ?></b></p>
                 </div>
             </div>
         </div>
         <br>
     </div>
-
-    <div class="container">
-        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-            <div class="card h-100">
-            <div class="card-body" style="background-color: #ffc107;">
-            <a href="#" class="title"><b>Exploring Multi-Surface Interactions in Retail Environments</b></a>
-            </div>
-            <div class="card-body" >
-                <div class="card-body" >
-                    <p>
-                    Over the past several years, physical retail outlets have seen a noticeable decline in shoppers, as digital shopping has provided a newer and less costly shopping alternative for consumers. Online digital shopping provides immediate product information but lacks the experience of a physical product. Newer immersive digital shopping environments bring together digital product information with physical products. In this paper we present our early work in exploring the applicability and interaction space of spatially aware multi-surface environments in a retail space. We give an overview on our prototype designed with an industry partner, followed by early feedback on the role of multi-surface environments and interactions in the retail space.                    </p> 
-                    <hr>
-                    <p style="float: right;"><b>by <a href="#">Sydney Pratte</a></b></p>
-                </div>
-            </div>
-        </div>
-        <br>
-    </div>
+    @endforeach
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
