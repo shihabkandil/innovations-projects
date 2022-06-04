@@ -39,8 +39,10 @@ Route::group(['middleware'=>'language'], function () {
         Route::get('/categories', [CategoryController::class, 'index'] );
         Route::get('/checkout', [PagesController::class, 'checkout'] );
         Route::get('/contact', [PagesController::class, 'contact'] );
+        Route::post('/submitContactUs',[PagesController::class,'submitContactUs']);
         Route::get('/about', [PagesController::class, 'about'] );
         Route::get('/articles', [PagesController::class, 'articles'] );
+        Route::get('/article/{id}', [PagesController::class, 'articleDetails'] );
         Route::get('/subscriptions', [PagesController::class, 'subscribe'] );
 
         Route::get('/logout', [LoginController::class,'logout']);
@@ -68,6 +70,16 @@ Route::group(['middleware'=>'language'], function () {
             Route::get('/dashboard' , [AdminController::class,'adminDash']);
             Route::get('/AdminLogout', [AdminController::class,'logout']);
             Route::get('/viewContentCreators', [AdminController::class, 'viewContentCreators'] );
+            Route::get('/viewContactUsForms', [AdminController::class , 'viewContactForms']);
+
+            // Articles admin view and acceptance        
+            Route::get('/dashboardAdminArticles', [ArticleController::class , 'showArticles']);
+            Route::post('/dashboardAdminArticles', [ArticleController::class, 'updateArticle'])->name('updateArticle');
+
+            // courses admin view and acceptance 
+            Route::get('/dashboardAdminCourses',  [AdminCoursesController::class, 'index']);
+            Route::post('/dashboardAdminCourses', [AdminCoursesController::class, 'updateCourse'])->name('updateCourse');
+            });
           });
         
         
@@ -120,19 +132,5 @@ Route::group(['middleware'=>'language'], function () {
 
 
 
-// Articles admin view and acceptance        
-Route::get('/dashboardAdminArticles', [ArticleController::class , 'showArticles']);
 
-Route::post('/dashboardAdminArticles', [ArticleController::class, 'updateArticle'])->name('updateArticle');
-
-
-
-// courses admin view and acceptance 
-
-
-
-Route::get('/dashboardAdminCourses',  [AdminCoursesController::class, 'index']);
-
-Route::post('/dashboardAdminCourses', [AdminCoursesController::class, 'updateCourse'])->name('updateCourse');
-});
 
