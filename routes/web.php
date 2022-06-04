@@ -71,6 +71,8 @@ Route::group(['middleware'=>'language'], function () {
             Route::get('/AdminLogout', [AdminController::class,'logout']);
             Route::get('/viewContentCreators', [AdminController::class, 'viewContentCreators'] );
             Route::get('/viewContactUsForms', [AdminController::class , 'viewContactForms']);
+            Route::get('/addAdmin', [AdminController::class , 'addAdminForm'])->name('addAdminForm');
+            Route::post('/addAdmin', [AdminController::class , 'addAdmin'])->name('addAdminForm');
 
             // Articles admin view and acceptance        
             Route::get('/dashboardAdminArticles', [ArticleController::class , 'showArticles']);
