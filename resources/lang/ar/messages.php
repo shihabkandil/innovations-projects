@@ -16,7 +16,7 @@ return [
     'News' => 'الاخبار',
     'Articles' => 'المقالات',
     'About us' => 'معلومات عنا',
-    'Contact us' => 'اتصل بنا',
+    'Contact Us' => 'اتصل بنا',
     'Login' => 'تسجيل الدخول',
     'Logout' => 'تسجيل الخروج',
     'Join us' => 'انضم إلينا',
@@ -41,8 +41,12 @@ return [
     'Skilled Instructors' => 'مدربين مهره',
     'Verified Certificates' => 'شهادات موثقه',
     'Experts\' articles' => 'مقالات الخبراء',
-    'Bundles' => 'حزم من الدورات التدريبيه'
-
+    'Bundles' => 'حزم من الدورات التدريبيه',
+    'Name' => 'اسم',
+    'Email' => 'البريد الإلكتروني',
+    'Subject' => 'موضوع',
+    'Message' => 'رسالة',
+    'Send' => 'ارسل',
 
 ];
 
