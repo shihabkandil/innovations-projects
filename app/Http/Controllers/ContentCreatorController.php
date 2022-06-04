@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Category;
+use App\Models\ContentCreator;
 use App\Models\Courses;
 use App\Models\Lesson;
 use Illuminate\Http\Request;
@@ -34,7 +35,7 @@ class ContentCreatorController extends Controller
         return view('contentCreator.courseBuilder', ['categories' => $this->category->getAll()]);
     }
 
-    public function submitCourse(Request $request){
+    public function validateCourse($request){
         $request->validate([
             'courseName' => ['required', 'string', 'max:255'],
             'courseCategory' => ['required','integer'],
@@ -49,8 +50,36 @@ class ContentCreatorController extends Controller
             'whatWillILearn' => ['required','string'],
             'learningOutcomes' => ['required','string'],
         ]);
+    }
 
+    public function createLessons(Request $request, Courses $course){
+        $name = $request['lessonName'];
+        $body = $request['lessonBody'];
+        $prevLesson = [];
+        $id = $course->id;
+        for($i = 0; $i < count($name); $i++){
+            if($i == 0){
+                $lesson = Lesson::create([
+                    'courseId' => $id,
+                    'name' => $name[$i],
+                    'body' => $body[$i],
+                    'prerequisiteLesson' => 0,
+                ]);
+                array_push($prevLesson, $lesson->id);
+            }else{
+                $lesson = Lesson::create([
+                    'courseId' => $course->id,
+                    'name' => $name[$i],
+                    'body' => $body[$i],
+                    'prerequisiteLesson' => end($prevLesson),
+                ]);
+                array_push($prevLesson, $lesson->id);
+            }
+        }
+    }
 
+    public function submitCourse(Request $request){
+        ContentCreatorController::validateCourse($request);
 
         $picture = FirestorageController::store($request['coursePicture'], 'Courses/Pictures/');
 
@@ -70,34 +99,10 @@ class ContentCreatorController extends Controller
         ]);
 
         if($request['lessonName']!=NULL){
-            $name = $request['lessonName'];
-            $body = $request['lessonBody'];
-            $prevLesson = [];
-            $id = $course->id;
-            for($i = 0; $i < count($name); $i++){
-                if($i == 0){
-                    $lesson = Lesson::create([
-                        'courseId' => $id,
-                        'name' => $name[$i],
-                        'body' => $body[$i],
-                        'prerequisiteLesson' => 0,
-                    ]);
-                    array_push($prevLesson, $lesson->id);
-                }else{
-                    $lesson = Lesson::create([
-                        'courseId' => $course->id,
-                        'name' => $name[$i],
-                        'body' => $body[$i],
-                        'prerequisiteLesson' => end($prevLesson),
-                    ]);
-                    array_push($prevLesson, $lesson->id);
-                }
-                
-            }
+            ContentCreatorController::createLessons($request, $course);
+            return redirect('/contentCreator/addCourse');
+        }else{
+            return redirect('/contentCreator/addCourse');
         }
-        
-        
-
-        return redirect('/contentCreator/addCourse');
     }
 }
