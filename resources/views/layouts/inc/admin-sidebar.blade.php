@@ -2,15 +2,11 @@
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <a class="nav-link" href="{{url('viewContentCreators')}}">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-                                View Content Creators
-                            </a>
                             <a class="nav-link" href="{{url('dashboardAdminArticles')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-file-circle-check"></i></div>
                                 Approve Articles
                             </a>
-                            <a class="nav-link" href="{{url('viewContentCreators')}}">
+                            <a class="nav-link" href="{{url('dashboardAdminCourses')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book"></i></div>
                                 Approve Courses
                             </a>

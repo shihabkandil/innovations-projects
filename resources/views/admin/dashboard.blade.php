@@ -15,7 +15,7 @@ overflow-x: hidden;
                 <a href="/course/" class="btn btn-mute"><h1 class="mb-0">
                     <i class="fa fa-user text-muted me-2"></i>
                 </h1>
-                <h5 class="mb-4 mt-2">Student:</h5></a>
+                <h5 class="mb-4 mt-2">Students:</h5></a>
             </div>
         </div>
     </div>
@@ -26,7 +26,7 @@ overflow-x: hidden;
                 </div>
             </div>
             <div class="text-center p-4 pb-4">
-                <a href="/course/" class="btn btn-mute"><h1 class="mb-0">
+                <a href="{{url('viewContentCreators')}}" class="btn btn-mute"><h1 class="mb-0">
                     <i class="fa fa-user-tie text-muted me-2"></i>
                 </h1>
                 <h5 class="mb-4 mt-2">Content Creators:</h5></a>
