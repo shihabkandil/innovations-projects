@@ -58,11 +58,6 @@
                             </div>
 
                             <div class="mb-3">
-                                <label for="exampleFormControlTextarea1" class="form-label">About You</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                            </div>
-
-                            <div class="mb-3">
                                 <label for="formFile" class="form-label">Upload your CV as a PDF file</label>
                                 <input class="form-control" type="file" id="formFile"  name="cv">
                             </div>
