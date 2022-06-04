@@ -13,7 +13,7 @@ class Article extends Model
         'title', 'text','written_by','approved'
     ];
 
-    public function getApproved(){
+    static public function getApproved(){
         return Article::where('approved', '=' ,'1')->get(); 
     }
 

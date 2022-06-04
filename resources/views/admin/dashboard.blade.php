@@ -12,10 +12,10 @@ overflow-x: hidden;
                 </div>
             </div>
             <div class="text-center p-4 pb-4">
-                <a href="/course/" class="btn btn-mute"><h1 class="mb-0">
-                    <i class="fa fa-user text-muted me-2"></i>
+                <h1 class="mb-0">
+                <i class="fa fa-user text-muted me-2"></i>
                 </h1>
-                <h5 class="mb-4 mt-2">Students:</h5></a>
+                <h5 class="mb-4 mt-2">Students: {{$students->count()}}</h5>
             </div>
         </div>
     </div>
@@ -26,10 +26,10 @@ overflow-x: hidden;
                 </div>
             </div>
             <div class="text-center p-4 pb-4">
-                <a href="{{url('viewContentCreators')}}" class="btn btn-mute"><h1 class="mb-0">
-                    <i class="fa fa-user-tie text-muted me-2"></i>
+                <h1 class="mb-0">
+                <i class="fa fa-user-tie text-muted me-2"></i>
                 </h1>
-                <h5 class="mb-4 mt-2">Content Creators:</h5></a>
+                <h5 class="mb-4 mt-2">Content Creators: {{$contentCreators->count()}}</h5>
             </div>
         </div>
     </div>
@@ -40,10 +40,10 @@ overflow-x: hidden;
                 </div>
             </div>
             <div class="text-center p-4 pb-4">
-                <a href="/course/" class="btn btn-mute"><h1 class="mb-0">
+                <h1 class="mb-0">
                     <i class="fa fa-book text-muted me-2"></i>
                 </h1>
-                <h5 class="mb-4 mt-2">Courses:</h5></a>
+                <h5 class="mb-4 mt-2">Courses: {{$courses->count()}}</h5>
             </div>
         </div>
     </div>
@@ -54,10 +54,10 @@ overflow-x: hidden;
                 </div>
             </div>
             <div class="text-center p-4 pb-4">
-                <a href="/course/" class="btn btn-mute"><h1 class="mb-0">
+                <h1 class="mb-0">
                     <i class="fa fa-file text-muted me-2"></i>
                 </h1>
-                <h5 class="mb-4 mt-2">Articles:</h5></a>
+                <h5 class="mb-4 mt-2">Articles: {{$articles->count()}}</h5>
             </div>
         </div>
     </div>

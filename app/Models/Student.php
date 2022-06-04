@@ -31,4 +31,7 @@ class Student extends Authenticatable implements MustVerifyEmail
         public function orders(){
             return $this->belongsToMany(Order::class);
         }
+        static public function getall(){ 
+            return Student::all(); 
+        }
 }
