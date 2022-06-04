@@ -12,4 +12,13 @@ class Article extends Model
     protected $fillable = [
         'title', 'text','written_by','approved'
     ];
+
+    public function getApproved(){
+        return Article::where('approved', '=' ,'1')->get(); 
+    }
+
+    public function getArticle($id){
+        return Article::findOrFail($id);
+    }
+    
 }

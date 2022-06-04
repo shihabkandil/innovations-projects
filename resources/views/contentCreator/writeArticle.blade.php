@@ -20,7 +20,7 @@
                     <div class="mb-2">
                             <input type="hidden" name='currentUserID' value="{{ Auth::guard('contentCreator')->user()->id }}">
                             <div class="input-group hdtuto control-group lst increment" >
-                                <textarea required style="height: 500px;"name="article" class="form-control" rows="40" cols="5"></textarea>
+                                <textarea required style="height: 500px; white-space: pre-wrap;"name="article" class="form-control" rows="40" cols="5"></textarea>
                             </div>
                             <div class="w-25 m-5 text-center mx-auto">
                                 <button class="w-full h-12 text-lg w-32 rounded text-white" style="background-color: #ffc107">Submit for approval</button> 
