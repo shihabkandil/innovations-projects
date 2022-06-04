@@ -39,10 +39,8 @@
                                 <h2 style="color:white">{{$course->CourseName}} Course</h2>
                                 <div class="review-option ">
                                     <div class="teacher-info">
-                                        <img src="{{asset('img/review_1.jpg')}}" alt="" class="img-fluid">
                                         <div class="teacher-name m-2">
-                                            <h4 class="sub-header-course">Instructor</h4>
-                                            <span><?php echo ContentCreator::getContentCreator($course->CourseInstructorID)[0]->name; ?></span>
+                                            <h4 class="sub-header-course">Instructor <?php echo ContentCreator::getContentCreator($course->CourseInstructorID)[0]->name; ?></h4>
                                         </div>
                                     </div>
                                     <div class="review-rank mx-5">

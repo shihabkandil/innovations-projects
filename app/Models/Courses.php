@@ -58,5 +58,9 @@ class Courses extends Model
     public function getnotapproved(){
         return Courses::where('approved', '=' ,'0')->get(); 
     }
+
+    static public function getapproved(){
+        return Courses::where('approved', '=' ,'1')->get(); 
+    }
     
 }

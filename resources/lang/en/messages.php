@@ -17,7 +17,7 @@ return [
     'News' => 'News',
     'Articles' => 'Articles',
     'About us' => 'About us',
-    'Contact us' => 'Contact us',
+    'Contact Us' => 'Contact Us',
     'Login' => 'Login',
     'About Us' => 'About Us',
     'Join us' => 'Join us',
@@ -41,7 +41,11 @@ return [
     'Skilled Instructors' => 'Skilled Instructors',
     'Verified Certificates' => 'Verified Certificates',
     'Experts\' articles' => 'Experts\' articles',
-    'Bundles' => 'Bundles'
+    'Name' => 'Name',
+    'Email' => 'Email',
+    'Subject' => 'Subject',
+    'Message' => 'Message',
+    'Send' => 'Send',
 ];
 
 ?>

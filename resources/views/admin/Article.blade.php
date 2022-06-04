@@ -2,10 +2,10 @@
 @section('content')
 
 <table class="table">
-<thead style ="background-color:#1985E7;">
-<tr>
+<thead style ="background-color:grey;">
+   <tr style="color: white;">
           <td>ID</td>
-          <td>title</td>
+          <td style='width:20%;'>Title</td>
           <td>Article</td>
           <td>Pending</td>
      </tr>
@@ -20,10 +20,8 @@
 <input type="hidden" name="articleID" value="{{$articles['id']}}">
     <td>{{$articles['id']}}</td>
     <td>{{$articles['title']}}</td>
-    <td>{{$articles['text']}}</td>
-    <td><button type = 'submit'> Accept
-     </button></td>
-
+    <td ><p style="white-space: pre-wrap;">{{$articles['text']}}</p></td>
+    <td><button class='btn btn-secondary' type = 'submit'> Accept</button></td>
 </tr>
 </form>
 @endforeach

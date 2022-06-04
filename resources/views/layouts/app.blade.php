@@ -55,7 +55,7 @@
                 <a href="/news" class="nav-item nav-link">{{ __('messages.News') }}</a>
                 <a href="/articles" class="nav-item nav-link">{{ __('messages.Articles') }}</a>
                 <a href="/about" class="nav-item nav-link">{{ __('messages.About us') }}</a>
-                <a href="/contact" class="nav-item nav-link">{{ __('messages.Contact us') }}</a>
+                <a href="/contact" class="nav-item nav-link">{{ __('messages.Contact Us') }}</a>
                 
 
                 @auth('contentCreator')

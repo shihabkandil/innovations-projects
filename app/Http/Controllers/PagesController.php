@@ -2,16 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
+use App\Models\Contact;
 use Illuminate\Support\Facades\Auth;
 use App\Models\NewsApiModel;
+use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
 
-    private $apiModel;
+    private $apiModel, $articles;
 
     public function __construct(){
         $this->apiModel = new NewsApiModel();
+        $this->articles = new Article();
     }
 
     public function index(){
@@ -50,14 +54,27 @@ class PagesController extends Controller
             return redirect('/');
         }  
     }
-    
+
+    public function submitContactUs(Request $request){
+        $contact = Contact::create([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'subject' => $request['subject'],
+            'message' => $request['message']
+        ]);
+        return redirect('/home');
+    }
 
     public function bundles(){
         return view('pages.bundles');
     }
 
     public function articles(){
-        return view('pages.articles');
+        return view('pages.articles',['articles'=>$this->articles->getApproved()]);
+    }
+    
+    public function articleDetails($id){
+        return view('pages.articleDetails',['article'=>$this->articles->getArticle($id)]);
     }
 
     public function subscribe(){

@@ -25,35 +25,36 @@
 				<img src="img/img-01.png" alt="IMG">
 			</div>
 
-			<form class="contact1-form validate-form">
+			<form class="contact1-form validate-form"  method="post" action="submitContactUs">
+				@csrf
 				<span class="contact1-form-title">
-					Get in touch
+				{{ __('messages.Contact Us') }}
 				</span>
 
 				<div class="wrap-input1 validate-input" data-validate = "Name is required">
-					<input class="input1" type="text" name="name" placeholder="Name">
+					<input class="input1" type="text" name="name" placeholder="{{ __('messages.Name') }}">
 					<span class="shadow-input1"></span>
 				</div>
 
 				<div class="wrap-input1 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-					<input class="input1" type="text" name="email" placeholder="Email">
+					<input class="input1" type="text" name="email" placeholder="{{ __('messages.Email') }}">
 					<span class="shadow-input1"></span>
 				</div>
 
 				<div class="wrap-input1 validate-input" data-validate = "Subject is required">
-					<input class="input1" type="text" name="subject" placeholder="Subject">
+					<input class="input1" type="text" name="subject" placeholder="{{ __('messages.Subject') }}">
 					<span class="shadow-input1"></span>
 				</div>
 
 				<div class="wrap-input1 validate-input" data-validate = "Message is required">
-					<textarea class="input1" name="message" placeholder="Message"></textarea>
+					<textarea class="input1" name="message" placeholder="{{ __('messages.Message') }}"></textarea>
 					<span class="shadow-input1"></span>
 				</div>
 
 				<div class="container-contact1-form-btn">
 					<button class="contact1-form-btn">
 						<span>
-							Send Email
+						{{ __('messages.Send') }}
 							<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
 						</span>
 					</button>

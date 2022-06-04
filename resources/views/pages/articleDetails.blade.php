@@ -25,46 +25,32 @@
     
         <!-- Template Stylesheet -->
         <link href="{{ asset('css/style.css')}}" rel="stylesheet">
-        <style>
-            .title{
-                color: white;
-                font-size: 20px;
-            }
-            .title:hover{
-                color: gray;
-            }
-        </style>
     </head>
     <br>
     <?php use App\Models\ContentCreator; ?>
-
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="4s">
-                <h2 class="section-title bg-white text-center px-3">{{ __('Articles Section')}}</h2>
+                <h1 class=" bg-white text-center px-3">{{$article->title}}</h1>
+                <br>
+                <h4><p>by<b> <?php echo ContentCreator::getContentCreator($article->written_by)[0]->name; ?></b></p></h4>
             </div>
         </div>
     </div>
 
-    @foreach($articles as $data)
     <div class="container">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                <div class="card h-100">
-                <div class="card-body" style="background-color: #ffc107;">
-                <a href="/article/{{$data->id}}" class="title"><b>{{$data->title}}</b></a>
-                </div>
+            <div class="card h-100">
                 <div class="card-body">
-                    <p>
-                    {{\Illuminate\Support\Str::limit($data->text,600,$end='...')}} 
+                    <p style="white-space: pre-wrap;">
+                    {{$article->text}}
                     </p> 
-                    <hr>
-                    <p style="float: right; "><b>by <?php echo ContentCreator::getContentCreator($data->written_by)[0]->name; ?></b></p>
+                    <hr>  
                 </div>
             </div>
         </div>
-        <br>
     </div>
-    @endforeach
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
