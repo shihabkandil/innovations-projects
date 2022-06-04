@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ContentCreator;
+use App\Models\Contact;
 use Auth;
 use App\Http\Controllers\Controller;
 
@@ -28,6 +29,10 @@ class AdminController extends Controller
 
     public function viewContentCreators(){
         return view('admin.viewContentCreators',['contentCreators' => ContentCreator::getall()]);
+    }
+
+    public function viewContactForms(){
+        return view('admin.contactUs',['contactUs' => Contact::getall()]);
     }
 
     public function adminLogin(Request $request){
