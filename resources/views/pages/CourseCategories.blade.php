@@ -5,7 +5,9 @@
 @section('content')
 
 @if(session('message'))
-    <div>{{session('message')}}</div>
+<div class="alert alert-success">
+  <strong>{{session('message')}}</strong>
+</div>
 @endif
 
 

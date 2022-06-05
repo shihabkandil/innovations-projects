@@ -1,47 +1,98 @@
+@extends('layouts.app')
+@section('content')
 
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@if(session('message'))
+    <div>{{session('message')}}</div>
+@endif
 
-        <title>Laravel Vue Stripe Shopping Cart</title>
+<!-- imports -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/cart.css">
+<script src="{{ asset('js/cart.js') }}"></script>
 
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-        <link type="text/css" rel="stylesheet" href="{{ mix('css/app.css') }}">
-    </head>
-    <body class="antialiased">
-        <div class="container mx-auto">
-            <div id="app">
-                <div class="wrapper">
-                    <header class="text-gray-700 body-font">
-                        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-                            <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
-                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                                </svg>
-                                <span class="ml-3 text-xl">Shopping Cart</span>
-                            </a>
-                            <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
-                                <router-link
-                                    class="mr-5 hover:text-gray-900"
-                                    :to="{name: 'products.index'}"
-                                >
-                                    Products
-                                </router-link>
-                            </nav>
-                            <router-link
-                                class="inline-flex items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0"
-                                :to="{name: 'order.checkout'}"
-                            >
-                                Checkout<span class="inline-block ml-1" v-text="'(' + $store.state.cart.length + ' items)'"></span>
-                            </router-link>
-                        </div>
-                    </header>
-                    <router-view></router-view>
+
+<div class="container px-4 py-5 mx-auto">
+  
+  
+  <div class="row justify-content-center">
+      <div class="col-lg-12">
+          
+           <div class="card">
+           
+
+
+           <div class="row d-flex justify-content-center">
+      <div class="col-5">
+     <h4 class="heading">Cart</h4>
+      </div>
+
+      <div class="col-7">
+          <div class="row text-right">
+              <div class="col-4">
+                  <h6 class="mt-2">Category</h6>
+              </div>
+              <div class="col-4">
+                  <h6 class="mt-2">Price</h6>
+              </div>
+              <div class="col-4">
+                  <h6 class="mt-2">Button</h6>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+  @foreach ($cart as $data)
+  <form action="{{route('cart.remove')}}" method="POST">
+    @csrf
+    <div class="row d-flex justify-content-center border-top">
+        <div class="col-5">
+            <div class="row d-flex">
+                <div class="book"> <img src="https://i.imgur.com/2DsA49b.jpg" class="book-img"> </div>
+                <div class="my-auto flex-column d-flex pad-left">
+                    <h6> <a class="mob-text" href ="#">{{ $cart->where('id',$data->id) }}</a> </h6>
+
+                    <p class = "mob-text" >{{ $data->CourseInstructorID }}</p>
                 </div>
             </div>
         </div>
-        <script src="{{ mix('js/app.js') }}"></script>
-    </body>
-</html>
+        <div class="my-auto col-7">
+            <div class="row text-right">
+
+                <div class="col-4">
+                    <p class="mob-text">{{ $data->CategoryID }}</p>
+                </div>
+
+                <div class="col-4">
+                    <h6 class="mob-text">EGP {{ $data->CoursePrice }}</h6>
+                </div>
+
+                <div class="col-4">
+                    <input type="hidden" name="row_id" value={{ $data->rowId }}></input>
+                    <input type="hidden" name="Course_id" value={{ $data->id }}></input>
+                    <button type="submit" class="btn btn-danger">Remove</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+  @endforeach
+
+
+<!-- checkbox button -->
+<!-- </div> <button  class="btn-block btn-blue"> <span> <span id="checkout">Checkout</span> <span id="check-amt">$26.48</span> </span> </button> -->
+
+
+      
+</div>
+
+<button  type="button" class="btn btn-primary btn-lg">Checkout</button>
+<a  class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">{{\Gloudemans\Shoppingcart\Facades\Cart::total()}} EGP</a>
+      </div>
+      
+  </div>
+</div>
+@endsection

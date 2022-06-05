@@ -121,12 +121,9 @@ Route::group(['middleware'=>'language'], function () {
         Route::post('/login', [LoginController::class, 'studentLogin'])->name('studentLoginForm');
 
         Route::post('/uploadFile', [FirestorageController::class, 'firebaseStore']);
-        Route::post('/', [CartController::class, 'store'])->name(name:'cart.store');
-        Route::post('/', [CartController::class, 'remove'])->name(name:'cart.remove');
+        Route::post('/CourseCategories', [CartController::class, 'store'])->name(name:'cart.store');
+        Route::post('/cart', [CartController::class, 'remove'])->name(name:'cart.remove');
         Route::get('/cart' , [CartController::class , 'index'])->name(name:'cart');
-
-        Route::post('/purchase' , [StudentController::class, 'purchase'] );
-
 
         Route::get('changeLocale/{locale}', function($lang) {
             \Session::put('locale', $lang);

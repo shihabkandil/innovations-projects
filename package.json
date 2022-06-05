@@ -20,10 +20,12 @@
         "sass-loader": "^11.0.1",
         "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
         "vue": "^3.2.36",
+        "vue-loader": "^16.2.0",
         "vue-router": "^4.0.15",
         "vuex": "^4.0.2"
     },
     "dependencies": {
+        "@vue/compiler-sfc": "^3.2.36",
         "firebase": "^9.6.11"
     }
 }
