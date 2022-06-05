@@ -28,10 +28,11 @@
     @csrf
 <div class="row g-4 justify-content-center">
 @foreach($courses as $data)
+@if($data->approved==1)
     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
         <div class="course-item bg-light">
             <div class="position-relative overflow-hidden">
-                <img class="img-fluid" src="<?php echo FirestorageController::fetch('Courses/Picture/',$data->CoursePicture)?>" alt="{{$data->CourseName}}">
+                <img class="img-fluid" src="<?php echo FirestorageController::fetch('Courses/Pictures/',$data->CoursePicture)?>" alt="{{$data->CourseName}}">
                 <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
                 </div>
             </div>
@@ -58,11 +59,12 @@
                     IN Cart
                 @else
                 <button type="submit" class="btn btn-primary">Add to Cart</button>
-                <input type="number" value="1" name="QTY" class="col-xs-2">
+                <input type="hidden" value="1" name="QTY" class="col-xs-2">
                 @endif
             </div>
         </div>
     </div>
+@endif    
 @endforeach
 </div>
 </form>
