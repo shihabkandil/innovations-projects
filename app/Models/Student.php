@@ -17,14 +17,14 @@ class Student extends Authenticatable implements MustVerifyEmail
     protected $table = 'students';
 
         protected $fillable = [
-            'name', 'email', 'password', 'facebook_id','google_id',
+            'name', 'email', 'password', 'facebook_id','google_id','address','city','state','zip_code'
         ];
 
         protected $hidden = [
             'password', 'remember_token',
         ];
 
-        public  function  getStudent($id){ 
+        static public function getStudent($id){ 
             return Student::where('id', 'LIKE', $id)->get(); 
         }
 
