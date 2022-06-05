@@ -43,14 +43,14 @@ class CartController extends Controller
     
         Cart::add($course->id, $course->CourseName, $request->input(key:'QTY'), $course->CoursePrice);
 
-        return back()->with('message' , 'Successfully added');
+        return back();
     }
 
     public function remove(Request $request)
     {
         $id = $request->row_id;
         Cart::remove($id);
-        return redirect()->route('cart')->with('message' , 'Successfully Removed');
+        return redirect()->route('cart');
     }
 
     /**

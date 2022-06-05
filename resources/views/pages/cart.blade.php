@@ -33,13 +33,10 @@
       <div class="col-7">
           <div class="row text-right">
               <div class="col-4">
-                  <h6 class="mt-2">Category</h6>
-              </div>
-              <div class="col-4">
                   <h6 class="mt-2">Price</h6>
               </div>
               <div class="col-4">
-                  <h6 class="mt-2">Button</h6>
+                  <h6 class="mt-2">Remove</h6>
               </div>
           </div>
       </div>
@@ -51,11 +48,8 @@
     <div class="row d-flex justify-content-center border-top">
         <div class="col-5">
             <div class="row d-flex">
-                <div class="book"> <img src="https://i.imgur.com/2DsA49b.jpg" class="book-img"> </div>
                 <div class="my-auto flex-column d-flex pad-left">
-                    <h6> <a class="mob-text" href ="#">{{ $cart->where('id',$data->id) }}</a> </h6>
-
-                    <p class = "mob-text" >{{ $data->CourseInstructorID }}</p>
+                    <h5>{{ $data->name }}</h5>
                 </div>
             </div>
         </div>
@@ -63,16 +57,12 @@
             <div class="row text-right">
 
                 <div class="col-4">
-                    <p class="mob-text">{{ $data->CategoryID }}</p>
+                    <h6 class="mob-text">EGP {{ $data->price }}</h6>
                 </div>
 
                 <div class="col-4">
-                    <h6 class="mob-text">EGP {{ $data->CoursePrice }}</h6>
-                </div>
-
-                <div class="col-4">
-                    <input type="hidden" name="row_id" value={{ $data->rowId }}></input>
-                    <input type="hidden" name="Course_id" value={{ $data->id }}></input>
+                    <input type="hidden" name="row_id" value={{ $data->rowId}}></input>
+                    <input type="hidden" name="Course_id" value={{ $data->id}}></input>
                     <button type="submit" class="btn btn-danger">Remove</button>
                 </div>
             </div>
@@ -89,7 +79,7 @@
       
 </div>
 
-<button  type="button" class="btn btn-primary btn-lg">Checkout</button>
+<button  type="button" style="color: white;" class="btn btn-warning btn-lg">Checkout</button>
 <a  class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">{{\Gloudemans\Shoppingcart\Facades\Cart::total()}} EGP</a>
       </div>
       
