@@ -31,8 +31,10 @@ Route::group(['middleware'=>'language'], function () {
 
         Route::get('/Catigories', [CategoryController::class, 'index'] );
 
-        Route::middleware(['auth'])->group(function(){
-            Route::get('/editProfile/{id}', [StudentController::class, 'editProfile'] );
+
+        Route::group(['middleware' => ['auth:student']], function() {
+            Route::get('/editProfile', [StudentController::class, 'editProfile'] );
+            Route::post('/home', [StudentController::class, 'updateStudent'])->name('update');
         });
 
         
@@ -117,7 +119,6 @@ Route::group(['middleware'=>'language'], function () {
 
         Route::post('/register/student', [RegisterController::class, 'studentRegister'])->name('studentRegisterForm');
         Route::post('/login', [LoginController::class, 'studentLogin'])->name('studentLoginForm');
-        Route::post('/home', [StudentController::class, 'updateStudent'])->name('update');
 
         Route::post('/uploadFile', [FirestorageController::class, 'firebaseStore']);
         Route::post('/', [CartController::class, 'store'])->name(name:'cart.store');

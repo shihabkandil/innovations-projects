@@ -136,6 +136,10 @@ class RegisterController extends Controller
         $student = Student::create([
             'name' => $request['name'],
             'email' => $request['email'],
+            'address' => $request['address'],
+            'city' => $request['city'],
+            'state' => $request['state'],
+            'zip_code' => $request['zip'],
             'password' => Hash::make($request['password']),
         ]);
         

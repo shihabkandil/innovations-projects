@@ -56,34 +56,34 @@ class ContentCreatorController extends Controller
         $name = $request['lessonName'];
         $body = $request['lessonBody'];
         $prevLesson = [];
-        $id = $course->id;
+        $id = $course->id; //id of the course the lessons belong to
         for($i = 0; $i < count($name); $i++){
             if($i == 0){
                 $lesson = Lesson::create([
                     'courseId' => $id,
                     'name' => $name[$i],
                     'body' => $body[$i],
-                    'prerequisiteLesson' => 0,
+                    'prerequisiteLesson' => 0,//the first lesson does not have a prerequisite so its set to 0
                 ]);
-                array_push($prevLesson, $lesson->id);
+                array_push($prevLesson, $lesson->id); //first lesson id is pushed to end of array
             }else{
                 $lesson = Lesson::create([
                     'courseId' => $course->id,
                     'name' => $name[$i],
                     'body' => $body[$i],
-                    'prerequisiteLesson' => end($prevLesson),
-                ]);
-                array_push($prevLesson, $lesson->id);
+                    'prerequisiteLesson' => end($prevLesson),//the lesson prerequisite is set to the id of the lesson before it 
+                ]);                                          //which is at the end of the array
+                array_push($prevLesson, $lesson->id); //latest lesson id is pushed to end of array
             }
         }
     }
 
     public function submitCourse(Request $request){
-        ContentCreatorController::validateCourse($request);
+        ContentCreatorController::validateCourse($request); //validate user input
 
-        $picture = FirestorageController::store($request['coursePicture'], 'Courses/Pictures/');
+        $picture = FirestorageController::store($request['coursePicture'], 'Courses/Pictures/'); //upload validated file and get path
 
-        $course = Courses::create([
+        $course = Courses::create([ //create course with validated request and file path
             'CourseName' => $request['courseName'],
             'CategoryID' => $request['courseCategory'],
             'CoursePrice' => $request['coursePrice'],
@@ -98,7 +98,7 @@ class ContentCreatorController extends Controller
             'learningOutcomes' => $request['learningOutcomes'],
         ]);
 
-        if($request['lessonName']!=NULL){
+        if($request['lessonName']!=NULL){ //if there are lessons go to createLessons function else go to addCourse page
             ContentCreatorController::createLessons($request, $course);
             return redirect('/contentCreator/addCourse');
         }else{

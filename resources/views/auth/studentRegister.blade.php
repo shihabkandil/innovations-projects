@@ -41,6 +41,30 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
+                                    <div class="form-floating">
+                                        <input id="address" type="text" placeholder="{{ __('Address') }}" class="form-control" name="address" value="{{ old('address') }}" required>
+                                        <label for="address">{{ __('Your Address') }}</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input id="city" type="text" placeholder="{{ __('City') }}" class="form-control" name="city" value="{{ old('city') }}" required>
+                                        <label for="city">{{ __('Your City') }}</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input id="state" type="text" placeholder="{{ __('State') }}" class="form-control" name="state" value="{{ old('state') }}" required>
+                                        <label for="state">{{ __('Your State') }}</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input id="zip" type="text" placeholder="{{ __('ZIP') }}" class="form-control" name="zip" value="{{ old('zip') }}" required>
+                                        <label for="zip">{{ __('ZIP') }}</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
                                 <div class="form-floating">
                                     <input id="password" type="password" placeholder="{{ __('Password') }}" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 

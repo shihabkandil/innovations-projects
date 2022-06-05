@@ -32,19 +32,37 @@ class StudentController extends Controller
         return $student;
     }
 
-    public function editProfile($id){
-        return view('pages.editProfile', ['id'=>$id] )->with(array('student'=>$this->fetchStudent($id)));
+    public function editProfile(){
+        return view('pages.editProfile');
     }
 
     public function purchase(){
         
     }
 
-    public function updateStudent(Request $req){
-        $data = Student::find($req->id);
-        $data->name = $req->name;
-        $data->email = $req->email;
-        $data->BIO = $req->BIO;
+    public function updateStudent(Request $request){
+        $request->validate([
+            'profilePicture'=> ['required','mimes:jpeg,jpg,png,gif|required|max:10000'],
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:students,email'],
+            'zip' => ['required','integer'],
+            'bio' => ['required','string'],
+            'address' => ['required','string'],
+            'city' => ['required','string'],
+            'state' => ['required','string'],
+        ]);
+
+        $pp = FirestorageController::store($request->profilePicture, 'Students/');
+
+        $data = Student::find($request->id);
+        $data->name = $request->name;
+        $data->email = $request->email;
+        $data->BIO = $request->bio;
+        $data->address = $request->address;
+        $data->city = $request->city;
+        $data->state = $request->state;
+        $data->zip_code = $request->zip;
+        $data->PP = $pp;
         $data->save();
         return redirect('/');
     }

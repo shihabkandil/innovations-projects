@@ -108,7 +108,7 @@
                         <ul class="dropdown-menu" style="right: auto; left: 0;" aria-labelledby="navbarDropdown">
                         @endif
                             @if(Auth::guard('student')->check())
-                            <li><a class="dropdown-item" href="/editProfile/{{Auth::guard('student')->user()->id}}">Edit Profile</a></li>
+                            <li><a class="dropdown-item" href="/editProfile">Edit Profile</a></li>
                             <li><hr class="dropdown-divider" /></li>
                             @endif
                             <li><a class="dropdown-item" href="/logout">{{__('messages.Logout')}}</a></li>
