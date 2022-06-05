@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use App\Models\Courses;
 
+
 class CartController extends Controller
 {
     /**
@@ -47,10 +48,8 @@ class CartController extends Controller
 
     public function remove(Request $request)
     {
-        $course = Courses::findOrFail($request->input(key:'Course_id'));
-    
-        Cart::remove($course->id);
-
+        $id = $request->row_id;
+        Cart::remove($id);
         return redirect()->route('cart')->with('message' , 'Successfully Removed');
     }
 
